@@ -38,7 +38,7 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
   - Eingebaut in: Gründer-Card + Kontakt-Sektion (index.html)
   - Kein LinkedIn-Embed, kein externes Script
 - GitHub Pages Staging aktiv
-- Kontakt-Bereich vorbereitet: visueller E-Mail-Platzhalter, TODO-Kommentare im Code
+- E-Mail-Adresse kontakt@thevio-systems.de eingerichtet und getestet
 - Triovo-Referenz-Card vollständig
 - Gründerprofil vollständig
 
@@ -46,14 +46,13 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ## ❌ Launch-Blocker (vor Go-Live zwingend abschließen)
 
-1. **E-Mail einrichten** — `kontakt@thevio-systems.de` einrichten, testen, dann in index.html aktivieren (TODO-Kommentar vorhanden)
-2. **Impressum finalisieren** — Platzhalter durch rechtsgeprüften Inhalt gemäß § 5 DDG ersetzen
-3. **Datenschutz finalisieren** — Platzhalter durch DSGVO-konforme Datenschutzerklärung ersetzen
-4. **noindex entfernen** — `<meta name="robots" content="noindex, nofollow">` aus index.html entfernen (erst nach Abschluss aller obigen Punkte)
-5. **Domain DNS konfigurieren** — A-Records bei INWX auf GitHub Pages IPs setzen
-6. **CNAME-Datei erstellen** — erst nach DNS-Konfiguration
-7. **HTTPS aktivieren** — "Enforce HTTPS" in GitHub Pages nach Domain-Verbindung
-8. **Finale QA** — vollständiger Test auf thevio-systems.de
+1. **Impressum finalisieren** — Platzhalter durch rechtsgeprüften Inhalt gemäß § 5 DDG ersetzen
+2. **Datenschutz finalisieren** — Platzhalter durch DSGVO-konforme Datenschutzerklärung ersetzen
+3. **noindex entfernen** — `<meta name="robots" content="noindex, nofollow">` aus index.html entfernen (erst nach Abschluss aller obigen Punkte)
+4. **Domain DNS konfigurieren** — A-Records bei INWX auf GitHub Pages IPs setzen
+5. **CNAME-Datei erstellen** — erst nach DNS-Konfiguration
+6. **HTTPS aktivieren** — "Enforce HTTPS" in GitHub Pages nach Domain-Verbindung
+7. **Finale QA** — vollständiger Test auf thevio-systems.de
 
 > **noindex-Hinweis:** impressum.html, datenschutz.html und 404.html können noindex auch nach Go-Live behalten. Nur index.html muss für die Indexierung freigegeben werden.
 
