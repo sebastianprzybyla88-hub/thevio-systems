@@ -3,7 +3,7 @@
 **Dachmarke:** Thevio Systems
 **Domain:** thevio-systems.de
 **Repo:** `sebastianprzybyla88-hub/thevio-systems`
-**Status:** Phase 7 — **Staging-Ready, nicht Go-Live-Ready**
+**Status:** Phase 8 — **Staging-Ready, nicht Go-Live-Ready**
 
 ---
 
@@ -11,7 +11,7 @@
 
 Dieses Repository enthält den vollständigen Quellcode der statischen Unternehmenswebsite von Thevio Systems.
 
-Thevio Systems ist die Dachmarke für KI-gestützte Softwarelösungen, digitale Workflows, Prozessautomatisierung und produktionsnahe Softwareentwicklung.
+Thevio Systems ist der professionelle Rahmen für den praktischen Aufbau in Richtung Softwareentwicklung, KI-gestützte Workflows, digitale Produktentwicklung und Customer Experience. Triovo ist das erste eigenständige Praxisprojekt und dient als sichtbarer Nachweis dieser Arbeitsweise.
 
 Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — ohne externe Frameworks, ohne unnötige Abhängigkeiten.
 
@@ -25,7 +25,7 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ---
 
-## ✅ Erledigt (Phase 1–7)
+## ✅ Erledigt (Phase 1–8)
 
 - Website-Grundstruktur und Design-System
 - Alle Sektionen: Hero, Leistungen, Triovo, Über/Gründer, Kontakt, Footer
@@ -47,6 +47,13 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
   - Verantwortlich für Inhalt: Sebastian Przybyla, Bahnhofstraße 5, 37318 Arenshausen
   - Hinweis zum Aufbaustatus eingefügt
   - Entwurfs-Platzhalter vollständig entfernt
+- Strategische Text-Überarbeitung (index.html) ✅
+  - Positionierung geschärft: Thevio Systems als professioneller Rahmen für den praktischen Aufbau in Richtung Softwareentwicklung, KI-Workflows, digitale Produktentwicklung und Customer Experience — bewusst nicht als etablierte Agentur dargestellt
+  - Hero, Technische Schwerpunkte, Triovo-Referenz, Über-Sektion und Gründerprofil überarbeitet
+  - Fokus auf praktische Erfahrung, Eigeninitiative, Lernkurve, technischen Aufbau, Produktdenken und reale Umsetzung
+  - Keine Kunden-, Umsatz- oder Erfolgsclaims enthalten
+  - Kein Bezug auf privates berufliches Umfeld — Formulierungen bewusst professionell und sachlich gehalten
+  - Meta-Title, Meta-Description und Open-Graph-Tags an neue Positionierung angepasst
 
 ---
 
