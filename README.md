@@ -3,7 +3,7 @@
 **Dachmarke:** Thevio Systems
 **Domain:** thevio-systems.de
 **Repo:** `sebastianprzybyla88-hub/thevio-systems`
-**Status:** Phase 6 abgeschlossen — **Staging-Ready, nicht Go-Live-Ready**
+**Status:** Phase 7 — **Staging-Ready, nicht Go-Live-Ready**
 
 ---
 
@@ -25,28 +25,34 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ---
 
-## ✅ Erledigt (Phase 1–6)
+## ✅ Erledigt (Phase 1–7)
 
 - Website-Grundstruktur und Design-System
 - Alle Sektionen: Hero, Leistungen, Triovo, Über/Gründer, Kontakt, Footer
-- Impressum- und Datenschutz-Platzhalter vorhanden (als Entwurf markiert, nicht für Livebetrieb)
 - noindex-Meta-Tag aktiv auf allen Seiten
 - 404-Seite
 - Hamburger-Navigation (Mobile)
 - LinkedIn-Integration: https://www.linkedin.com/in/sebastian-przybyla-9426b0416
-  - target="_blank" + rel="noopener noreferrer" korrekt gesetzt
-  - Eingebaut in: Gründer-Card + Kontakt-Sektion (index.html)
-  - Kein LinkedIn-Embed, kein externes Script
+- target="_blank" + rel="noopener noreferrer" korrekt gesetzt
+- Eingebaut in: Gründer-Card + Kontakt-Sektion (index.html)
+- Kein LinkedIn-Embed, kein externes Script
 - GitHub Pages Staging aktiv
-- E-Mail-Adresse kontakt@thevio-systems.de eingerichtet und getestet
+- E-Mail-Adresse kontakt@thevio-systems.de eingerichtet und getestet ✅
+- Kontaktzeile (index.html) auf finale Formulierung aktualisiert ✅
 - Triovo-Referenz-Card vollständig
 - Gründerprofil vollständig
+- Impressum (impressum.html) mit echten Angaben befüllt gemäß § 5 DDG ✅
+  - Name und Dachmarke eingetragen
+  - Adressfeld für Geschäftsanschrift als Platzhalter gesetzt (abhängig von echten Adressdaten)
+  - Verantwortlich für Inhalt: Sebastian Przybyla, Bahnhofstraße 5, 37318 Arenshausen
+  - Hinweis zum Aufbaustatus eingefügt
+  - Entwurfs-Platzhalter vollständig entfernt
 
 ---
 
 ## ❌ Launch-Blocker (vor Go-Live zwingend abschließen)
 
-1. **Impressum finalisieren** — Platzhalter durch rechtsgeprüften Inhalt gemäß § 5 DDG ersetzen
+1. **Impressum-Adresse vervollständigen** — Geschäftsanschrift `[STRAẞE HAUSNUMMER]` / `[PLZ ORT]` durch echte Adressdaten ersetzen
 2. **Datenschutz finalisieren** — Platzhalter durch DSGVO-konforme Datenschutzerklärung ersetzen
 3. **noindex entfernen** — `<meta name="robots" content="noindex, nofollow">` aus index.html entfernen (erst nach Abschluss aller obigen Punkte)
 4. **Domain DNS konfigurieren** — A-Records bei INWX auf GitHub Pages IPs setzen
@@ -60,18 +66,15 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ## TODO-Stellen im Code
 
-### index.html — E-Mail-Aktivierung
+### impressum.html — Geschäftsanschrift vervollständigen
 
-**Datei:** `index.html`
-**Abschnitt:** Sektion `#kontakt`, `<div class="contact-options">`
-
-Sobald `kontakt@thevio-systems.de` eingerichtet und getestet ist:
-1. `<div class="contact-placeholder">` Block entfernen
-2. Kommentierten `<a href="mailto:...">` Block einkommentieren
-3. TODO-Kommentar entfernen
-
-Empfohlener Button-Text: `kontakt@thevio-systems.de`
-Empfohlener mailto-Link: `href="mailto:kontakt@thevio-systems.de"`
+**Datei:** `impressum.html`
+**Platzhalter:**
+```
+[STRAẞE HAUSNUMMER]
+[PLZ ORT]
+```
+Durch echte Geschäftsanschrift ersetzen, sobald Unternehmensanmeldung abgeschlossen.
 
 ### index.html — noindex entfernen
 
@@ -110,14 +113,14 @@ Diese Zeile und den Kommentar erst nach Abschluss aller Launch-Blocker entfernen
 ```
 thevio-systems/
 ├── index.html          # Hauptseite
-├── impressum.html      # Impressum (Entwurf — vor Go-Live ersetzen)
+├── impressum.html      # Impressum (Angaben gem. § 5 DDG — Adresse ausstehend)
 ├── datenschutz.html    # Datenschutz (Entwurf — vor Go-Live ersetzen)
 ├── 404.html            # Fehlerseite (noindex kann bleiben)
 ├── assets/
 │   ├── css/
-│   │   └── main.css    # Gesamtes Stylesheet
+│   │   └── main.css   # Gesamtes Stylesheet
 │   └── js/
-│       └── main.js     # Nur Hamburger-Menü-Logik
+│       └── main.js    # Nur Hamburger-Menü-Logik
 └── README.md
 ```
 
