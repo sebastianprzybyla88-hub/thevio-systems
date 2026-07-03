@@ -3,7 +3,7 @@
 **Dachmarke:** Thevio Systems
 **Domain:** thevio-systems.de (gesichert, noch nicht verbunden)
 **Repo:** `sebastianprzybyla88-hub/thevio-systems`
-**Status:** Phase 9 — **Staging-Ready, NICHT Go-Live-Ready** (Impressum und Datenschutz sind Launch-Blocker)
+**Status:** Phase 9 — **Impressum & Datenschutz final, NICHT Go-Live-Ready** (noindex aktiv, Domain nicht verbunden)
 
 ---
 
@@ -19,9 +19,9 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ## Aktueller Status
 
-> **STAGING-READY — NICHT GO-LIVE-READY**
+> **RECHTSTEXTE FINAL — NICHT GO-LIVE-READY**
 >
-> Impressum und Datenschutz enthalten weiterhin Platzhalter bzw. widersprüchliche Angaben. noindex bleibt auf index.html aktiv. Keine Domain-Umschaltung, keine DNS-Änderung, keine CNAME-Datei, solange diese Blocker bestehen.
+> Impressum und Datenschutz enthalten keine Platzhalter mehr und sind inhaltlich final. noindex bleibt auf index.html weiterhin aktiv (noch nicht entfernt). Keine Domain-Umschaltung, keine DNS-Änderung, keine CNAME-Datei, solange die Domain nicht vorbereitet wurde.
 
 ---
 
@@ -43,17 +43,20 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ---
 
+## ✅ Erledigt seit letztem Update
+
+- **Impressum final** — `impressum.html` enthält keine Platzhalter mehr. Die Anbieteradresse unter "Angaben gemäß § 5 DDG" wurde auf dieselbe Anschrift gesetzt wie unter "Verantwortlich für den Inhalt" (Bahnhofstraße 5, 37318 Arenshausen, Deutschland). Keine widersprüchlichen Adressangaben mehr vorhanden.
+- **Datenschutz final** — `datenschutz.html` wurde vollständig durch eine schlanke, auf den tatsächlichen technischen Stand zugeschnittene Datenschutzerklärung ersetzt (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, expliziter Hinweis auf keine eigenen Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand). Keine Platzhalter, kein Kontaktformular, kein Cookie-Consent-Verfahren erwähnt.
+
 ## ❌ Launch-Blocker (vor Go-Live zwingend abschließen)
 
-1. **Impressum ist NICHT final** — `impressum.html` enthält weiterhin die Platzhalter `[STRAẞE HAUSNUMMER]` und `[PLZ ORT]` im Abschnitt "Angaben gemäß § 5 DDG". Zusätzlich besteht ein Widerspruch: Die Anschrift bei "Verantwortlich für den Inhalt" (Bahnhofstraße 5, 37318 Arenshausen) weicht von der noch offenen Hauptanschrift ab. Vor Go-Live muss die vollständige, ladungsfähige Anschrift eingetragen und die Konsistenz beider Adressangaben hergestellt werden. **Keine Adressdaten wurden erfunden.**
-2. **Datenschutz ist NICHT final** — `datenschutz.html` enthält weiterhin vollständige Platzhalter (Verantwortlicher, Hosting/GitHub Pages, Datenerhebung, Cookies, Betroffenenrechte, Datenschutzkontakt) sowie den Entwurfs-Warnhinweis. Erfordert entweder einen geprüften Datenschutz-Generator oder rechtliche Beratung. **Keine Rechtstexte wurden erfunden.**
-3. **noindex auf index.html bleibt aktiv** — darf gemäß obiger Blocker nicht entfernt werden.
-4. **Domain-Verbindung nicht vorbereitet** — DNS-Änderungen bei INWX wurden nicht vorgenommen, da Blocker 1 und 2 offen sind. Bestehende Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) sind davon nicht betroffen und wurden nicht angefasst.
-5. **CNAME-Datei nicht erstellt** — wird erst nach Abschluss der DNS-Vorbereitung angelegt.
-6. **HTTPS-Erzwingung** — erst nach Domain-Verbindung relevant.
-7. **Finale QA auf thevio-systems.de** — erst nach Domain-Verbindung möglich.
+1. **noindex auf index.html weiterhin aktiv** — wurde noch nicht entfernt. Entfernung ist jetzt inhaltlich möglich, da Impressum und Datenschutz final sind, erfolgt aber erst nach gesonderter Bestätigung.
+2. **Domain-Verbindung nicht vorbereitet** — DNS-Änderungen bei INWX wurden noch nicht vorgenommen. Bestehende Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) sind davon nicht betroffen und dürfen bei künftigen Änderungen nicht beschädigt werden.
+3. **CNAME-Datei nicht erstellt** — wird erst nach Abschluss der DNS-Vorbereitung angelegt.
+4. **HTTPS-Erzwingung** — erst nach Domain-Verbindung relevant.
+5. **Finale QA auf thevio-systems.de** — erst nach Domain-Verbindung möglich.
 
-> **noindex-Hinweis:** impressum.html, datenschutz.html und 404.html können noindex auch nach Go-Live behalten. Nur index.html muss für die Indexierung freigegeben werden — aber erst, wenn Blocker 1 und 2 abgeschlossen sind.
+> **noindex-Hinweis:** impressum.html, datenschutz.html und 404.html können noindex auch nach Go-Live behalten. Nur index.html muss für die Indexierung freigegeben werden.
 
 ---
 
@@ -71,25 +74,20 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ## TODO-Stellen im Code
 
-### impressum.html — Adresse vervollständigen und Widerspruch auflösen
+### impressum.html — erledigt
 
 **Datei:** `impressum.html`
-**Platzhalter:**
-```
-[STRAẞE HAUSNUMMER]
-[PLZ ORT]
-```
-Vor Go-Live: echte, ladungsfähige Anschrift eintragen. Zusätzlich prüfen, ob diese Anschrift mit der Angabe bei "Verantwortlich für den Inhalt" übereinstimmen soll — aktuell zwei unterschiedliche Zustände (Platzhalter vs. konkrete Adresse) im selben Dokument.
+Die Anbieteradresse unter "Angaben gemäß § 5 DDG" wurde auf dieselbe Anschrift gesetzt wie unter "Verantwortlich für den Inhalt" (Bahnhofstraße 5, 37318 Arenshausen, Deutschland). Keine Platzhalter, keine widersprüchlichen Adressangaben mehr vorhanden.
 
-### datenschutz.html — vollständig neu ausformulieren
+### datenschutz.html — erledigt
 
 **Datei:** `datenschutz.html`
-Alle sechs Abschnitte (Verantwortlicher, Hosting, Datenerhebung, Cookies, Betroffenenrechte, Datenschutzkontakt) sind noch Platzhalter. Empfehlung weiterhin: geprüften Datenschutz-Generator nutzen oder rechtliche Beratung einholen.
+Vollständig ersetzt durch eine schlanke, auf den tatsächlichen technischen Stand der Website zugeschnittene Datenschutzerklärung (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, expliziter Hinweis auf keine eigenen Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand). Keine Platzhalter, kein Kontaktformular, kein Cookie-Consent-Verfahren erwähnt.
 
-### index.html — noindex entfernen (gesperrt)
+### index.html — noindex entfernen (noch offen)
 
 **Zeile im `<head>`:** `<meta name="robots" content="noindex, nofollow" />`
-Erst entfernen, wenn Impressum UND Datenschutz final sind.
+Kann jetzt entfernt werden, da Impressum und Datenschutz final sind — Entfernung erfolgt erst nach gesonderter Bestätigung.
 
 ---
 
@@ -131,8 +129,8 @@ Die GitHub-Pages-DNS-Konfiguration (A-Records + www-CNAME) betrifft ausschließl
 ```
 thevio-systems/
 ├── index.html          # Hauptseite (Hero final geschärft, Phase 9)
-├── impressum.html      # Impressum — NICHT final (Platzhalter + Widerspruch)
-├── datenschutz.html    # Datenschutz — NICHT final (vollständiger Entwurf)
+├── impressum.html      # Impressum — final (keine Platzhalter, keine Widersprüche)
+├── datenschutz.html    # Datenschutz — final (schlanke, faktenbasierte Fassung)
 ├── 404.html            # Fehlerseite (geprüft, keine Platzhalter)
 ├── assets/
 │   ├── css/
