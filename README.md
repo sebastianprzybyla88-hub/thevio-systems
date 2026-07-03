@@ -1,9 +1,9 @@
 # Thevio Systems — Website
 
 **Dachmarke:** Thevio Systems
-**Domain:** thevio-systems.de (gesichert, noch nicht verbunden)
+**Domain:** thevio-systems.de (gesichert, CNAME-Datei erstellt, DNS-Verbindung noch ausstehend)
 **Repo:** `sebastianprzybyla88-hub/thevio-systems`
-**Status:** Phase 9 — **Impressum & Datenschutz final, NICHT Go-Live-Ready** (noindex aktiv, Domain nicht verbunden)
+**Status:** Phase 10 — **noindex entfernt, CNAME erstellt, NICHT Go-Live-Ready** (DNS bei INWX noch nicht gesetzt, Domain-Verbindung ausstehend)
 
 ---
 
@@ -19,9 +19,9 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ## Aktueller Status
 
-> **RECHTSTEXTE FINAL — NICHT GO-LIVE-READY**
+> **PHASE 10 — DOMAIN-VORBEREITUNG LÄUFT, NICHT GO-LIVE-READY**
 >
-> Impressum und Datenschutz enthalten keine Platzhalter mehr und sind inhaltlich final. noindex bleibt auf index.html weiterhin aktiv (noch nicht entfernt). Keine Domain-Umschaltung, keine DNS-Änderung, keine CNAME-Datei, solange die Domain nicht vorbereitet wurde.
+> Impressum und Datenschutz sind final. noindex wurde auf index.html entfernt (index.html ist jetzt indexierbar/index,follow). Die CNAME-Datei wurde erstellt (Inhalt exakt: thevio-systems.de). DNS-Einträge bei INWX wurden noch NICHT gesetzt — dies erfolgt erst nach gesonderter, ausdrücklicher Freigabe. Bestehende Tuta-Mail-DNS-Einträge bleiben unverändert.
 
 ---
 
@@ -48,13 +48,17 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 - **Impressum final** — `impressum.html` enthält keine Platzhalter mehr. Die Anbieteradresse unter "Angaben gemäß § 5 DDG" wurde auf dieselbe Anschrift gesetzt wie unter "Verantwortlich für den Inhalt" (Bahnhofstraße 5, 37318 Arenshausen, Deutschland). Keine widersprüchlichen Adressangaben mehr vorhanden.
 - **Datenschutz final** — `datenschutz.html` wurde vollständig durch eine schlanke, auf den tatsächlichen technischen Stand zugeschnittene Datenschutzerklärung ersetzt (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, expliziter Hinweis auf keine eigenen Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand). Keine Platzhalter, kein Kontaktformular, kein Cookie-Consent-Verfahren erwähnt.
 
+## ✅ Erledigt seit letztem Update (Phase 10)
+
+- **noindex entfernt** — `index.html` enthält jetzt `<meta name="robots" content="index, follow" />`. Der STAGING-Kommentar wurde entfernt. impressum.html, datenschutz.html und 404.html behalten weiterhin noindex.
+- **CNAME-Datei erstellt** — Inhalt exakt eine Zeile: `thevio-systems.de`.
+
 ## ❌ Launch-Blocker (vor Go-Live zwingend abschließen)
 
-1. **noindex auf index.html weiterhin aktiv** — wurde noch nicht entfernt. Entfernung ist jetzt inhaltlich möglich, da Impressum und Datenschutz final sind, erfolgt aber erst nach gesonderter Bestätigung.
-2. **Domain-Verbindung nicht vorbereitet** — DNS-Änderungen bei INWX wurden noch nicht vorgenommen. Bestehende Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) sind davon nicht betroffen und dürfen bei künftigen Änderungen nicht beschädigt werden.
-3. **CNAME-Datei nicht erstellt** — wird erst nach Abschluss der DNS-Vorbereitung angelegt.
-4. **HTTPS-Erzwingung** — erst nach Domain-Verbindung relevant.
-5. **Finale QA auf thevio-systems.de** — erst nach Domain-Verbindung möglich.
+1. **DNS-Einträge bei INWX noch nicht gesetzt** — A-Records (apex) und CNAME (www) wurden dokumentiert, aber noch nicht gespeichert. Erfolgt erst nach ausdrücklicher Freigabe. Bestehende Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) bleiben davon unberührt und dürfen nicht verändert werden.
+2. **GitHub Pages Custom Domain noch nicht eingetragen** — erfolgt erst nach DNS-Vorbereitung.
+3. **HTTPS-Erzwingung** — erst nach Domain-Verbindung relevant, kein Zertifikat vor Custom-Domain-Eintrag verfügbar.
+4. **Finale QA auf thevio-systems.de** — erst nach Domain-Verbindung möglich.
 
 > **noindex-Hinweis:** impressum.html, datenschutz.html und 404.html können noindex auch nach Go-Live behalten. Nur index.html muss für die Indexierung freigegeben werden.
 
@@ -84,10 +88,9 @@ Die Anbieteradresse unter "Angaben gemäß § 5 DDG" wurde auf dieselbe Anschrif
 **Datei:** `datenschutz.html`
 Vollständig ersetzt durch eine schlanke, auf den tatsächlichen technischen Stand der Website zugeschnittene Datenschutzerklärung (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, expliziter Hinweis auf keine eigenen Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand). Keine Platzhalter, kein Kontaktformular, kein Cookie-Consent-Verfahren erwähnt.
 
-### index.html — noindex entfernen (noch offen)
+### index.html — noindex entfernt (erledigt, Phase 10)
 
-**Zeile im `<head>`:** `<meta name="robots" content="noindex, nofollow" />`
-Kann jetzt entfernt werden, da Impressum und Datenschutz final sind — Entfernung erfolgt erst nach gesonderter Bestätigung.
+**Zeile im `<head>`:** wurde geändert zu `<meta name="robots" content="index, follow" />`. Der STAGING-Kommentar wurde entfernt. index.html ist jetzt indexierbar.
 
 ---
 
@@ -120,7 +123,7 @@ Die GitHub-Pages-DNS-Konfiguration (A-Records + www-CNAME) betrifft ausschließl
 5. "Enforce HTTPS" aktivieren, sobald Zertifikat verfügbar (nicht vor Verfügbarkeit raten)
 6. HTTPS testen, finale QA auf thevio-systems.de durchführen
 
-**CNAME-Datei wurde noch nicht erstellt.** Wird erst nach vollständiger DNS-Vorbereitung angelegt.
+**CNAME-Datei wurde erstellt** (Inhalt exakt eine Zeile: `thevio-systems.de`, keine Leerzeile, keine zusätzlichen Inhalte). DNS-Einträge bei INWX wurden noch nicht gesetzt und erfordern eine gesonderte, ausdrückliche Freigabe vor dem Speichern.
 
 ---
 
@@ -128,10 +131,11 @@ Die GitHub-Pages-DNS-Konfiguration (A-Records + www-CNAME) betrifft ausschließl
 
 ```
 thevio-systems/
-├── index.html          # Hauptseite (Hero final geschärft, Phase 9)
+├── index.html          # Hauptseite (noindex entfernt, Phase 10)
 ├── impressum.html      # Impressum — final (keine Platzhalter, keine Widersprüche)
 ├── datenschutz.html    # Datenschutz — final (schlanke, faktenbasierte Fassung)
-├── 404.html            # Fehlerseite (geprüft, keine Platzhalter)
+├── 404.html            # Fehlerseite (geprüft, keine Platzhalter, noindex aktiv)
+├── CNAME               # Custom Domain für GitHub Pages (Inhalt: thevio-systems.de)
 ├── assets/
 │   ├── css/
 │   │   └── main.css   # Gesamtes Stylesheet (geprüft, keine externen Ressourcen)
