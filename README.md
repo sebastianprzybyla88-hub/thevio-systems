@@ -1,9 +1,9 @@
 # Thevio Systems — Website
 
 **Dachmarke:** Thevio Systems
-**Domain:** thevio-systems.de (gesichert, CNAME-Datei erstellt, DNS-Verbindung noch ausstehend)
+**Domain:** thevio-systems.de (verbunden, live)
 **Repo:** `sebastianprzybyla88-hub/thevio-systems`
-**Status:** Phase 10 — **noindex entfernt, CNAME erstellt, NICHT Go-Live-Ready** (DNS bei INWX noch nicht gesetzt, Domain-Verbindung ausstehend)
+**Status:** Phase 12 final — **GO-LIVE ABGESCHLOSSEN** — live unter https://thevio-systems.de
 
 ---
 
@@ -19,9 +19,29 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 
 ## Aktueller Status
 
-> **PHASE 10 — DOMAIN-VORBEREITUNG LÄUFT, NICHT GO-LIVE-READY**
+> **PHASE 12 FINAL — GO-LIVE-READY, LIVE**
 >
-> Impressum und Datenschutz sind final. noindex wurde auf index.html entfernt (index.html ist jetzt indexierbar/index,follow). Die CNAME-Datei wurde erstellt (Inhalt exakt: thevio-systems.de). DNS-Einträge bei INWX wurden noch NICHT gesetzt — dies erfolgt erst nach gesonderter, ausdrücklicher Freigabe. Bestehende Tuta-Mail-DNS-Einträge bleiben unverändert.
+> Die Website ist unter https://thevio-systems.de live und öffentlich erreichbar. Domain-Verbindung, HTTPS und finale QA sind abgeschlossen.
+
+---
+
+## ✅ Go-Live abgeschlossen (Phase 11–12)
+
+- Domain thevio-systems.de mit GitHub Pages verbunden (DNS-Check erfolgreich)
+- HTTPS aktiviert (Zertifikat aktiv)
+- „Enforce HTTPS" in GitHub Pages aktiviert
+- http://thevio-systems.de leitet korrekt auf https://thevio-systems.de weiter
+- https://www.thevio-systems.de leitet korrekt auf die Apex-Domain https://thevio-systems.de weiter
+- Impressum final und über HTTPS erreichbar (impressum.html)
+- Datenschutz final und über HTTPS erreichbar (datenschutz.html)
+- index.html enthält `<meta name="robots" content="index, follow" />`
+- impressum.html, datenschutz.html und 404.html behalten weiterhin `noindex, nofollow` (gewollt)
+- E-Mail-Adresse kontakt@thevio-systems.de aktiv und als mailto-Link korrekt eingebunden
+- LinkedIn-Link geprüft und korrekt: https://www.linkedin.com/in/sebastian-przybyla-9426b0416
+- Triovo-Link geprüft und korrekt: https://triovo.org
+- Bestehende Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) unverändert und vollständig erhalten
+- Keine sichtbaren Platzhalter im Code (geprüft)
+- Keine offenen Launch-Blocker mehr
 
 ---
 
@@ -33,97 +53,40 @@ Die Website ist bewusst als schlanke, statische HTML/CSS-Website aufgebaut — o
 - 404-Seite geprüft — keine Platzhalter, Links korrekt
 - Hamburger-Navigation (Mobile) funktionsfähig, keine externen Scripts, kein Tracking (main.js geprüft)
 - main.css geprüft — keine externen Imports, keine externen Font-/Asset-Referenzen
-- LinkedIn-Integration geprüft und funktionsfähig: https://www.linkedin.com/in/sebastian-przybyla-9426b0416
-- Triovo-Link geprüft und funktionsfähig: https://triovo.org
+- LinkedIn-Integration geprüft und funktionsfähig
+- Triovo-Link geprüft und funktionsfähig
 - target="_blank" + rel="noopener noreferrer" korrekt gesetzt
 - GitHub Pages Staging live und geprüft (Footer-Links, Impressum/Datenschutz erreichbar)
-- E-Mail-Adresse kontakt@thevio-systems.de eingerichtet, verlinkt und getestet ✅
+- E-Mail-Adresse kontakt@thevio-systems.de eingerichtet, verlinkt und getestet
 - Kein LinkedIn-Embed, kein externes Script, keine Cookies, keine Formulare im Code bestätigt
-- Domain thevio-systems.de ist registriert/gesichert (noch nicht verbunden)
-
----
 
 ## ✅ Erledigt seit letztem Update
 
-- **Impressum final** — `impressum.html` enthält keine Platzhalter mehr. Die Anbieteradresse unter "Angaben gemäß § 5 DDG" wurde auf dieselbe Anschrift gesetzt wie unter "Verantwortlich für den Inhalt" (Bahnhofstraße 5, 37318 Arenshausen, Deutschland). Keine widersprüchlichen Adressangaben mehr vorhanden.
-- **Datenschutz final** — `datenschutz.html` wurde vollständig durch eine schlanke, auf den tatsächlichen technischen Stand zugeschnittene Datenschutzerklärung ersetzt (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, expliziter Hinweis auf keine eigenen Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand). Keine Platzhalter, kein Kontaktformular, kein Cookie-Consent-Verfahren erwähnt.
+- Impressum final — impressum.html enthält keine Platzhalter mehr, Adressangaben konsistent (Bahnhofstraße 5, 37318 Arenshausen, Deutschland)
+- Datenschutz final — datenschutz.html vollständig auf den tatsächlichen technischen Stand zugeschnitten (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, keine Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand)
+- noindex entfernt — index.html enthält `<meta name="robots" content="index, follow" />`
+- CNAME-Datei erstellt — Inhalt exakt eine Zeile: thevio-systems.de
+- DNS-Einträge bei INWX gesetzt (A-Records apex + CNAME www), Tuta-Mail-Einträge unangetastet
+- GitHub Pages Custom Domain eingetragen, DNS-Check erfolgreich
+- „Enforce HTTPS" aktiviert
+- Finale QA auf https://thevio-systems.de durchgeführt und bestanden
 
-## ✅ Erledigt seit letztem Update (Phase 10)
-
-- **noindex entfernt** — `index.html` enthält jetzt `<meta name="robots" content="index, follow" />`. Der STAGING-Kommentar wurde entfernt. impressum.html, datenschutz.html und 404.html behalten weiterhin noindex.
-- **CNAME-Datei erstellt** — Inhalt exakt eine Zeile: `thevio-systems.de`.
-
-## ❌ Launch-Blocker (vor Go-Live zwingend abschließen)
-
-1. **DNS-Einträge bei INWX noch nicht gesetzt** — A-Records (apex) und CNAME (www) wurden dokumentiert, aber noch nicht gespeichert. Erfolgt erst nach ausdrücklicher Freigabe. Bestehende Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) bleiben davon unberührt und dürfen nicht verändert werden.
-2. **GitHub Pages Custom Domain noch nicht eingetragen** — erfolgt erst nach DNS-Vorbereitung.
-3. **HTTPS-Erzwingung** — erst nach Domain-Verbindung relevant, kein Zertifikat vor Custom-Domain-Eintrag verfügbar.
-4. **Finale QA auf thevio-systems.de** — erst nach Domain-Verbindung möglich.
-
-> **noindex-Hinweis:** impressum.html, datenschutz.html und 404.html können noindex auch nach Go-Live behalten. Nur index.html muss für die Indexierung freigegeben werden.
+**noindex-Hinweis:** impressum.html, datenschutz.html und 404.html behalten bewusst dauerhaft `noindex`. Nur index.html ist für die Indexierung freigegeben.
 
 ---
 
-## Technische Prüfung (Phase 9 — bestanden)
+## Technische Prüfung (bestanden)
 
-- Keine externen `<script src>`-Einbindungen außerhalb von `assets/`
+- Keine externen `<script src>`-Einbindungen außerhalb von assets/
 - Keine `<form>`-Elemente im gesamten Repository
 - Keine Cookies, kein Tracking im Code (main.js ausschließlich Hamburger-Menü + Scroll-Shadow)
 - Keine `@import` oder externen `url()`-Referenzen in main.css
 - LinkedIn-Link, Triovo-Link und mailto-Link auf index.html verifiziert (korrekt, klickbar, live getestet)
-- Footer-Links zu Impressum und Datenschutz auf der Live-Staging-Seite erreichbar
+- Footer-Links zu Impressum und Datenschutz auf der Live-Seite erreichbar
 - Mobile-Navigation (Hamburger) funktionsfähig laut main.js-Logik
-
----
-
-## TODO-Stellen im Code
-
-### impressum.html — erledigt
-
-**Datei:** `impressum.html`
-Die Anbieteradresse unter "Angaben gemäß § 5 DDG" wurde auf dieselbe Anschrift gesetzt wie unter "Verantwortlich für den Inhalt" (Bahnhofstraße 5, 37318 Arenshausen, Deutschland). Keine Platzhalter, keine widersprüchlichen Adressangaben mehr vorhanden.
-
-### datenschutz.html — erledigt
-
-**Datei:** `datenschutz.html`
-Vollständig ersetzt durch eine schlanke, auf den tatsächlichen technischen Stand der Website zugeschnittene Datenschutzerklärung (Verantwortlicher, GitHub-Pages-Hosting, Server-Logfiles, Kontakt per E-Mail, expliziter Hinweis auf keine eigenen Cookies/kein Tracking/keine externen Scripts, externe Links zu LinkedIn/Triovo, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Beschwerderecht, Stand). Keine Platzhalter, kein Kontaktformular, kein Cookie-Consent-Verfahren erwähnt.
-
-### index.html — noindex entfernt (erledigt, Phase 10)
-
-**Zeile im `<head>`:** wurde geändert zu `<meta name="robots" content="index, follow" />`. Der STAGING-Kommentar wurde entfernt. index.html ist jetzt indexierbar.
-
----
-
-## Domain-Vorbereitung (dokumentarisch — noch nicht umgesetzt, da Blocker offen)
-
-### DNS-Einträge bei INWX (erst nach Abschluss der Blocker vorzunehmen)
-
-> Werte vor Eintragung mit aktueller GitHub-Pages-Dokumentation prüfen:
-> https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
-
-**A-Records** (apex domain: thevio-systems.de): Vier A-Records auf die zum Zeitpunkt der Einrichtung aktuellen GitHub-Pages-IPs setzen (Werte vorher gegen die offizielle Dokumentation prüfen, nicht blind übernehmen).
-
-**CNAME-Record** (www): `www.thevio-systems.de` → `sebastianprzybyla88-hub.github.io`
-
-**Zwingend zu erhalten — bestehende Tuta-Mail-DNS-Einträge dürfen nicht verändert oder gelöscht werden:**
-- MX-Records
-- SPF TXT-Record
-- DKIM CNAME-Einträge
-- DMARC TXT-Record
-- MTA-STS CNAME-Einträge
-- t-verify TXT-Record
-
-Die GitHub-Pages-DNS-Konfiguration (A-Records + www-CNAME) betrifft ausschließlich die Webserver-Auflösung und darf die oben genannten Mail-Einträge nicht beschädigen oder ersetzen.
-
-**Reihenfolge (erst nach Abschluss von Impressum + Datenschutz):**
-1. DNS-Werte bei INWX eintragen, Mail-Einträge unangetastet lassen
-2. Propagation abwarten (bis zu 24–48 Stunden)
-3. CNAME-Datei im Repository erstellen (Inhalt ausschließlich: `thevio-systems.de`)
-4. GitHub Pages: Custom Domain `thevio-systems.de` eintragen
-5. "Enforce HTTPS" aktivieren, sobald Zertifikat verfügbar (nicht vor Verfügbarkeit raten)
-6. HTTPS testen, finale QA auf thevio-systems.de durchführen
-
-**CNAME-Datei wurde erstellt** (Inhalt exakt eine Zeile: `thevio-systems.de`, keine Leerzeile, keine zusätzlichen Inhalte). DNS-Einträge bei INWX wurden noch nicht gesetzt und erfordern eine gesonderte, ausdrückliche Freigabe vor dem Speichern.
+- HTTP → HTTPS Redirect verifiziert
+- www → Apex-Domain Redirect verifiziert
+- Tuta-Mail-DNS-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) unverändert verifiziert
 
 ---
 
@@ -131,16 +94,16 @@ Die GitHub-Pages-DNS-Konfiguration (A-Records + www-CNAME) betrifft ausschließl
 
 ```
 thevio-systems/
-├── index.html          # Hauptseite (noindex entfernt, Phase 10)
-├── impressum.html      # Impressum — final (keine Platzhalter, keine Widersprüche)
-├── datenschutz.html    # Datenschutz — final (schlanke, faktenbasierte Fassung)
-├── 404.html            # Fehlerseite (geprüft, keine Platzhalter, noindex aktiv)
-├── CNAME               # Custom Domain für GitHub Pages (Inhalt: thevio-systems.de)
+├── index.html          # Hauptseite (index, follow)
+├── impressum.html       # Impressum — final (noindex)
+├── datenschutz.html     # Datenschutz — final (noindex)
+├── 404.html             # Fehlerseite (noindex)
+├── CNAME                # Custom Domain für GitHub Pages (Inhalt: thevio-systems.de)
 ├── assets/
 │   ├── css/
-│   │   └── main.css   # Gesamtes Stylesheet (geprüft, keine externen Ressourcen)
+│   │   └── main.css     # Gesamtes Stylesheet (geprüft, keine externen Ressourcen)
 │   └── js/
-│       └── main.js    # Nur Hamburger-Menü-Logik (geprüft, kein Tracking)
+│       └── main.js      # Nur Hamburger-Menü-Logik (geprüft, kein Tracking)
 └── README.md
 ```
 
@@ -148,27 +111,29 @@ thevio-systems/
 
 ## Technologie
 
-- **HTML5** — semantisch, barrierefrei
-- **CSS3** — eigene CSS-Variablen, kein Framework
-- **JavaScript** — minimal, nur für Mobile-Navigation und Scroll-Shadow
-- **Fonts** — System-Font-Stack, keine externen Anfragen
-- **Icons** — keine externe Icon-Library
-- **Tracking** — keines (geprüft)
-- **Cookies** — keine (geprüft)
-- **Externe Abhängigkeiten** — keine (geprüft)
+- HTML5 — semantisch, barrierefrei
+- CSS3 — eigene CSS-Variablen, kein Framework
+- JavaScript — minimal, nur für Mobile-Navigation und Scroll-Shadow
+- Fonts — System-Font-Stack, keine externen Anfragen
+- Icons — keine externe Icon-Library
+- Tracking — keines (geprüft)
+- Cookies — keine (geprüft)
+- Externe Abhängigkeiten — keine (geprüft)
 
 ---
 
 ## Deployment
 
-### Aktivierung GitHub Pages
-1. Repository → Settings → Pages
-2. Source: Deploy from a branch
-3. Branch: `main` / Root (`/`)
-4. Speichern
+### GitHub Pages
+- Repository → Settings → Pages
+- Source: Deploy from a branch
+- Branch: main / Root (/)
+- Custom Domain: thevio-systems.de (verbunden, DNS-Check erfolgreich)
+- Enforce HTTPS: aktiviert
 
-### Custom Domain (thevio-systems.de)
-- Domain ist registriert/gesichert, aber noch nicht verbunden
-- Reihenfolge: Impressum + Datenschutz final → DNS konfigurieren (ohne Tuta-Mail-Einträge zu beschädigen) → CNAME-Datei erstellen → Domain eintragen → HTTPS erzwingen
-- CNAME-Datei noch nicht vorhanden (gesperrt durch offene Launch-Blocker)
-- HTTPS wird automatisch via Let's Encrypt aktiviert, sobald DNS propagiert ist
+### DNS (bei INWX)
+- A-Records (apex thevio-systems.de) → GitHub-Pages-IPs
+- CNAME www → sebastianprzybyla88-hub.github.io
+- Bestehende Tuta-Mail-Einträge (MX, SPF, DKIM, DMARC, MTA-STS, t-verify) unverändert und vollständig erhalten
+
+HTTPS ist aktiv (Let's Encrypt via GitHub Pages), Enforce HTTPS ist aktiviert. Die Website ist live und final geprüft.
