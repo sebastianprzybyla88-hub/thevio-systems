@@ -186,7 +186,7 @@ line-height: var(--line-height-loose);
 
 /* Ueber: Zwei-spaltig auf Desktop */
 .about-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-12); }
-@media (min-width: 960px) { .about-layout { grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: start; } }
+@media (min-width: 960px) { .about-layout { grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; } }
 
 /* Ueber-Text: etwas groesser und besser lesbar auf Desktop */
 .about-content { max-width: 100%; }
@@ -199,29 +199,26 @@ font-size: var(--font-size-md);
 }
 .about-content p:last-child { margin-bottom: 0; }
 
-/* Gruender-Card: staerker abgesetzt, klarer strukturiert */
+/* Gruender-Card: dezent und ruhig, unterstuetzt Text statt zu dominieren */
 .founder-card {
-background-color: var(--color-bg-secondary);
-border: 1px solid var(--color-border-strong);
-border-radius: calc(var(--border-radius) * 1.5);
+background-color: var(--color-bg-primary);
+border: 1px solid var(--color-border);
+border-radius: var(--border-radius);
 overflow: hidden;
-box-shadow: 0 4px 20px rgba(15, 25, 35, 0.07);
 }
-.founder-card-inner { padding: var(--space-8); }
-@media (min-width: 960px) { .founder-card-inner { padding: var(--space-10); } }
+.founder-card-inner { padding: var(--space-6); }
+@media (min-width: 960px) { .founder-card-inner { padding: var(--space-8); } }
 
-/* Gruendername und Rolle staerker hervorgehoben */
+/* Gruendername und Rolle: dezent, nicht dominant */
 .founder-meta {
-margin-bottom: var(--space-6);
-padding-bottom: var(--space-6);
-border-bottom: 1px solid var(--color-border);
+margin-bottom: var(--space-4);
 }
 .founder-meta h3 {
-font-size: var(--font-size-2xl);
+font-size: var(--font-size-xl);
 font-weight: 700;
 color: var(--color-text-primary);
 margin-bottom: var(--space-2);
-letter-spacing: -0.02em;
+letter-spacing: -0.01em;
 }
 .founder-role {
 font-size: var(--font-size-sm);
@@ -232,12 +229,12 @@ line-height: 1.5;
 }
 .founder-body p {
 color: var(--color-text-secondary);
-line-height: var(--line-height-loose);
+line-height: var(--line-height-normal);
 margin-bottom: var(--space-4);
 font-size: var(--font-size-sm);
 }
 .founder-body p:last-child { margin-bottom: 0; }
-.founder-footer { margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
+.founder-footer { margin-top: var(--space-4); }
 
 /* Kontakt: professionell vorbereitet, visuell vollstaendig */
 .contact-content { max-width: 620px; }
