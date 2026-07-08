@@ -199,6 +199,9 @@ font-size: var(--font-size-md);
 }
 .about-content p:last-child { margin-bottom: 0; }
 
+/* Zielgruppen- & Audit-Karten: verhindert zu schmale/linksbuendige Darstellung auf breiten Desktop-Screens (Modifier auf Basis von .about-content) */
+.content-card-wide { max-width: 720px; margin-left: auto; margin-right: auto; }
+
 /* Gruender-Card: dezent und ruhig, unterstuetzt Text statt zu dominieren */
 .founder-card {
 background-color: var(--color-bg-primary);
