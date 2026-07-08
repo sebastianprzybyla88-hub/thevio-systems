@@ -202,6 +202,9 @@ font-size: var(--font-size-md);
 /* Zielgruppen- & Audit-Karten: verhindert zu schmale/linksbuendige Darstellung auf breiten Desktop-Screens (Modifier auf Basis von .about-content) */
 .content-card-wide { max-width: 720px; margin-left: auto; margin-right: auto; }
 
+/* Kleiner oberer Abstand fuer einen Link direkt unter einer Card (z.B. Referenz-Link), ohne bestehende Layouts zu beeinflussen */
+.card-link-gap { margin-top: var(--space-6); }
+
 /* Gruender-Card: dezent und ruhig, unterstuetzt Text statt zu dominieren */
 .founder-card {
 background-color: var(--color-bg-primary);
