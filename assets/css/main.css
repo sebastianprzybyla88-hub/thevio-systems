@@ -310,3 +310,8 @@ html { scroll-behavior: auto; }
 .reveal { opacity: 1; transform: none; transition: none; }
 .process-step { transition: none; }
 }
+
+/* Audit-Seite: breite Textkarten */
+.content-card-wide { max-width: 720px; }
+.content-card-wide p { margin-bottom: var(--space-3); }
+.content-card-wide p:last-child { margin-bottom: 0; }
