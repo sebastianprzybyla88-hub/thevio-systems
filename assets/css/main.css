@@ -6,7 +6,7 @@
 --color-bg-accent: #E8EDF5;
 --color-text-primary: #0F1923;
 --color-text-secondary: #4b5870;
---color-text-muted: #8A94A6;
+--color-text-muted: #5C6B84;
 --color-text-inverse: #F8F9FB;
 --color-text-inverse-muted: #A9B4C4;
 --color-accent: #1B3A6B;
@@ -277,9 +277,9 @@ gap: 10px;
 .site-footer { background-color: var(--color-bg-dark); color: var(--color-text-inverse); padding-block: var(--space-8); border-top: 1px solid var(--color-border-dark); }
 .footer-inner { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
 @media (min-width: 640px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
-.footer-copy { font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.footer-copy { font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); }
 .footer-links { display: flex; gap: var(--space-6); }
-.footer-links a { font-size: var(--font-size-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--transition-base); }
+.footer-links a { font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); text-decoration: none; transition: color var(--transition-base); }
 .footer-links a:hover { color: var(--color-text-inverse); }
 .footer-links a:focus-visible { outline: 2px solid var(--color-accent-light); outline-offset: 2px; border-radius: var(--border-radius-sm); }
 
