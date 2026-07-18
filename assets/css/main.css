@@ -203,14 +203,14 @@ ul, ol { list-style: none; }
   background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  padding: var(--space-4);
-      box-shadow: 0 2px 8px rgba(15, 25, 35, 0.05), 0 16px 32px rgba(15, 25, 35, 0.1);
+    padding: var(--space-6);
+          box-shadow: 0 1px 4px rgba(15, 25, 35, 0.04), 0 20px 44px rgba(15, 25, 35, 0.08);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
   width: 100%;
   max-width: 280px;
   margin-inline: auto;
 }
-.hero-visual:hover .hv-panel { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(15, 25, 35, 0.06), 0 20px 40px rgba(15, 25, 35, 0.13); }
+.hero-visual:hover .hv-panel { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(15, 25, 35, 0.05), 0 24px 48px rgba(15, 25, 35, 0.1); }
 .hv-panel-status { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-xs); font-weight: 700; color: var(--color-success); }
 .hv-status-dot { width: 7px; height: 7px; border-radius: 50%; background-color: var(--color-success); flex-shrink: 0; }
 .hv-panel-row { display: flex; flex-wrap: wrap; row-gap: var(--space-1); justify-content: space-between; gap: var(--space-2); font-size: var(--font-size-xs); border-top: 1px solid var(--color-border); padding-top: var(--space-2); }
@@ -262,9 +262,9 @@ ul, ol { list-style: none; }
   .hv-card--1 { transform: translateX(4%); }
   .hv-card--2 { transform: translateX(16%); }
   .hv-card--3 { transform: translateX(0%); }
-  .hvz-decision { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 22%; }
+  .hvz-decision { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 20%; }
   .hv-node { max-width: none; }
-  .hvz-result { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 38%; }
+  .hvz-result { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 36%; }
   .hv-panel { max-width: none; }
 }
 @keyframes hv-flow { to { stroke-dashoffset: -28; } }
