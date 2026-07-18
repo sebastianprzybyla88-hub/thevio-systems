@@ -295,17 +295,30 @@ ul, ol { list-style: none; }
 
 /* Process visualization */
 .process-section { overflow-x: hidden; }
-.process-flow { display: flex; flex-direction: column; gap: var(--space-4); }
-.process-step { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-6); background-color: var(--color-bg-primary); border: 1px solid var(--color-border); border-radius: var(--border-radius); transition: border-color var(--transition-slow), background-color var(--transition-slow); }
-.process-step.is-active { border-color: var(--color-accent); background-color: var(--color-bg-accent); }
+.process-flow { display: flex; flex-direction: column; gap: var(--space-4); position: relative; padding-left: var(--space-8); }
+.process-flow::before { content: ''; position: absolute; left: 15px; top: var(--space-2); bottom: var(--space-2); width: 2px; background: linear-gradient(var(--color-border-strong), var(--color-border)); }
+.process-step { position: relative; display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4) var(--space-6); background-color: var(--color-bg-primary); border: 1px solid var(--color-border); border-radius: var(--border-radius); transition: border-color var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base); }
+.process-step::before { content: ''; position: absolute; left: calc(-1 * var(--space-8) + 6px); top: var(--space-4); width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-bg-secondary); border: 2px solid var(--color-accent); }
+.process-step:hover, .process-step:focus-visible, .process-step.is-active { border-color: var(--color-accent); background-color: var(--color-bg-accent); outline: none; }
+.process-step--input { border-style: dashed; border-color: var(--color-border-strong); background-color: transparent; }
+.process-step--done { box-shadow: 0 1px 4px rgba(15, 25, 35, 0.04), 0 12px 28px rgba(15, 25, 35, 0.08); }
+.process-step--handover { border-left: 3px solid var(--color-accent-bright); }
 .process-index { font-size: var(--font-size-sm); font-weight: 700; color: var(--color-accent); letter-spacing: var(--letter-spacing-wide); }
 .process-title { font-size: var(--font-size-lg); font-weight: 600; color: var(--color-text-primary); }
 .process-desc { font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.process-desc--chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-1); }
+.process-chip { display: inline-flex; align-items: center; font-size: var(--font-size-xs); font-weight: 600; color: var(--color-text-muted); background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 999px; padding: var(--space-1) var(--space-3); }
 .process-connector { display: none; }
 @media (min-width: 960px) {
-  .process-flow { flex-direction: row; align-items: stretch; gap: 0; }
-  .process-step { flex: 1; text-align: center; align-items: center; }
-  .process-connector { display: block; width: 32px; flex-shrink: 0; align-self: center; height: 1px; background: linear-gradient(90deg, var(--color-border), var(--color-border-strong)); position: relative; }
+.process-flow { flex-direction: row; align-items: stretch; gap: 0; padding-left: 0; }
+.process-flow::before { display: none; }
+.process-step { flex: 1; text-align: center; align-items: center; }
+.process-step::before { display: none; }
+.process-step--core-a { border-radius: var(--border-radius) 0 0 var(--border-radius); border-right: none; }
+.process-step--core-b { border-radius: 0 var(--border-radius) var(--border-radius) 0; border-left: 1px solid var(--color-border-strong); }
+.process-connector--core { display: none; }
+.process-connector { display: block; width: 32px; flex-shrink: 0; align-self: center; height: 1px; background: linear-gradient(90deg, var(--color-border), var(--color-border-strong)); position: relative; }
+.process-connector::after { content: ''; position: absolute; right: 0; top: 50%; width: 0; height: 0; transform: translateY(-50%); border-style: solid; border-width: 4px 0 4px 6px; border-color: transparent transparent transparent var(--color-border-strong); }
 }
 
 /* Transformation */

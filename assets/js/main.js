@@ -77,25 +77,4 @@ revealTargets.forEach(function (el) { revealObserver.observe(el); });
 }
 }
 
-var processSteps = document.querySelectorAll('.process-step');
-if (processSteps.length && !prefersReducedMotion) {
-var activeIndex = 0;
-
-function activateStep(index) {
-processSteps.forEach(function (step, i) {
-if (i === index) {
-step.classList.add('is-active');
-} else {
-step.classList.remove('is-active');
-}
-});
-}
-
-activateStep(0);
-setInterval(function () {
-activeIndex = (activeIndex + 1) % processSteps.length;
-activateStep(activeIndex);
-}, 7000);
-}
-
 })();
