@@ -490,6 +490,20 @@ h2.triovo-dark-title { font-size: var(--font-size-h2); font-weight: 700; color: 
 .contact-option--dark .contact-option-label { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-accent-bright); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); min-width: 3.5rem; }
 .contact-option--dark .contact-option-value { font-size: var(--font-size-md); color: var(--color-text-inverse); font-weight: 500; }
 
+/* Vision */
+.vision-section { text-align: center; padding-block: var(--space-20) var(--space-16); }
+.vision-mark { width: 48px; height: 2px; background-color: var(--color-accent-bright); margin: 0 auto var(--space-6); border-radius: 2px; }
+.vision-heading { max-width: 760px; margin-inline: auto; }
+.vision-text { max-width: 620px; margin-inline: auto; margin-top: var(--space-6); font-size: var(--font-size-lg); color: var(--color-text-inverse-muted); line-height: var(--line-height-loose); }
+.vision-note { max-width: 540px; margin-inline: auto; margin-top: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); font-style: italic; opacity: 0.85; }
+
+/* Kontakt: Verfeinerung */
+.kontakt-final { position: relative; overflow: hidden; }
+.kontakt-glow { position: absolute; top: -140px; right: -140px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(76,124,209,0.18), transparent 70%); pointer-events: none; }
+.kontakt-final .container { position: relative; z-index: 1; }
+.contact-cta--primary { margin-bottom: var(--space-10); }
+.kontakt-alt-label { display: block; font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-inverse-muted); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--space-4); }
+
 /* Footer */
 .site-footer { background-color: var(--color-bg-dark); color: var(--color-text-inverse); padding-block: var(--space-8); border-top: 1px solid var(--color-border-dark); }
 .footer-inner { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
