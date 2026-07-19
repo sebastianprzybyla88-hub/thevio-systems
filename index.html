@@ -43,11 +43,40 @@
 <div class="hero-layout">
 <div class="hero-text">
 <span class="section-label">Customer Experience · Software Engineering · Business Automation</span>
-<h1 id="hero-heading">Erst das Problem. Dann die Technologie.</h1>
-<p class="hero-sub">Thevio Systems beginnt bei realen Geschäftsprozessen und verbindet Customer Experience, Software Engineering und Business Automation zu Lösungen, die dauerhaft funktionieren – nicht bei Trends oder Tools.</p>
+<h1 id="hero-heading"><span class="hero-heading-line">Erst das Problem.</span> <span class="hero-heading-line">Dann die Technologie.</span></h1>
+<p class="hero-sub">Thevio Systems verbindet Customer Experience, Softwareentwicklung und Automatisierung zu Lösungen für reale Geschäftsprozesse.</p>
 <div class="hero-actions">
 <a href="#kontakt" class="btn btn-primary">Projekt oder Prozess besprechen</a>
 <a href="https://www.triovo.org" class="link-arrow" target="_blank" rel="noopener noreferrer">Triovo als Praxisprojekt ansehen</a>
+</div>
+</div>
+<div class="hero-visual" role="img" aria-label="Darstellung eines Geschäftsprozesses: mehrere unstrukturierte Eingänge werden analysiert, einer Regel zugeordnet und als klarer, bearbeitbarer Vorgang an ein System übergeben.">
+<div class="hero-visual-glow" aria-hidden="true"></div>
+<svg class="hv-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<defs><marker id="hv-arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" style="fill: var(--color-accent-bright);" /></marker></defs>
+<path class="hv-line hv-line--in1" d="M28,19.3 C33,19.3 33,40 39,50" />
+<path class="hv-line hv-line--in2" d="M28,50 C33,50 33,50 39,50" />
+<path class="hv-line hv-line--in3" d="M28,80.7 C33,80.7 33,60 39,50" />
+<path class="hv-line hv-line--out" d="M60,50 C61,50 63,50 64,50" marker-end="url(#hv-arrow)" />
+</svg>
+<div class="hvz hvz-input">
+<div class="hv-card hv-card--mobile-input" aria-hidden="true"><span class="hv-card-dot"></span><span class="hv-card-label">Eingehende Anfragen</span><span class="hv-card-sub">E-Mail · Formular · System</span></div>
+<div class="hv-card hv-card--1" aria-hidden="true"><span class="hv-card-dot"></span><span class="hv-card-label">Formular</span></div>
+<div class="hv-card hv-card--2" aria-hidden="true"><span class="hv-card-dot"></span><span class="hv-card-label">E-Mail</span></div>
+<div class="hv-card hv-card--3" aria-hidden="true"><span class="hv-card-dot"></span><span class="hv-card-label">Systemereignis</span></div>
+</div>
+<div class="hvz hvz-decision">
+<div class="hv-node" aria-hidden="true">
+<span class="hv-node-label">Analyse</span>
+<span class="hv-node-sub">Kategorie · Priorität</span>
+</div>
+</div>
+<div class="hvz hvz-result">
+<div class="hv-panel" aria-hidden="true">
+<span class="hv-panel-status"><span class="hv-status-dot"></span>Bereit zur Bearbeitung</span>
+<span class="hv-panel-row"><span class="hv-panel-key">Zuständigkeit</span><span class="hv-panel-value">Vertrieb</span></span>
+<span class="hv-panel-row"><span class="hv-panel-key">Zielsystem</span><span class="hv-panel-value">CRM →</span></span>
+</div>
 </div>
 </div>
 </div>
@@ -62,15 +91,15 @@
 <span class="section-label">Funktionsprinzip</span>
 <p class="section-intro">Technologie ist bei Thevio Systems immer Mittel zum Zweck: Jede Automatisierung setzt an einem realen Geschäftsproblem an – von eingehenden Daten bis zur vorbereiteten oder automatisierten Bearbeitung.</p>
 <ol class="process-flow" role="list">
-<li class="process-step" data-step="1"><span class="process-index">01</span><span class="process-title">Eingang</span><span class="process-desc">E-Mail, Formular oder Systemereignis</span></li>
+<li class="process-step process-step--input" data-step="1" tabindex="0"><span class="process-index">01</span><span class="process-title">Eingang</span><span class="process-desc process-desc--chips"><span class="process-chip">E-Mail</span><span class="process-chip">Formular</span><span class="process-chip">Systemereignis</span></span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step" data-step="2"><span class="process-index">02</span><span class="process-title">KI-Analyse</span><span class="process-desc">Inhalt und Kontext werden ausgewertet</span></li>
+<li class="process-step process-step--core process-step--core-a" data-step="2" tabindex="0"><span class="process-index">02</span><span class="process-title">KI-Analyse</span><span class="process-desc">Inhalt und Kontext werden ausgewertet</span></li>
+<li class="process-connector process-connector--core" aria-hidden="true"></li>
+<li class="process-step process-step--core process-step--core-b" data-step="3" tabindex="0"><span class="process-index">03</span><span class="process-title">Einordnung</span><span class="process-desc">Kategorie, Priorität und Regeln</span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step" data-step="3"><span class="process-index">03</span><span class="process-title">Einordnung</span><span class="process-desc">Kategorie, Priorität und Regeln</span></li>
+<li class="process-step process-step--handover" data-step="4" tabindex="0"><span class="process-index">04</span><span class="process-title">Routing</span><span class="process-desc">Zuständigkeit und Zielsystem</span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step" data-step="4"><span class="process-index">04</span><span class="process-title">Routing</span><span class="process-desc">Zuständigkeit und Zielsystem</span></li>
-<li class="process-connector" aria-hidden="true"></li>
-<li class="process-step" data-step="5"><span class="process-index">05</span><span class="process-title">Ausführung</span><span class="process-desc">Automatisierte oder vorbereitete Bearbeitung</span></li>
+<li class="process-step process-step--done" data-step="5" tabindex="0"><span class="process-index">05</span><span class="process-title">Ausführung</span><span class="process-desc">Automatisierte oder vorbereitete Bearbeitung</span></li>
 </ol>
 </div>
 </section>
@@ -93,7 +122,7 @@
 <li>Fehlende Transparenz</li>
 </ul>
 </div>
-<div class="transformation-arrow" aria-hidden="true">→</div>
+<div class="transformation-arrow" aria-hidden="true"><span class="transformation-corridor"><span class="transformation-node"></span></span></div>
 <div class="transformation-after reveal">
 <span class="transformation-kicker transformation-kicker--accent">Mit Thevio Systems</span>
 <ul class="transformation-list transformation-list--structured" role="list">
@@ -116,9 +145,18 @@
 <span class="section-label">Leistungen</span>
 <h2 id="leistungen-heading">Was Thevio Systems entwickelt</h2>
 <p class="section-intro">Jede Lösung von Thevio Systems beginnt mit einem realen Geschäftsproblem oder einem ineffizienten Prozess. Erst danach entscheidet sich, welche Kombination aus Customer Experience, Software Engineering und Business Automation sinnvoll ist.</p>
-<div class="pillars-grid">
-<article class="pillar-card reveal">
-<span class="pillar-index">A</span>
+<div class="competency-system">
+<article class="competency-module competency-module--a reveal">
+<span class="competency-index">A</span>
+<div class="competency-motif competency-motif--a" aria-hidden="true">
+<span class="cm-signal cm-signal--1"></span>
+<span class="cm-signal cm-signal--2"></span>
+<span class="cm-signal cm-signal--3"></span>
+<span class="cm-line cm-line--1"></span>
+<span class="cm-line cm-line--2"></span>
+<span class="cm-line cm-line--3"></span>
+<span class="cm-focus"></span>
+</div>
 <h3>Customer Experience</h3>
 <ul role="list">
 <li>Digitale Fall- und Anfrageprozesse</li>
@@ -127,8 +165,14 @@
 <li>Prozessanalyse und Optimierung</li>
 </ul>
 </article>
-<article class="pillar-card reveal">
-<span class="pillar-index">B</span>
+<div class="competency-connector" aria-hidden="true"></div>
+<article class="competency-module competency-module--b reveal">
+<span class="competency-index">B</span>
+<div class="competency-motif competency-motif--b" aria-hidden="true">
+<span class="cm-layer cm-layer--top"></span>
+<span class="cm-layer cm-layer--mid"></span>
+<span class="cm-layer cm-layer--base"></span>
+</div>
 <h3>Software Engineering</h3>
 <ul role="list">
 <li>Individuelle Web- und Business-Anwendungen</li>
@@ -137,8 +181,14 @@
 <li>Backend-, Daten- und Workflow-Logik</li>
 </ul>
 </article>
-<article class="pillar-card reveal">
-<span class="pillar-index">C</span>
+<div class="competency-connector" aria-hidden="true"></div>
+<article class="competency-module competency-module--c reveal">
+<span class="competency-index">C</span>
+<div class="competency-motif competency-motif--c" aria-hidden="true">
+<span class="cm-node cm-node--trigger"></span>
+<span class="cm-node cm-node--rule"></span>
+<span class="cm-node cm-node--action"></span>
+</div>
 <h3>Business Automation</h3>
 <ul role="list">
 <li>KI-gestützte Workflows</li>
@@ -148,7 +198,7 @@
 </ul>
 </article>
 </div>
-<p class="contact-note card-link-gap">Datenschutzorientierte Integration, menschliche Freigabe und nachvollziehbare Entscheidungswege werden von Anfang an in die Systemarchitektur einbezogen.</p>
+<p class="competency-principle card-link-gap">Datenschutzorientierte Integration, menschliche Freigabe und nachvollziehbare Entscheidungswege werden von Anfang an in die Systemarchitektur einbezogen.</p>
 </div>
 </section>
 
@@ -159,24 +209,88 @@
 <span class="section-label">Für wen ist Thevio Systems?</span>
 <h2 id="zielgruppen-heading">Relevant für Teams mit wachsendem Automatisierungsbedarf</h2>
 <p class="section-intro">Vier wiederkehrende Ausgangslagen, in denen strukturierte Automatisierung besonders schnell Wirkung zeigt.</p>
-<div class="cards-grid cards-grid--2col">
-<article class="card reveal">
+<ol class="scenario-map" role="list">
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
 <h3>Wachstumsunternehmen und Start-ups</h3>
-<p>Für Teams, deren Prozesse schneller wachsen als ihre internen Systeme. <strong>Automatisierung</strong> schafft von Anfang an eine Struktur, die mitwächst.</p>
-</article>
-<article class="card reveal">
-<h3>Mittelstand und KMU</h3>
-<p>Für Unternehmen mit manuellen Abläufen, Medienbrüchen und wiederkehrenden Verwaltungsaufgaben. Digitale Workflows reduzieren <strong>wiederkehrenden manuellen Aufwand</strong>.</p>
-</article>
-<article class="card reveal">
-<h3>E-Commerce und digitale Geschäftsmodelle</h3>
-<p>Für Unternehmen mit hohem Anfragevolumen, Datenflüssen, Systemübergaben und Skalierungsbedarf. Strukturierte Schnittstellen schaffen <strong>Übersicht zwischen Systemen</strong>.</p>
-</article>
-<article class="card reveal">
-<h3>Service-, Operations- und Vertriebsteams</h3>
-<p>Für Teams, die Informationen strukturiert erfassen, weiterleiten, auswerten oder automatisiert bearbeiten müssen. Klare Abläufe schaffen <strong>Zeit für komplexere Aufgaben</strong>.</p>
-</article>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Prozesse wachsen schneller als die internen Systeme.</p>
 </div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Engpass</span>
+<p>Es fehlt eine Struktur, die mit dem Wachstum mithält.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Ansatz</span>
+<p><strong>Automatisierung</strong> schafft von Anfang an eine Struktur, die mitwächst.</p>
+</div>
+</div>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<h3>Mittelstand und KMU</h3>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Manuelle Abläufe und wiederkehrende Verwaltungsaufgaben.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Engpass</span>
+<p>Medienbrüche zwischen Tools und Verantwortlichen.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Ansatz</span>
+<p>Digitale Workflows reduzieren <strong>wiederkehrenden manuellen Aufwand</strong>.</p>
+</div>
+</div>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<h3>E-Commerce und digitale Geschäftsmodelle</h3>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Hohes Anfragevolumen und wachsender Skalierungsbedarf.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Engpass</span>
+<p>Unübersichtliche Datenflüsse und Systemübergaben.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Ansatz</span>
+<p>Strukturierte Schnittstellen schaffen <strong>Übersicht zwischen Systemen</strong>.</p>
+</div>
+</div>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<h3>Service-, Operations- und Vertriebsteams</h3>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Informationen müssen strukturiert erfasst und weitergeleitet werden.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Engpass</span>
+<p>Uneinheitliche Erfassung erschwert Auswertung und Übergabe.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Ansatz</span>
+<p>Klare Abläufe schaffen <strong>Zeit für komplexere Aufgaben</strong>.</p>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </section>
 
@@ -187,53 +301,37 @@
 <span class="triovo-badge">Proof of Work</span>
 <h2 id="triovo-heading" class="triovo-dark-title">Nicht nur konzipiert. Als produktives System umgesetzt.</h2>
 <p class="triovo-dark-intro">Triovo ist der praktische Nachweis, dass Thevio Systems reale Geschäftsprobleme in ein vollständiges, produktives Softwaresystem überführt – von der Idee bis zum laufenden Betrieb.</p>
-<div class="triovo-blocks-dark">
-<div class="triovo-block-dark reveal">
-<span class="triovo-block-label">Produkt- &amp; UX-Konzeption</span>
-<p>Von der Problemdefinition bis zur nutzbaren Prozessstruktur.</p>
-</div>
-<div class="triovo-block-dark reveal">
-<span class="triovo-block-label">Backend, Datenmodell &amp; APIs</span>
-<p>Strukturierte Datenhaltung und Systemanbindung.</p>
-</div>
-<div class="triovo-block-dark reveal">
-<span class="triovo-block-label">KI-gestützte Fallanalyse</span>
-<p>Kategorisierung, Priorisierung und vorbereitete Bearbeitung.</p>
-</div>
-<div class="triovo-block-dark reveal">
-<span class="triovo-block-label">Dashboard, Security &amp; Betrieb</span>
-<p>Auswertung, Zugriffsschutz und laufender Betrieb.</p>
-</div>
-</div>
+<p class="triovo-product-intro">Ein vollständiges B2C-Business-Dashboard für Fallerfassung, KI-gestützte Triage und teamübergreifende Bearbeitung – vom ersten Kontakt bis zum abgeschlossenen Vorgang.</p>
 <div class="triovo-product-frame reveal">
+<div class="triovo-frame-glow" aria-hidden="true"></div>
 <div class="triovo-frame-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
 <img src="assets/img/triovo-dashboard-preview.png" alt="Beispielansicht des Triovo Business-Dashboards mit Testdaten: Fallübersicht, Status und Priorisierung" width="1568" height="741" loading="lazy" decoding="async" />
 <p class="triovo-frame-caption">Beispielansicht mit Testdaten – zeigt den typischen Aufbau des Triovo Business-Dashboards.</p>
 </div>
 <div class="triovo-proof-dark">
-<h3 class="triovo-proof-title-dark">Technische Eigenleistung</h3>
-<div class="triovo-tech-groups">
-<div class="triovo-tech-group">
-<h4>Produkt und UX</h4>
-<p>Produktkonzept, Problemdefinition, UX- und Prozessstruktur, B2C-Fallerfassung, Business-Dashboard.</p>
-</div>
-<div class="triovo-tech-group">
-<h4>Backend und API</h4>
-<p>Backend-/API-Struktur, Case-Management-Logik, E-Mail-Workflows.</p>
-</div>
-<div class="triovo-tech-group">
-<h4>Datenmodell und Authentifizierung</h4>
-<p>PostgreSQL-Datenmodell, Authentifizierung, E-Mail-Verifikation.</p>
-</div>
-<div class="triovo-tech-group">
-<h4>KI-Triage und Unternehmensvalidierung</h4>
-<p>KI-gestützte Triage, Unternehmens- und Lookup-Logik.</p>
-</div>
-<div class="triovo-tech-group">
-<h4>Security, Deployment und Qualitätssicherung</h4>
-<p>Rate-Limiting, XSS-Schutz, Deployment mit Healthcheck, laufende Weiterentwicklung.</p>
-</div>
-</div>
+<h3 class="triovo-proof-title-dark">Technische Eigenleistung: der Umsetzungsweg</h3>
+<ol class="triovo-path" role="list">
+<li class="triovo-path-step">
+<span class="triovo-path-index" aria-hidden="true">01</span>
+<h4>Problemverständnis &amp; Produkt-/UX-Konzept</h4>
+<p>Produktkonzept, Problemdefinition sowie UX- und Prozessstruktur für die B2C-Fallerfassung und das Business-Dashboard.</p>
+</li>
+<li class="triovo-path-step">
+<span class="triovo-path-index" aria-hidden="true">02</span>
+<h4>Systemarchitektur, Backend &amp; Daten</h4>
+<p>Backend-/API-Struktur, Case-Management-Logik und E-Mail-Workflows auf einem PostgreSQL-Datenmodell mit Authentifizierung und E-Mail-Verifikation.</p>
+</li>
+<li class="triovo-path-step">
+<span class="triovo-path-index" aria-hidden="true">03</span>
+<h4>KI- und Workflowlogik</h4>
+<p>KI-gestützte Fallanalyse und Triage mit Kategorisierung, Priorisierung sowie Unternehmens- und Lookup-Logik für vorbereitete Bearbeitung.</p>
+</li>
+<li class="triovo-path-step">
+<span class="triovo-path-index" aria-hidden="true">04</span>
+<h4>Dashboard, Security &amp; Betrieb</h4>
+<p>Auswertung und Zugriffsschutz durch Rate-Limiting und XSS-Schutz, Deployment mit Healthcheck und laufende Weiterentwicklung.</p>
+</li>
+</ol>
 <p class="triovo-tech-line">Technische Grundlage: Node.js · Express · PostgreSQL · Railway · Cloudflare</p>
 </div>
 <div class="triovo-cta">
@@ -252,6 +350,29 @@
 <h2 id="audit-heading">Wo lohnt sich Automatisierung in Ihrem Unternehmen wirklich?</h2>
 <p class="audit-kicker">Potenzial-Audit für Prozesse, Workflows und Kundenservice</p>
 <p>Das Potenzial-Audit zeigt, an welchen Stellen Zeit verloren geht, welche Abläufe automatisierbar sind und welcher Pilotprozess realistisch umgesetzt werden kann.</p>
+<ol class="audit-steps" role="list">
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">1</span>
+<div>
+<h3>Prozess verstehen</h3>
+<p>Wir sehen uns an, an welchen Stellen im Ablauf Zeit verloren geht.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">2</span>
+<div>
+<h3>Potenzial priorisieren</h3>
+<p>Wir ordnen ein, welche Abläufe sich am ehesten automatisieren lassen.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">3</span>
+<div>
+<h3>Pilot definieren</h3>
+<p>Wir legen fest, welcher Pilotprozess realistisch umgesetzt werden kann.</p>
+</div>
+</li>
+</ol>
 <p class="contact-note">Hinweis: Bei anschließender Umsetzung kann der Audit-Betrag auf das Projekt angerechnet werden.</p>
 </div>
 <div class="contact-card audit-card reveal">
@@ -278,16 +399,15 @@
 <div class="about-content">
 <p class="philosophy-intro">Thevio Systems denkt vom Geschäftsproblem her, nicht von der Technologie: Erst wird der reale Prozess verstanden – erst danach entscheidet sich, ob und wie KI, Automatisierung oder individuelle Software sinnvoll eingesetzt werden.</p>
 <ul class="strengths-list" role="list">
-<li><strong>Eigene Produktentwicklung statt reiner Konzeptarbeit</strong> — mit Triovo wurde ein vollständiges System umgesetzt statt nur skizziert.</li>
-<li><strong>Verbindung von Geschäftsprozess, UX und technischer Umsetzung</strong> — Prozessverständnis, Gestaltung und Entwicklung greifen ineinander.</li>
-<li><strong>Praxiswissen aus Frontend, Backend, Datenmodell, APIs und KI-Integration</strong> — praktisch erarbeitet, nicht nur theoretisch bekannt.</li>
-<li><strong>Fokus auf wartbare und nachvollziehbare Lösungen</strong> — Systeme bleiben auch im laufenden Betrieb verständlich.</li>
-<li><strong>Customer Experience als zusätzliche fachliche Kernkompetenz</strong> — Anfrage- und Serviceprozesse werden aus Nutzer- und Teamsicht mitgedacht.</li>
-<li><strong>Entwicklung mit Blick auf Sicherheit, Datenschutz und Betrieb</strong> — von Anfang an mitgeplant statt nachträglich ergänzt.</li>
+<li><strong>Produkt und Geschäftsprozess</strong> — Eigene Produktentwicklung statt reiner Konzeptarbeit: Mit Triovo wurde ein vollständiges System umgesetzt statt nur skizziert. Prozessverständnis, Gestaltung und technische Umsetzung greifen ineinander.</li>
+<li><strong>Software und Systemarchitektur</strong> — Praxiswissen aus Frontend, Backend, Datenmodell, APIs und KI-Integration, praktisch erarbeitet und nicht nur theoretisch bekannt.</li>
+<li><strong>Customer Experience und Automatisierung</strong> — Anfrage- und Serviceprozesse werden aus Nutzer- und Teamsicht mitgedacht und automatisiert.</li>
+<li><strong>Sicherheit, Wartbarkeit und Betrieb</strong> — Lösungen bleiben auch im laufenden Betrieb verständlich; Sicherheit und Datenschutz werden von Anfang an mitgeplant statt nachträglich ergänzt.</li>
 </ul>
 </div>
 <div class="founder-card">
 <div class="founder-card-inner">
+<div class="founder-mark" aria-hidden="true">SP</div>
 <div class="founder-meta">
 <h3>Sebastian Przybyla</h3>
 <p class="founder-role">Entwicklung und Produktverantwortung</p>
@@ -311,11 +431,26 @@
 
 <hr class="section-divider" />
 
+<section class="section section--dark vision-section" id="vision" aria-labelledby="vision-heading">
+<div class="container">
+<div class="vision-mark" aria-hidden="true"></div>
+<span class="section-label section-label--inverse">Unsere Vision</span>
+<h2 id="vision-heading" class="vision-heading">Technologie sollte Komplexität reduzieren – nicht erzeugen.</h2>
+<p class="vision-text">Thevio Systems entwickelt Software, die bestehende Abläufe klarer macht, statt neue Komplexität hinzuzufügen. Im Mittelpunkt steht ein System, das mit einem Unternehmen mitwächst und langfristig verständlich bleibt.</p>
+<p class="vision-note">Diese Haltung bestimmt jede Entscheidung – von der ersten Prozessanalyse bis zum produktiven Betrieb.</p>
+</div>
+</section>
+
+<hr class="section-divider" />
+
 <section class="section section--dark kontakt-final" id="kontakt" aria-labelledby="kontakt-heading">
 <div class="container">
+<div class="kontakt-glow" aria-hidden="true"></div>
 <span class="section-label section-label--inverse">Zusammenarbeit</span>
 <h2 id="kontakt-heading">Aus manuellen Prozessen kann ein klares System werden.</h2>
 <p class="kontakt-intro">Lassen Sie uns gemeinsam prüfen, welche Prozesse sich sinnvoll automatisieren lassen und wie ein passendes System aussehen kann.</p>
+<a href="mailto:kontakt@thevio-systems.de" class="btn btn-inverse contact-cta contact-cta--primary">Projekt oder Prozess besprechen</a>
+<span class="kontakt-alt-label">Oder direkt erreichbar über</span>
 <div class="kontakt-options-dark">
 <a href="mailto:kontakt@thevio-systems.de" class="contact-option contact-option--dark">
 <span class="contact-option-label">E-Mail</span>
@@ -326,9 +461,7 @@
 <span class="contact-option-value">Kontakt über LinkedIn</span>
 </a>
 </div>
-<a href="mailto:kontakt@thevio-systems.de" class="btn btn-inverse contact-cta">Projekt oder Prozess besprechen</a>
-</div>
-</section>
+</div></section>
 
 </main>
 <footer class="site-footer">
