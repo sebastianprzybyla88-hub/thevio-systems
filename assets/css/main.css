@@ -470,6 +470,7 @@ h2.triovo-dark-title { font-size: var(--font-size-h2); font-weight: 700; color: 
 .founder-card { background-color: var(--color-bg-primary); border: 1px solid var(--color-border); border-radius: var(--border-radius); overflow: hidden; }
 .founder-card-inner { padding: var(--space-6); }
 @media (min-width: 960px) { .founder-card-inner { padding: var(--space-8); } }
+.founder-mark { width: 56px; height: 56px; border-radius: var(--border-radius); background-color: var(--color-accent); color: var(--color-text-inverse); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: var(--font-size-lg); letter-spacing: 0.02em; margin-bottom: var(--space-4); }
 .founder-meta { margin-bottom: var(--space-4); }
 .founder-meta h3 { font-size: var(--font-size-xl); font-weight: 700; color: var(--color-text-primary); margin-bottom: var(--space-2); letter-spacing: -0.01em; }
 .founder-role { font-size: var(--font-size-sm); font-weight: 500; color: var(--color-accent); letter-spacing: 0.01em; line-height: 1.5; }
