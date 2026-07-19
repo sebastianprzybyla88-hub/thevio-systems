@@ -416,26 +416,23 @@ ul, ol { list-style: none; }
 @media (min-width: 960px) { .section--triovo-dark { padding-block: var(--space-24); } }
 .triovo-badge { display: inline-block; font-size: var(--font-size-xs); font-weight: 700; color: var(--color-bg-dark); background-color: var(--color-text-inverse); border-radius: var(--border-radius-sm); padding: var(--space-1) var(--space-3); letter-spacing: var(--letter-spacing-wide); text-transform: uppercase; margin-bottom: var(--space-6); }
 .triovo-dark-title { font-size: var(--font-size-h2); font-weight: 700; color: var(--color-text-inverse); line-height: var(--line-height-tight); margin-bottom: var(--space-6); max-width: 780px; letter-spacing: -0.015em; }
-.triovo-dark-intro { font-size: var(--font-size-lg); color: var(--color-text-inverse-muted); line-height: var(--line-height-loose); max-width: 680px; margin-bottom: var(--space-12); }
-.triovo-blocks-dark { display: grid; grid-template-columns: 1fr; gap: var(--space-6); margin-bottom: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--color-border-dark); }
-@media (min-width: 640px) { .triovo-blocks-dark { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .triovo-blocks-dark { grid-template-columns: repeat(4, 1fr); } }
-.triovo-block-label { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-accent-bright); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--space-3); display: block; }
-.triovo-block-dark p { font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); line-height: var(--line-height-normal); }
-
-.triovo-product-frame { background-color: var(--color-bg-dark-alt); border: 1px solid var(--color-border-dark); border-radius: calc(var(--border-radius) * 1.5); padding: var(--space-4); margin-bottom: var(--space-12); }
-.triovo-frame-chrome { display: flex; gap: 6px; padding: var(--space-2) var(--space-2) var(--space-4); }
+.triovo-dark-intro { font-size: var(--font-size-lg); color: var(--color-text-inverse-muted); line-height: var(--line-height-loose); max-width: 680px; margin-bottom: var(--space-6); }
+.triovo-product-intro { font-size: var(--font-size-md); color: var(--color-text-inverse); font-weight: 500; max-width: 640px; line-height: var(--line-height-normal); margin-bottom: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--color-border-dark); }
+.triovo-product-frame { position: relative; background-color: var(--color-bg-dark-alt); border: 1px solid var(--color-border-dark); border-radius: calc(var(--border-radius) * 2); padding: var(--space-4); margin-bottom: var(--space-12); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35); overflow: hidden; }
+.triovo-frame-glow { position: absolute; inset: -20%; background: radial-gradient(closest-side, rgba(76, 124, 209, 0.22), rgba(109, 111, 224, 0.08) 55%, transparent 75%); pointer-events: none; z-index: 0; }
+.triovo-frame-chrome { position: relative; z-index: 1; display: flex; gap: 6px; padding: var(--space-2) var(--space-2) var(--space-4); }
 .triovo-frame-chrome span { width: 9px; height: 9px; border-radius: 50%; background-color: rgba(255,255,255,0.18); }
-.triovo-product-frame img { border-radius: var(--border-radius-sm); width: 100%; height: auto; }
-.triovo-frame-caption { font-size: var(--font-size-xs); color: var(--color-text-inverse-muted); text-align: center; margin-top: var(--space-4); font-style: italic; }
-
+.triovo-product-frame img { position: relative; z-index: 1; border-radius: var(--border-radius-sm); width: 100%; height: auto; }
+.triovo-frame-caption { position: relative; z-index: 1; font-size: var(--font-size-xs); color: var(--color-text-inverse-muted); text-align: center; margin-top: var(--space-4); font-style: italic; }
+@media (min-width: 960px) { .triovo-product-frame { margin-inline: calc(var(--space-8) * -1); padding: var(--space-8); } }
 .triovo-proof-dark { margin-bottom: var(--space-10); }
 .triovo-proof-title-dark { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-inverse); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--space-6); }
-.triovo-tech-groups { display: grid; grid-template-columns: 1fr; gap: var(--space-6); margin-bottom: var(--space-6); }
-@media (min-width: 640px) { .triovo-tech-groups { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .triovo-tech-groups { grid-template-columns: repeat(3, 1fr); } }
-.triovo-tech-group h4 { font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-inverse); margin-bottom: var(--space-2); }
-.triovo-tech-group p { font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); line-height: var(--line-height-normal); }
+.triovo-path { position: relative; display: flex; flex-direction: column; gap: var(--space-6); padding-left: var(--space-8); margin-bottom: var(--space-8); }
+.triovo-path::before { content: ''; position: absolute; left: 11px; top: var(--space-2); bottom: var(--space-2); width: 2px; background: linear-gradient(var(--color-accent-bright), var(--color-border-dark)); opacity: 0.5; }
+.triovo-path-step { position: relative; }
+.triovo-path-index { position: absolute; left: calc(-1 * var(--space-8) + 2px); top: 0; width: 24px; height: 24px; border-radius: 50%; background-color: var(--color-bg-dark); border: 2px solid var(--color-accent-bright); color: var(--color-text-inverse); font-size: 0.65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.triovo-path-step h4 { font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-inverse); margin-bottom: var(--space-2); }
+.triovo-path-step p { font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); line-height: var(--line-height-normal); max-width: 640px; }
 .triovo-tech-line { font-size: var(--font-size-sm); color: var(--color-text-inverse-muted); }
 .triovo-cta { padding-top: var(--space-8); border-top: 1px solid var(--color-border-dark); }
 
