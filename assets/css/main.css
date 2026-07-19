@@ -455,6 +455,11 @@ h2.triovo-dark-title { font-size: var(--font-size-h2); font-weight: 700; color: 
 .audit-demo-item dt { font-size: var(--font-size-xs); font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--space-1); }
 .audit-demo-item dd { font-size: var(--font-size-md); font-weight: 600; color: var(--color-text-primary); }
 .contact-note { font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.audit-steps { display: flex; flex-direction: column; gap: var(--space-4); margin-block: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
+.audit-step { display: flex; gap: var(--space-4); align-items: flex-start; }
+.audit-step-index { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-accent); color: var(--color-text-inverse); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: var(--font-size-sm); }
+.audit-step h3 { font-size: var(--font-size-md); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-1); }
+.audit-step p { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: var(--line-height-normal); margin: 0; }
 
 /* Warum Thevio: Staerken + Gruenderkarte */
 .strengths-list { display: flex; flex-direction: column; gap: var(--space-4); }
