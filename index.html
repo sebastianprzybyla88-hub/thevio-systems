@@ -92,23 +92,23 @@
 <h2 id="prozess-heading" class="visually-hidden">Wie Automatisierung bei Thevio Systems funktioniert</h2>
 <span class="section-label">Funktionsprinzip</span>
 <p class="section-intro">Technologie ist bei Thevio Systems immer Mittel zum Zweck: Jeder Vorgang wird strukturiert aufgenommen, geprüft, eingeordnet, zugeordnet, bearbeitet und nachvollziehbar abgeschlossen.</p>
-<ol class="process-flow" role="list">
-<li class="process-step process-step--input" data-step="1" tabindex="0"><span class="process-index">01</span><span class="process-title">Eingang</span><span class="process-desc">Anfragen und Vorgänge werden zentral aus E-Mail, Formularen oder bestehenden Systemen übernommen.</span><span class="process-desc process-desc--chips"><span class="process-chip">E-Mail</span><span class="process-chip">Formular</span><span class="process-chip">Systemereignis</span></span></li>
+<ol class="process-flow reveal" role="list">
+<li class="process-step process-step--input" data-step="1" tabindex="0"><span class="process-index">01</span><span class="process-title">Eingang</span><span class="process-desc">Anfragen und Vorgänge werden zentral aus E-Mail, Formularen oder bestehenden Systemen übernommen.</span><span class="process-desc process-desc--chips"><span class="process-chip">E-Mail</span><span class="process-chip">Formular</span><span class="process-chip">Systemereignis</span></span><span class="process-detail">Unabhängig vom Ursprungskanal entsteht ein einheitlicher, strukturierter Vorgang.</span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step process-step--core process-step--core-a" data-step="2" tabindex="0"><span class="process-index">02</span><span class="process-title">Prüfung</span><span class="process-desc">Inhalt, Vollständigkeit und Kontext werden geprüft.</span></li>
+<li class="process-step process-step--core process-step--core-a" data-step="2" tabindex="0"><span class="process-index">02</span><span class="process-title">Prüfung</span><span class="process-desc">Inhalt, Vollständigkeit und Kontext werden geprüft.</span><span class="process-detail">Fehlende Angaben werden erkannt, bevor der Vorgang weiterläuft.</span></li>
 <li class="process-connector process-connector--core" aria-hidden="true"></li>
-<li class="process-step process-step--core process-step--core-b" data-step="3" tabindex="0"><span class="process-index">03</span><span class="process-title">Einordnung</span><span class="process-desc">Kategorie, Priorität, Regeln und erforderliche Bearbeitung werden bestimmt.</span></li>
+<li class="process-step process-step--core process-step--core-b" data-step="3" tabindex="0"><span class="process-index">03</span><span class="process-title">Einordnung</span><span class="process-desc">Kategorie, Priorität, Regeln und erforderliche Bearbeitung werden bestimmt.</span><span class="process-detail">Automatisierte Regeln schlagen die passende Behandlung vor.</span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step process-step--handover" data-step="4" tabindex="0"><span class="process-index">04</span><span class="process-title">Zuständigkeit</span><span class="process-desc">Der Vorgang wird der richtigen Person, Abteilung oder dem passenden Zielsystem zugeordnet.</span></li>
+<li class="process-step process-step--handover" data-step="4" tabindex="0"><span class="process-index">04</span><span class="process-title">Zuständigkeit</span><span class="process-desc">Der Vorgang wird der richtigen Person, Abteilung oder dem passenden Zielsystem zugeordnet.</span><span class="process-detail">Vertretungen und Eskalationswege greifen automatisch bei Abwesenheit.</span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step" data-step="5" tabindex="0"><span class="process-index">05</span><span class="process-title">Bearbeitung</span><span class="process-desc">Mitarbeitende erhalten einen vorbereiteten Vorgang statt unstrukturierter Einzelinformationen.</span></li>
+<li class="process-step" data-step="5" tabindex="0"><span class="process-index">05</span><span class="process-title">Bearbeitung</span><span class="process-desc">Mitarbeitende erhalten einen vorbereiteten Vorgang statt unstrukturierter Einzelinformationen.</span><span class="process-detail">Alle relevanten Informationen liegen gebündelt an einem Ort vor.</span></li>
 <li class="process-connector" aria-hidden="true"></li>
-<li class="process-step process-step--done" data-step="6" tabindex="0"><span class="process-index">06</span><span class="process-title">Abschluss</span><span class="process-desc">Status, Ergebnis, Rückfragen und Eskalationen bleiben nachvollziehbar dokumentiert.</span></li>
+<li class="process-step process-step--done" data-step="6" tabindex="0"><span class="process-index">06</span><span class="process-title">Abschluss</span><span class="process-desc">Status, Ergebnis, Rückfragen und Eskalationen bleiben nachvollziehbar dokumentiert.</span><span class="process-detail">Auch nachträgliche Rückfragen bleiben im Kontext nachvollziehbar.</span></li>
 </ol>
 </div>
 </section>
 
-<hr class="section-divider" />>
+<hr class="section-divider" />
 <section class="section transformation-section" id="transformation" aria-labelledby="transformation-heading">
 <div class="container">
 <span class="section-label">Transformation</span>
@@ -212,12 +212,13 @@
 </section>
 
 <hr class="section-divider" />
-<section class="section section--light" id="resolution" aria-labelledby="resolution-heading">
+ <section class="section section--dark" id="resolution" aria-labelledby="resolution-heading">
 <div class="container">
 <span class="section-label">Thevio Resolution Principle</span>
 <h2 id="resolution-heading">Nicht nur automatisiert. Nachvollziehbar abgeschlossen.</h2>
 <p class="section-intro">Viele Systeme messen, wie schnell ein Vorgang beantwortet oder weitergeleitet wurde. Thevio betrachtet zusätzlich, ob der Vorgang tatsächlich vollständig bearbeitet wurde.</p>
-<div class="transformation-grid">
+  <div class="resolution-status" aria-hidden="true"><span class="resolution-status-dot"></span><span class="resolution-status-text"><span class="rs-a">bearbeitet</span><span class="rs-b">wirklich abgeschlossen</span></span></div>
+  <div class="transformation-grid">
 <div class="transformation-before reveal">
 <span class="transformation-kicker">Übliche Betrachtung</span>
 <ul class="transformation-list" role="list">
@@ -246,7 +247,7 @@
 
 <hr class="section-divider" />
 
-<section class="section" id="zielgruppen" aria-labelledby="zielgruppen-heading">
+<section class="section section--warm" id="zielgruppen" aria-labelledby="zielgruppen-heading">
 <div class="container">
 <span class="section-label">Ausgangslage</span>
 <h2 id="zielgruppen-heading">Wann Thevio Systems besonders relevant wird</h2>
@@ -254,7 +255,7 @@
 <ol class="scenario-map" role="list">
 <li class="scenario-row reveal">
 <span class="scenario-marker" aria-hidden="true"></span>
-<h3>Unstrukturierte Eingänge</h3>
+<details class="scenario-details" open><summary class="scenario-summary"><h3>Unstrukturierte Eingänge</h3></summary>
 <div class="scenario-layers">
 <div class="scenario-layer scenario-layer--situation">
 <span class="scenario-layer-label">Situation</span>
@@ -271,10 +272,11 @@
 <p>Eingänge werden <strong>strukturiert aufgenommen</strong>, geprüft und vorbereitet.</p>
 </div>
 </div>
+</details>
 </li>
 <li class="scenario-row reveal">
 <span class="scenario-marker" aria-hidden="true"></span>
-<h3>Unklare Zuständigkeiten</h3>
+<details class="scenario-details"><summary class="scenario-summary"><h3>Unklare Zuständigkeiten</h3></summary>
 <div class="scenario-layers">
 <div class="scenario-layer scenario-layer--situation">
 <span class="scenario-layer-label">Situation</span>
@@ -291,10 +293,11 @@
 <p><strong>Regeln, Rollen und Vertretungen</strong> sowie Eskalationen werden im Prozess abgebildet.</p>
 </div>
 </div>
+</details>
 </li>
 <li class="scenario-row reveal">
 <span class="scenario-marker" aria-hidden="true"></span>
-<h3>Mehrere beteiligte Abteilungen</h3>
+<details class="scenario-details"><summary class="scenario-summary"><h3>Mehrere beteiligte Abteilungen</h3></summary>
 <div class="scenario-layers">
 <div class="scenario-layer scenario-layer--situation">
 <span class="scenario-layer-label">Situation</span>
@@ -311,10 +314,11 @@
 <p>Der Vorgang wird als <strong>gemeinsamer Prozess</strong> statt als Kette einzelner Nachrichten behandelt.</p>
 </div>
 </div>
+</details>
 </li>
 <li class="scenario-row reveal">
 <span class="scenario-marker" aria-hidden="true"></span>
-<h3>Mobile und operative Mitarbeitende</h3>
+<details class="scenario-details"><summary class="scenario-summary"><h3>Mobile und operative Mitarbeitende</h3></summary>
 <div class="scenario-layers">
 <div class="scenario-layer scenario-layer--situation">
 <span class="scenario-layer-label">Situation</span>
@@ -331,10 +335,11 @@
 <p>Mobile, einfache und rollenbezogene Erfassung <strong>direkt am Entstehungsort</strong>.</p>
 </div>
 </div>
+</details>
 </li>
 <li class="scenario-row reveal">
 <span class="scenario-marker" aria-hidden="true"></span>
-<h3>Wachsendes Vorgangsvolumen</h3>
+<details class="scenario-details"><summary class="scenario-summary"><h3>Wachsendes Vorgangsvolumen</h3></summary>
 <div class="scenario-layers">
 <div class="scenario-layer scenario-layer--situation">
 <span class="scenario-layer-label">Situation</span>
@@ -351,6 +356,7 @@
 <p>Wiederkehrende Schritte werden vorbereitet oder automatisiert, <strong>ohne Kontrolle zu verlieren</strong>.</p>
 </div>
 </div>
+</details>
 </li>
 </ol>
 <div class="target-tags">
