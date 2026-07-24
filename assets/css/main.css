@@ -713,7 +713,7 @@ Praezision ohne Kaelte. Technologie mit menschlicher Wirkung.
    color: var(--color-text-inverse-muted);
 }
 .resolution-status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-accent-bright); flex-shrink: 0; }
-.resolution-status-text { position: relative; display: inline-block; min-width: 14ch; }
+.resolution-status-text { position: relative; display: inline-block; min-width: 22ch; }.resolution-status-text .rs-a, .resolution-status-text .rs-b { white-space: nowrap; }
 .resolution-status-text .rs-b { position: absolute; left: 0; top: 0; opacity: 0; color: var(--color-success); }
 @media (prefers-reduced-motion: no-preference) {
    .resolution-status-text .rs-a { animation: rs-fade-out 8s ease-in-out infinite; }
