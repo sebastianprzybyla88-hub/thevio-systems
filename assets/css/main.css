@@ -533,12 +533,12 @@ h2.triovo-dark-title { font-size: var(--font-size-h2); font-weight: 700; color: 
 .card-link-gap { margin-top: var(--space-6); }
 
 /* Scroll-Reveal */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity var(--transition-slow), transform var(--transition-slow); }
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity var(--transition-slow), transform var(--transition-slow); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
 html { scroll-behavior: auto; }
-.reveal { opacity: 1; transform: none; transition: none; }
+.reveal, .js .reveal { opacity: 1; transform: none; transition: none; }
 .process-step { transition: none; }
 .hv-node::before { animation: none; opacity: 0.85; }
 .hv-line--out { animation: none; stroke-dashoffset: 0; }
@@ -835,8 +835,8 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 .process-tab[aria-selected="true"] { background-color: var(--color-bg-accent); border-color: var(--color-border); color: var(--color-accent); }
 .process-tab[aria-selected="true"] .process-tab-index { color: var(--color-accent-bright); }
 .process-panel { position: relative; min-height: 190px; background-color: var(--color-bg-primary); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: var(--space-8); }
-.process-panel-body { display: none; opacity: 0; transform: translateY(8px); }
-.process-panel-body.is-active { display: block; opacity: 1; transform: none; transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium); }
+.js .process-panel-body { display: none; opacity: 0; transform: translateY(8px); } .process-panel-body + .process-panel-body { margin-top: var(--space-6); }
+.js .process-panel-body.is-active { display: block; opacity: 1; transform: none; transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium); }
 .process-panel-index { display: inline-block; font-size: var(--font-size-sm); font-weight: 700; color: var(--color-accent); letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--space-3); }
 .process-panel-body h3 { font-size: var(--font-size-xl); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-3); }
 .process-panel-body p { font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: var(--line-height-normal); margin-bottom: var(--space-2); max-width: 560px; }
@@ -858,7 +858,7 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 .ts-connector-dot { position: absolute; left: 50%; top: 0; width: 10px; height: 10px; border-radius: 50%; background-color: var(--color-accent-bright); transform: translate(-50%, -50%); box-shadow: 0 0 0 6px rgba(76,124,209,0.15); }
 .transformation-scene.is-active .ts-connector-dot { animation: ts-travel 1.6s var(--ease-premium) 0.3s 1 both; }
 @keyframes ts-travel { 0% { top: 0; } 100% { top: 100%; } }
-.ts-result { display: flex; flex-direction: column; gap: var(--space-2); width: 100%; max-width: 420px; padding: var(--space-6); background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--border-radius); opacity: 0; transform: translateY(10px); transition: opacity 0.6s var(--ease-premium) 0.5s, transform 0.6s var(--ease-premium) 0.5s; }
+.ts-result { display: flex; flex-direction: column; gap: var(--space-2); width: 100%; max-width: 420px; padding: var(--space-6); background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--border-radius); } .js .ts-result { opacity: 0; transform: translateY(10px); transition: opacity 0.6s var(--ease-premium) 0.5s, transform 0.6s var(--ease-premium) 0.5s; }
 .transformation-scene.is-active .ts-result { opacity: 1; transform: none; }
 .ts-result-row { display: flex; justify-content: space-between; gap: var(--space-4); font-size: var(--font-size-sm); padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-border); }
 .ts-result-row:last-child { border-bottom: none; padding-bottom: 0; }
@@ -896,7 +896,6 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 .triovo-demo-callout { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background-color: var(--color-accent-bright); border: 2px solid rgba(255,255,255,0.85); opacity: 0; transform: scale(0.6); transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium); pointer-events: none; }
 .triovo-demo-callout.is-active { opacity: 1; transform: scale(1); }
 .triovo-demo-callout.is-active::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; background: radial-gradient(closest-side, rgba(76,124,209,0.4), transparent 70%); animation: pulse-ring 2.2s var(--ease-premium) infinite; }
-.triovo-lens { display: none; }
 .triovo-demo-step-text { font-size: var(--font-size-md); color: var(--color-text-inverse); font-weight: 500; min-height: 1.6em; }
 .triovo-demo-steps { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
 .triovo-demo-step { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border: 1px solid var(--color-border-dark); border-radius: 999px; background: none; color: var(--color-text-inverse-muted); font-size: var(--font-size-xs); font-weight: 600; font-family: var(--font-family); cursor: pointer; transition: border-color var(--transition-base), color var(--transition-base), background-color var(--transition-base); }
@@ -915,8 +914,8 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 .triovo-path-btn:focus-visible { outline: 2px solid var(--color-text-inverse); outline-offset: 2px; }
 .triovo-path-btn[aria-selected="true"] { background-color: rgba(76,124,209,0.16); border-color: var(--color-accent-bright); color: var(--color-text-inverse); }
 .triovo-path-panel { position: relative; min-height: 110px; }
-.triovo-path-body { display: none; opacity: 0; transform: translateY(6px); }
-.triovo-path-body.is-active { display: block; opacity: 1; transform: none; transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium); }
+.js .triovo-path-body { display: none; opacity: 0; transform: translateY(6px); } .triovo-path-body + .triovo-path-body { margin-top: var(--space-4); }
+.js .triovo-path-body.is-active { display: block; opacity: 1; transform: none; transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium); }
 @media (min-width: 640px) { .triovo-path-nav { flex-wrap: nowrap; overflow-x: auto; } }
 
 /* ---- Abschluss: finale Produktszene ---- */
