@@ -324,34 +324,41 @@ if (details.length < 2) { return; }
 var idx = 0;
 var userInteracted = false;
 var timer = null;
-details.forEach(function (d, i) {
-var summary = d.querySelector('.scenario-summary');
-if (!summary) { return; }
-['click', 'keydown'].forEach(function (evt) {
-summary.addEventListener(evt, function () {
-userInteracted = true;
-idx = i;
-if (timer) { window.clearInterval(timer); timer = null; }
-});
-});
-});
-function tick() {
-if (userInteracted) { return; }
-idx = (idx + 1) % details.length;
-details[idx].open = true;
-}
-if (!('IntersectionObserver' in window)) { return; }
-var io = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting && !userInteracted) {
-if (!timer) { timer = window.setInterval(tick, 5200); }
-} else if (timer) {
-window.clearInterval(timer);
-timer = null;
-}
-});
-}, { threshold: 0.5 });
-io.observe(map);
+  var visible = false;
+  function startDemo() {
+    if (timer || userInteracted || !visible) { return; }
+    timer = window.setInterval(tick, 5200);
+  }
+  function stopDemo() {
+    if (timer) { window.clearInterval(timer); timer = null; }
+  }
+  function tick() {
+    if (userInteracted) { stopDemo(); return; }
+    idx = (idx + 1) % details.length;
+    details[idx].open = true;
+  }
+  details.forEach(function (d, i) {
+    var summary = d.querySelector('.scenario-summary');
+    if (!summary) { return; }
+    ['click', 'keydown'].forEach(function (evt) {
+      summary.addEventListener(evt, function () {
+        userInteracted = true;
+        idx = i;
+        stopDemo();
+      });
+    });
+  });
+  if (!('IntersectionObserver' in window)) { return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      visible = entry.isIntersecting;
+      if (visible) { startDemo(); } else { stopDemo(); }
+    });
+  }, { threshold: 0.5 });
+  io.observe(map);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { stopDemo(); } else { startDemo(); }
+  });
 })();
 
 /* Triovo: kontrollierte Produktfuehrung (einmaliger Durchlauf, danach Benutzersteuerung) */
