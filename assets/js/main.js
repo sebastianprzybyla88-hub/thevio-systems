@@ -370,10 +370,10 @@ var callouts = Array.prototype.slice.call(demo.querySelectorAll('.triovo-demo-ca
 var caption = demo.querySelector('.triovo-demo-step-text');
 var texts = [
 'Ein Anliegen wird strukturiert eingereicht \u2013 Ausgangspunkt jedes Vorgangs.',
-'Angaben werden auf Vollstaendigkeit geprueft, bevor der Fall weiterlaeuft.',
-'Die KI-Triage ordnet Kategorie und Prioritaet automatisch ein.',
+'Angaben werden auf Vollständigkeit geprüft, bevor der Fall weiterläuft.',
+'Die KI-Triage ordnet Kategorie und Priorität automatisch ein.',
 'Der Fall erscheint strukturiert im Business-Dashboard.',
-'Die Bearbeitung wird vorbereitet, alle Informationen liegen gebuendelt vor.',
+'Die Bearbeitung wird vorbereitet, alle Informationen liegen gebündelt vor.',
 'Resolution Score und Abschlussstatus machen die Wirkung sichtbar.'
 ];
 new Stepper({
