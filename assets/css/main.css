@@ -949,3 +949,28 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 .abschluss-status-item .abschluss-status-dot { background-color: var(--color-accent-bright); }
 .abschluss-status-item--final .abschluss-status-dot { background-color: var(--color-success); }
 }
+
+
+/* Hotfix: Mobile-Responsive-Korrekturen (Leistungen-Motiv, Prozess-Tabs). Nur Mobile/Tablet betroffen, keine Aenderung am Desktop-Layout ab 960px. */
+
+/* Problem 1: Leistungen-Kompetenzmotiv (A/B/C) - Connector-Linien/Punkte skalierten unterhalb 960px mit variabler Kartenbreite und liefen ueber die Karte hinaus. Fixe, am Desktop bewaehrte Motiv-Breite auch unterhalb 960px erzwingen. */
+@media (max-width: 959px) {
+     .competency-motif {
+            max-width: 160px;
+            margin-inline: auto;
+     }
+}
+
+/* Problem 3: Funktionsprinzip-Stepper - Tabs brachen unterhalb 640px per flex-wrap in ein ungleichmaessiges Raster um. Auf kleinen Viewports stattdessen eine saubere, vertikale Liste in fester Reihenfolge 01-06 mit touch-freundlicher Zielgroesse. */
+@media (max-width: 639px) {
+     .process-tabs {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: stretch;
+     }
+     .process-tab {
+            width: 100%;
+            justify-content: flex-start;
+            min-height: 44px;
+     }
+}
