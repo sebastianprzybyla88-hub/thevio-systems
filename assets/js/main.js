@@ -120,10 +120,11 @@ this.resumeTimer = null;
 this.manuallyPaused = false;
 this.visible = false;
 this.finishedOnce = false;
+this.observerThreshold = config.observerThreshold || 0.2;
 this._bind();
 this._observe();
 this.activate(0, false);
-if (this.autoplay && !this.root) { this.resume(); }
+if (this.autoplay && (!this.root || this.visible)) { this.resume(); }
 }
 
 Stepper.prototype._bind = function () {
@@ -147,7 +148,7 @@ self.pauseForInteraction();
 });
 });
 if (this.root) {
-['mouseenter', 'focusin', 'touchstart'].forEach(function (evt) {
+['mouseenter', 'focusin'].forEach(function (evt) {
 self.root.addEventListener(evt, function () { self.pause(); }, { passive: true });
 });
 ['mouseleave', 'focusout'].forEach(function (evt) {
@@ -172,7 +173,7 @@ self.resume();
 self.pause();
 }
 });
-}, { threshold: 0.5 });
+}, { threshold: this.observerThreshold});
 io.observe(this.root);
 };
 
@@ -269,9 +270,34 @@ interval: 4200,
 autoplay: true,
 onActivate: function (i) {
 if (panelEl && tabs[i]) { panelEl.setAttribute('aria-labelledby', tabs[i].id); }
+  if (tabs[i] && window.innerWidth < 640) {
+    tabs[i].scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+  }
 }
 });
 })();
+
+  /* Leistungen: verbundene Systemebenen mit automatisch laufendem Signal */
+  (function () {
+    var system = document.querySelector('[data-component="capability-system"]');
+    if (!system) { return; }
+    var nodes = Array.prototype.slice.call(system.querySelectorAll('.capability-node'));
+    new Stepper({
+      root: system,
+      items: nodes,
+      interval: 2800,
+      autoplay: true,
+      observerThreshold: 0.15,
+      onActivate: function (i) {
+        system.setAttribute('data-active', String(i));
+        nodes.forEach(function (node, idx) {
+          if (idx === i) { node.setAttribute('aria-current', 'step'); }
+          else { node.removeAttribute('aria-current'); }
+        });
+        setPulse(system, nodes[i], '.capability-node-signal');
+      }
+    });
+  })();
 
 /* Transformation: einmalige Szene beim Eintritt in den Viewport */
 (function () {
