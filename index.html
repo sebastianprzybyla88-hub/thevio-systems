@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<title>Thevio Systems &ndash; Geschäftsprozesse lösen mit Software, KI und Automatisierung</title>
+<meta name="description" content="Thevio Systems entwickelt KI-gestützte Anfrage-, Freigabe- und Fallprozesse, die Vorgänge nicht nur weiterleiten, sondern nachvollziehbar zu Ende bringen." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Thevio Systems &ndash; Geschäftsprozesse lösen mit Software, KI und Automatisierung" />
+<meta property="og:description" content="Thevio Systems entwickelt KI-gestützte Anfrage-, Freigabe- und Fallprozesse, die Vorgänge nicht nur weiterleiten, sondern nachvollziehbar zu Ende bringen." />
+<meta property="og:url" content="https://thevio-systems.de" />
+<meta property="og:locale" content="de_DE" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+<nav class="site-nav" aria-label="Hauptnavigation">
+<div class="container">
+<div class="nav-inner">
+<a href="#hero" class="nav-logo"><img src="assets/img/thevio-logo.svg" alt="" class="nav-logo-icon" width="40" height="40" /><span class="nav-logo-text">Thevio Systems</span></a>
+<ul class="nav-links" role="list">
+<li><a href="#leistungen">Leistungen</a></li>
+<li><a href="#triovo">Triovo</a></li>
+<li><a href="#ueber">Über</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+<button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Navigation öffnen">
+<span></span><span></span><span></span>
+</button>
+</div>
+<nav id="nav-mobile" class="nav-mobile" aria-label="Mobile Navigation">
+<a href="#leistungen">Leistungen</a>
+<a href="#triovo">Triovo</a>
+<a href="#ueber">Über</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
+</div>
+</nav>
+<main>
+<section class="hero" id="hero" aria-labelledby="hero-heading">
+<div class="container">
+<div class="hero-layout">
+<div class="hero-text">
+<span class="section-label">Klare Prozesse. Intelligente Systeme.</span>
+<h1 id="hero-heading"><span class="hero-heading-line">Prozesse, die nicht nur starten.</span> <span class="hero-heading-line hero-heading-line--accent">Sondern zuverlässig abgeschlossen werden.</span></h1>
+<p class="hero-sub">Thevio Systems entwickelt KI-gestützte Anfrage-, Freigabe- und Fallprozesse &ndash; integriert in bestehende Systeme und mit menschlicher Kontrolle.</p>
+<div class="hero-actions">
+<a href="#audit" class="btn btn-primary">Prozess prüfen lassen</a>
+<a href="#triovo" class="link-arrow">Triovo erleben</a>
+</div>
+</div>
+<div class="hero-scene" id="hero-scene" data-component="hero-scene" aria-label="Beispielhafter Ablauf: Eine Anfrage wird aufgenommen, geprüft, eingeordnet, zugeordnet, freigegeben und nachvollziehbar abgeschlossen.">
+<ol class="hero-stage" role="list">
+<li class="hero-row" data-row="0"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Eingang</strong> &mdash; E-Mail, Formular und Systemereignis treffen ein.</span></li>
+<li class="hero-row" data-row="1"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Prüfung</strong> &mdash; eine fehlende Angabe wird erkannt.</span></li>
+<li class="hero-row" data-row="2"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Einordnung</strong> &mdash; Kategorie und Priorität werden ergänzt.</span></li>
+<li class="hero-row" data-row="3"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Zuständigkeit</strong> &mdash; die passende Person übernimmt.</span></li>
+<li class="hero-row" data-row="4"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Freigabe</strong> &mdash; ein menschlicher Kontrollpunkt bestätigt.</span></li>
+<li class="hero-row hero-row--status" data-row="5"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Status</strong> &mdash; vollständig abgeschlossen.</span></li>
+<li class="hero-row" data-row="6"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Dokumentation</strong> &mdash; Ergebnis nachvollziehbar hinterlegt.</span></li>
+</ol>
+<div class="hero-phase-nav" role="group" aria-label="Phase auswählen">
+<button type="button" class="hero-phase-btn" data-phase="0" aria-pressed="true"><span class="visually-hidden">Phase 1: Eingang</span><span aria-hidden="true">01</span></button>
+<button type="button" class="hero-phase-btn" data-phase="1" aria-pressed="false"><span class="visually-hidden">Phase 2: Prüfung</span><span aria-hidden="true">02</span></button>
+<button type="button" class="hero-phase-btn" data-phase="2" aria-pressed="false"><span class="visually-hidden">Phase 3: Einordnung</span><span aria-hidden="true">03</span></button>
+<button type="button" class="hero-phase-btn" data-phase="3" aria-pressed="false"><span class="visually-hidden">Phase 4: Zuständigkeit</span><span aria-hidden="true">04</span></button>
+<button type="button" class="hero-phase-btn" data-phase="4" aria-pressed="false"><span class="visually-hidden">Phase 5: Freigabe</span><span aria-hidden="true">05</span></button>
+<button type="button" class="hero-phase-btn" data-phase="5" aria-pressed="false"><span class="visually-hidden">Phase 6: Status</span><span aria-hidden="true">06</span></button>
+<button type="button" class="hero-phase-btn" data-phase="6" aria-pressed="false"><span class="visually-hidden">Phase 7: Dokumentation</span><span aria-hidden="true">07</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section section--light process-section" id="prozess" aria-labelledby="prozess-heading">
+<div class="container">
+<h2 id="prozess-heading" class="visually-hidden">Wie Automatisierung bei Thevio Systems funktioniert</h2>
+<span class="section-label">Funktionsprinzip</span>
+<p class="section-intro">Jeder Vorgang durchläuft denselben kontrollierten Weg &ndash; vom Eingang bis zum nachvollziehbaren Abschluss.</p>
+<div class="process-interactive" data-component="process-stepper">
+<div class="process-tabs" role="tablist" aria-label="Phasen des Funktionsprinzips">
+<button type="button" class="process-tab" role="tab" id="proz-tab-0" aria-controls="proz-panel" aria-selected="true" data-index="0"><span class="process-tab-index">01</span><span class="process-tab-label">Eingang</span></button>
+<button type="button" class="process-tab" role="tab" id="proz-tab-1" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="1"><span class="process-tab-index">02</span><span class="process-tab-label">Prüfung</span></button>
+<button type="button" class="process-tab" role="tab" id="proz-tab-2" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="2"><span class="process-tab-index">03</span><span class="process-tab-label">Einordnung</span></button>
+<button type="button" class="process-tab" role="tab" id="proz-tab-3" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="3"><span class="process-tab-index">04</span><span class="process-tab-label">Zuständigkeit</span></button>
+<button type="button" class="process-tab" role="tab" id="proz-tab-4" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="4"><span class="process-tab-index">05</span><span class="process-tab-label">Bearbeitung</span></button>
+<button type="button" class="process-tab" role="tab" id="proz-tab-5" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="5"><span class="process-tab-index">06</span><span class="process-tab-label">Abschluss</span></button>
+</div>
+<div class="process-panel" id="proz-panel" role="tabpanel" aria-labelledby="proz-tab-0">
+<div class="process-panel-body is-active" data-index="0"><span class="process-panel-index">01</span><h3>Eingang</h3><p>E-Mail, Formular oder Systemereignis werden zentral übernommen.</p><p class="process-panel-detail">Unabhängig vom Ursprungskanal entsteht ein einheitlicher, strukturierter Vorgang.</p></div>
+<div class="process-panel-body" data-index="1"><span class="process-panel-index">02</span><h3>Prüfung</h3><p>Vollständigkeit und Kontext werden geprüft.</p><p class="process-panel-detail">Fehlende Angaben werden erkannt, bevor der Vorgang weiterläuft.</p></div>
+<div class="process-panel-body" data-index="2"><span class="process-panel-index">03</span><h3>Einordnung</h3><p>Kategorie, Priorität und Regeln werden bestimmt.</p><p class="process-panel-detail">Automatisierte Regeln schlagen die passende Behandlung vor.</p></div>
+<div class="process-panel-body" data-index="3"><span class="process-panel-index">04</span><h3>Zuständigkeit</h3><p>Der Vorgang erreicht die richtige Person oder das passende System.</p><p class="process-panel-detail">Vertretungen und Eskalationswege greifen automatisch bei Abwesenheit.</p></div>
+<div class="process-panel-body" data-index="4"><span class="process-panel-index">05</span><h3>Bearbeitung</h3><p>Mitarbeitende erhalten einen vorbereiteten Vorgang.</p><p class="process-panel-detail">Alle relevanten Informationen liegen gebündelt an einem Ort vor.</p></div>
+<div class="process-panel-body" data-index="5"><span class="process-panel-index">06</span><h3>Abschluss</h3><p>Ergebnis, Rückfragen und Eskalationen bleiben dokumentiert.</p><p class="process-panel-detail">Auch nachträgliche Rückfragen bleiben im Kontext nachvollziehbar.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section transformation-section" id="transformation" aria-labelledby="transformation-heading">
+<div class="container">
+<span class="section-label">Transformation</span>
+<h2 id="transformation-heading">Von manuellen Abläufen zu einem strukturierten Prozess.</h2>
+<div class="transformation-scene reveal" data-component="transform-scene">
+<div class="ts-fragments" role="list" aria-label="Ausgangslage vor Thevio">
+<span class="ts-fragment ts-fragment--1" role="listitem">E-Mail</span>
+<span class="ts-fragment ts-fragment--2" role="listitem">Excel-Tabelle</span>
+<span class="ts-fragment ts-fragment--3" role="listitem">Papierbeleg</span>
+<span class="ts-fragment ts-fragment--4" role="listitem">Rückfrage</span>
+<span class="ts-fragment ts-fragment--5" role="listitem">Einzelwissen</span>
+<span class="ts-fragment ts-fragment--6" role="listitem">Status unklar</span>
+</div>
+<div class="ts-connector" aria-hidden="true"><span class="ts-connector-dot"></span></div>
+<div class="ts-result" role="list" aria-label="Ergebnis mit Thevio">
+<span class="ts-result-row" role="listitem"><span class="ts-result-key">Erfassung</span><span class="ts-result-value">strukturiert</span></span>
+<span class="ts-result-row" role="listitem"><span class="ts-result-key">Zuständigkeit</span><span class="ts-result-value">geklärt</span></span>
+<span class="ts-result-row" role="listitem"><span class="ts-result-key">Bearbeitung</span><span class="ts-result-value">vorbereitet</span></span>
+<span class="ts-result-row" role="listitem"><span class="ts-result-key">Frist</span><span class="ts-result-value">sichtbar</span></span>
+<span class="ts-result-row" role="listitem"><span class="ts-result-key">Abschluss</span><span class="ts-result-value">nachvollziehbar</span></span>
+</div>
+</div>
+<p class="transformation-conclusion">Nicht nur digitaler. Klarer, messbarer und weniger abhängig von Einzelpersonen.</p>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section section--light" id="leistungen" aria-labelledby="leistungen-heading">
+<div class="container">
+<span class="section-label">Leistungen</span>
+<h2 id="leistungen-heading">Was Thevio Systems entwickelt</h2>
+<p class="section-intro">Ein Leistungssystem statt drei getrennter Angebote: Jeder Schritt liefert die Grundlage für den nächsten.</p>
+<div class="competency-system">
+<article class="competency-module competency-module--a reveal">
+<span class="competency-index">A</span>
+<div class="competency-motif competency-motif--a" aria-hidden="true">
+<span class="cm-signal cm-signal--1"></span>
+<span class="cm-signal cm-signal--2"></span>
+<span class="cm-signal cm-signal--3"></span>
+<span class="cm-line cm-line--1"></span>
+<span class="cm-line cm-line--2"></span>
+<span class="cm-line cm-line--3"></span>
+<span class="cm-focus"></span>
+</div>
+<h3>Prozess verstehen</h3>
+<p class="competency-desc">Anforderungen, Übergaben und Risiken werden gemeinsam betrachtet.</p>
+<ul role="list">
+<li>Fall- und Anfrageprozesse</li>
+<li>Prozessanalyse und Rollen</li>
+<li>Customer Experience</li>
+</ul>
+</article>
+<div class="competency-connector" aria-hidden="true"></div>
+<article class="competency-module competency-module--b reveal">
+<span class="competency-index">B</span>
+<div class="competency-motif competency-motif--b" aria-hidden="true">
+<span class="cm-layer cm-layer--top"></span>
+<span class="cm-layer cm-layer--mid"></span>
+<span class="cm-layer cm-layer--base"></span>
+</div>
+<h3>System entwickeln</h3>
+<p class="competency-desc">Aus dem Zielprozess entsteht eine verständliche, wartbare Softwarelösung.</p>
+<ul role="list">
+<li>Frontend, UX und individuelle Anwendungen</li>
+<li>Backend, APIs und Datenmodelle</li>
+<li>Dashboards und Systemanbindungen</li>
+</ul>
+</article>
+<div class="competency-connector" aria-hidden="true"></div>
+<article class="competency-module competency-module--c reveal">
+<span class="competency-index">C</span>
+<div class="competency-motif competency-motif--c" aria-hidden="true">
+<span class="cm-node cm-node--trigger"></span>
+<span class="cm-node cm-node--rule"></span>
+<span class="cm-node cm-node--action"></span>
+</div>
+<h3>Ablauf automatisieren und messen</h3>
+<p class="competency-desc">Wiederkehrende Schritte werden unterstützt oder automatisiert &ndash; mit Kontrolle.</p>
+<ul role="list">
+<li>KI-gestützte Klassifizierung</li>
+<li>Routing, Freigaben, Eskalationen</li>
+<li>Human-in-the-Loop &amp; Kennzahlen</li>
+</ul>
+</article>
+</div>
+<p class="competency-principle card-link-gap">Menschliche Freigabe, nachvollziehbare Entscheidungswege und Datenschutz werden von Anfang an in die Systemarchitektur einbezogen.</p>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section resolution-section" id="resolution" aria-labelledby="resolution-heading">
+<div class="container">
+<span class="section-label section-label--inverse">Thevio Resolution Principle</span>
+<h2 id="resolution-heading">Nicht nur automatisiert. Nachvollziehbar abgeschlossen.</h2>
+<p class="section-intro section-intro--inverse">Viele Systeme messen nur, wie schnell ein Vorgang beantwortet wurde. Thevio betrachtet, ob er tatsächlich zu Ende gebracht wurde.</p>
+<ol class="resolution-sequence" data-component="resolution-sequence" role="list">
+<li class="resolution-step" data-step="0"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Anfrage beantwortet</span></li>
+<li class="resolution-step" data-step="1"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Vorgang bearbeitet</span></li>
+<li class="resolution-step" data-step="2"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Rückfrage offen</span></li>
+<li class="resolution-step" data-step="3"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Erneut geöffnet</span></li>
+<li class="resolution-step" data-step="4"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Tatsächlich geklärt</span></li>
+<li class="resolution-step resolution-step--final" data-step="5"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Vollständig abgeschlossen</span></li>
+</ol>
+<p class="resolution-note">Zusätzlich sichtbar: Wiederöffnungen, fehlende Informationen, Rückfragen, Eskalationen und Fristüberschreitungen &ndash; nicht nur die reine Antwortzeit.</p>
+<p class="competency-principle competency-principle--inverse card-link-gap">Der Resolution Score ist ein bei Triovo entwickelter Ansatz &ndash; kein branchenweit validierter Standard.</p>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section section--warm" id="zielgruppen" aria-labelledby="zielgruppen-heading">
+<div class="container">
+<span class="section-label">Ausgangslage</span>
+<h2 id="zielgruppen-heading">Wann Thevio Systems besonders relevant wird</h2>
+<p class="section-intro">Nicht die Branche entscheidet, sondern die Komplexität des Prozesses.</p>
+<ol class="scenario-map" role="list" data-component="scenario-demo">
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<details class="scenario-details" name="scenario-group" open><summary class="scenario-summary"><h3>Unstrukturierte Eingänge</h3></summary>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Anfragen kommen über E-Mail, Formulare, Telefon oder verschiedene Postfächer an.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Auswirkung</span>
+<p>Informationen fehlen, werden mehrfach erfasst oder müssen manuell verteilt werden.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Thevio-Ansatz</span>
+<p>Eingänge werden <strong>strukturiert aufgenommen</strong>, geprüft und vorbereitet.</p>
+</div>
+</div>
+</details>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<details class="scenario-details" name="scenario-group"><summary class="scenario-summary"><h3>Unklare Zuständigkeiten</h3></summary>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Die richtige Weiterleitung hängt vom Wissen einzelner Mitarbeitender ab.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Auswirkung</span>
+<p>Vorgänge bleiben liegen oder müssen mehrfach weitergeleitet werden.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Thevio-Ansatz</span>
+<p><strong>Regeln, Rollen und Vertretungen</strong> sowie Eskalationen werden im Prozess abgebildet.</p>
+</div>
+</div>
+</details>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<details class="scenario-details" name="scenario-group"><summary class="scenario-summary"><h3>Mehrere beteiligte Abteilungen</h3></summary>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Service, Vertrieb, Qualität, Logistik oder Verwaltung müssen am selben Vorgang arbeiten.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Auswirkung</span>
+<p>Status, Dokumente und Entscheidungen verteilen sich auf verschiedene Systeme.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Thevio-Ansatz</span>
+<p>Der Vorgang wird als <strong>gemeinsamer Prozess</strong> statt als Kette einzelner Nachrichten behandelt.</p>
+</div>
+</div>
+</details>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<details class="scenario-details" name="scenario-group"><summary class="scenario-summary"><h3>Mobile und operative Mitarbeitende</h3></summary>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Mitarbeitende in Produktion, Außendienst oder an mehreren Standorten arbeiten nicht dauerhaft am Desktop.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Auswirkung</span>
+<p>Papier, Zurufe, Fotos und nachträgliche Übertragungen erschweren die Bearbeitung.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Thevio-Ansatz</span>
+<p>Mobile, einfache und rollenbezogene Erfassung <strong>direkt am Entstehungsort</strong>.</p>
+</div>
+</div>
+</details>
+</li>
+<li class="scenario-row reveal">
+<span class="scenario-marker" aria-hidden="true"></span>
+<details class="scenario-details" name="scenario-group"><summary class="scenario-summary"><h3>Wachsendes Vorgangsvolumen</h3></summary>
+<div class="scenario-layers">
+<div class="scenario-layer scenario-layer--situation">
+<span class="scenario-layer-label">Situation</span>
+<p>Die Zahl der Anfragen steigt schneller als Personal und interne Strukturen.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--gap">
+<span class="scenario-layer-label">Auswirkung</span>
+<p>Mehr Volumen führt direkt zu mehr manueller Arbeit.</p>
+</div>
+<span class="scenario-connector" aria-hidden="true"></span>
+<div class="scenario-layer scenario-layer--approach">
+<span class="scenario-layer-label">Thevio-Ansatz</span>
+<p>Wiederkehrende Schritte werden vorbereitet oder automatisiert, <strong>ohne Kontrolle zu verlieren</strong>.</p>
+</div>
+</div>
+</details>
+</li>
+</ol>
+<div class="target-tags">
+<span class="transformation-kicker">Typische Zielgruppen</span>
+<div class="process-desc--chips">
+<span class="process-chip">Mittelstand &amp; KMU</span>
+<span class="process-chip">Industrie- und Serviceunternehmen</span>
+<span class="process-chip">E-Commerce und Handel</span>
+<span class="process-chip">Service-, Operations-, Qualitäts- und Vertriebsteams</span>
+<span class="process-chip">Mehrere Standorte &amp; mobile Teams</span>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section section--triovo-dark" id="triovo" aria-labelledby="triovo-heading">
+<div class="container">
+<span class="triovo-badge">Proof of Work</span>
+<h2 id="triovo-heading" class="triovo-dark-title">Nicht nur konzipiert. Als lauffähiges Produkt umgesetzt.</h2>
+<p class="triovo-dark-intro">Triovo ist der Praxisnachweis: ein reales Prozessproblem, überführt in ein vollständiges Softwareprodukt &ndash; von der UX über Backend und KI-Workflow bis zum laufenden Betrieb.</p>
+<div class="triovo-case-grid">
+<div class="triovo-case-col triovo-case-col--before">
+<h4>Ausgangslage</h4>
+<ul role="list">
+<li>Unstrukturierte Anliegen ohne einheitliche Erfassung</li>
+<li>Unklare Zuständigkeit zwischen Teams</li>
+<li>Antwortzeit als einzige Kennzahl</li>
+</ul>
+</div>
+<div class="triovo-case-col triovo-case-col--after">
+<h4>Mit Triovo</h4>
+<ul role="list">
+<li>Geführte, strukturierte Anliegenaufnahme</li>
+<li>KI-gestützte Triage und Routing</li>
+<li>Resolution Score und dokumentierter Abschluss</li>
+</ul>
+</div>
+</div>
+<div class="triovo-demo reveal" data-component="triovo-demo">
+<div class="triovo-demo-frame">
+<div class="triovo-frame-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="triovo-demo-image-wrap">
+<img src="assets/img/triovo-dashboard-preview.png" alt="Vollständige Ansicht des Triovo Business-Dashboards mit Testdaten: Fallübersicht, Status, Priorität und Resolution Score" width="1568" height="741" loading="lazy" decoding="async" class="triovo-demo-image" />
+<span class="triovo-demo-callout" data-callout="0" style="left:41.5%;top:54.8%;"></span>
+<span class="triovo-demo-callout" data-callout="1" style="left:51.7%;top:54.8%;"></span>
+<span class="triovo-demo-callout" data-callout="2" style="left:57.7%;top:54.8%;"></span>
+<span class="triovo-demo-callout" data-callout="3" style="left:38.6%;top:48.4%;"></span>
+<span class="triovo-demo-callout" data-callout="4" style="left:68.9%;top:54.8%;"></span>
+<span class="triovo-demo-callout" data-callout="5" style="left:44.6%;top:37.5%;"></span>
+</div>
+<p class="triovo-frame-caption">Reale Ansicht mit Testdaten &ndash; derselbe Bildschirm, wechselnder Fokus je Schritt.</p>
+</div>
+<div class="triovo-demo-steps" role="tablist" aria-label="Ablauf in Triovo">
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-0" aria-selected="true" data-index="0"><span class="triovo-demo-step-index">01</span>Anliegen eingereicht</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-1" aria-selected="false" tabindex="-1" data-index="1"><span class="triovo-demo-step-index">02</span>Angaben geprüft</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-2" aria-selected="false" tabindex="-1" data-index="2"><span class="triovo-demo-step-index">03</span>KI-Triage ordnet ein</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-3" aria-selected="false" tabindex="-1" data-index="3"><span class="triovo-demo-step-index">04</span>Fall im Dashboard</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-4" aria-selected="false" tabindex="-1" data-index="4"><span class="triovo-demo-step-index">05</span>Bearbeitung vorbereitet</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-5" aria-selected="false" tabindex="-1" data-index="5"><span class="triovo-demo-step-index">06</span>Resolution Score</button>
+</div>
+<p class="triovo-demo-step-text" aria-live="polite">Ein Anliegen wird strukturiert eingereicht &ndash; Ausgangspunkt jedes Vorgangs.</p>
+</div>
+<div class="triovo-proof-dark">
+<h3 class="triovo-proof-title-dark">Technische Eigenleistung: der Umsetzungsweg</h3>
+<div class="triovo-path-stepper" data-component="triovo-path">
+<div class="triovo-path-nav" role="tablist" aria-label="Schritte der technischen Umsetzung">
+<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-0" aria-selected="true" data-index="0"><span class="triovo-path-index" aria-hidden="true">01</span><span class="triovo-path-btn-label">Problemverständnis &amp; UX</span></button>
+<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-1" aria-selected="false" tabindex="-1" data-index="1"><span class="triovo-path-index" aria-hidden="true">02</span><span class="triovo-path-btn-label">Architektur &amp; Daten</span></button>
+<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-2" aria-selected="false" tabindex="-1" data-index="2"><span class="triovo-path-index" aria-hidden="true">03</span><span class="triovo-path-btn-label">KI &amp; Workflowlogik</span></button>
+<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-3" aria-selected="false" tabindex="-1" data-index="3"><span class="triovo-path-index" aria-hidden="true">04</span><span class="triovo-path-btn-label">Dashboard &amp; Betrieb</span></button>
+</div>
+<div class="triovo-path-panel">
+<div class="triovo-path-body is-active" data-index="0"><h4>Problemverständnis &amp; Produkt-/UX-Konzept</h4><p>Produktkonzept, Problemdefinition sowie UX- und Prozessstruktur für Anliegenaufnahme und Dashboard.</p></div>
+<div class="triovo-path-body" data-index="1"><h4>Systemarchitektur, Backend &amp; Daten</h4><p>Backend-/API-Struktur, Case-Management-Logik und E-Mail-Workflows auf einem PostgreSQL-Datenmodell.</p></div>
+<div class="triovo-path-body" data-index="2"><h4>KI- und Workflowlogik</h4><p>KI-gestützte Fallanalyse und Triage mit Kategorisierung, Priorisierung und Lookup-Logik.</p></div>
+<div class="triovo-path-body" data-index="3"><h4>Dashboard, Security &amp; Betrieb</h4><p>Auswertung, Zugriffsschutz durch Rate-Limiting und XSS-Schutz, Deployment mit Healthcheck.</p></div>
+</div>
+</div>
+<p class="triovo-tech-line">Technische Grundlage: Node.js · Express · PostgreSQL · Railway · Cloudflare</p>
+</div>
+<div class="triovo-cta">
+<a href="https://triovo.org" class="btn btn-inverse" target="_blank" rel="noopener noreferrer">Triovo live ansehen →</a>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section" id="audit" aria-labelledby="audit-heading">
+<div class="container">
+<span class="section-label">Nächster Schritt</span>
+<div class="about-layout">
+<div class="about-content">
+<h2 id="audit-heading">Wo lohnt sich Automatisierung in Ihrem Unternehmen wirklich?</h2>
+<p class="audit-kicker">Potenzial-Audit für Prozesse, Workflows und Kundenservice</p>
+<p>Das Potenzial-Audit untersucht einen konkreten Prozess und zeigt, ob eine Veränderung wirtschaftlich und technisch sinnvoll ist. Nicht jeder Ablauf braucht neue Software.</p>
+<ol class="audit-steps" role="list">
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">1</span>
+<div>
+<h3>Prozess verstehen</h3>
+<p>Wir betrachten Eingang, Bearbeitung, Übergaben, Rückfragen und Abschluss.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">2</span>
+<div>
+<h3>Aufwand und Risiken einordnen</h3>
+<p>Wir prüfen manuellen Aufwand, Medienbrüche, Abhängigkeiten und Fehlerquellen.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">3</span>
+<div>
+<h3>Potenzial priorisieren</h3>
+<p>Wir unterscheiden zwischen sinnvoller Automatisierung, kleiner Optimierung und unnötiger Veränderung.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">4</span>
+<div>
+<h3>Pilot definieren</h3>
+<p>Wenn sich eine Umsetzung lohnt, wird ein klar begrenzter erster Prozess vorgeschlagen.</p>
+</div>
+</li>
+</ol>
+<p class="contact-note">Wenn ein Prozess zuverlässig, wirtschaftlich und ohne relevantes Risiko funktioniert, empfiehlt Thevio keine unnötige Veränderung.</p>
+<p class="contact-note">Hinweis: Bei anschließender Umsetzung kann der Audit-Betrag auf das Projekt angerechnet werden.</p>
+</div>
+<div class="contact-card audit-card reveal">
+<span class="audit-demo-badge">Beispielhafte Einordnung</span>
+<dl class="audit-demo-grid">
+<div class="audit-demo-item"><dt>Automatisierungspotenzial</dt><dd>erhöht</dd></div>
+<div class="audit-demo-item"><dt>Prozessklarheit</dt><dd>ausbaufähig</dd></div>
+<div class="audit-demo-item"><dt>Technische Umsetzbarkeit</dt><dd>gut</dd></div>
+<div class="audit-demo-item"><dt>Empfohlener Einstieg</dt><dd>E-Mail-Triage</dd></div>
+</dl>
+<a href="audit.html" class="btn btn-primary contact-cta">Prozess prüfen lassen</a>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="section section--light" id="wirtschaftlichkeit" aria-labelledby="wirtschaftlichkeit-heading">
+<div class="container">
+<span class="section-label">Wirtschaftlich statt technologiegetrieben</span>
+<h2 id="wirtschaftlichkeit-heading">Nicht jeder Prozess braucht neue Software.</h2>
+<p class="section-intro">Wenn ein Ablauf selten vorkommt, zuverlässig funktioniert und keine relevanten Kosten oder Risiken verursacht, sollte er nicht allein wegen neuer Technologie verändert werden. Thevio konzentriert sich auf Prozesse, bei denen manueller Aufwand, wiederkehrende Fehler, fehlende Transparenz, personelle Abhängigkeiten oder wachsendes Volumen einen messbaren Handlungsbedarf erzeugen.</p>
+<ul class="strengths-list" role="list">
+<li>Wie viel manuelle Arbeit ist nötig, damit der Prozess funktioniert?</li>
+<li>Funktioniert er auch bei Urlaub, Krankheit oder Vertretung?</li>
+<li>Sind offene Vorgänge, Zuständigkeiten und Fristen jederzeit sichtbar?</li>
+<li>Wie häufig entstehen Rückfragen, Wiederholungen oder Eskalationen?</li>
+<li>Könnte der Ablauf die doppelte Menge ohne proportional mehr Personal bewältigen?</li>
+</ul>
+<p class="competency-principle card-link-gap">Thevio verkauft keine Veränderung um jeden Preis, sondern prüft, ob sich eine Veränderung nachweisbar lohnt.</p>
+</div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="section" id="zusammenarbeit" aria-labelledby="zusammenarbeit-heading">
+<div class="container">
+<span class="section-label">Zusammenarbeit</span>
+<h2 id="zusammenarbeit-heading">Vom bestehenden Ablauf zum messbaren Pilot.</h2>
+<ol class="audit-steps" role="list">
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">1</span>
+<div>
+<h3>Prozessgespräch</h3>
+<p>Wir verstehen das Problem, bevor eine technische Lösung diskutiert wird.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">2</span>
+<div>
+<h3>Potenzial-Audit</h3>
+<p>Aufwand, Risiken, Systeme und realistischer Nutzen werden eingeordnet.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">3</span>
+<div>
+<h3>Pilot definieren</h3>
+<p>Ein klar begrenzter Prozess und konkrete Erfolgskriterien werden festgelegt.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">4</span>
+<div>
+<h3>System umsetzen</h3>
+<p>Die Lösung wird entwickelt, integriert und mit realistischen Vorgängen getestet.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">5</span>
+<div>
+<h3>Wirkung prüfen</h3>
+<p>Bearbeitungsaufwand, Rückfragen, Transparenz und Abschlussqualität werden verglichen.</p>
+</div>
+</li>
+<li class="audit-step">
+<span class="audit-step-index" aria-hidden="true">6</span>
+<div>
+<h3>Ausbauen oder bewusst stoppen</h3>
+<p>Nur wenn der Pilot einen nachvollziehbaren Nutzen zeigt, wird der Prozess erweitert.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="section section--light" id="vertrauen" aria-labelledby="vertrauen-heading">
+<div class="container">
+<span class="section-label">Sicherheit &amp; Vertrauen</span>
+<h2 id="vertrauen-heading">Automatisierung mit Kontrolle.</h2>
+<p class="section-intro">Thevio berücksichtigt Datenschutz, Zugriffe, menschliche Kontrolle und technische Abhängigkeiten bereits bei der Architektur &ndash; nicht erst nach der Umsetzung.</p>
+<div class="trust-grid">
+<ul class="transformation-list transformation-list--structured" role="list">
+<li>Menschliche Freigabe bei kritischen Entscheidungen</li>
+<li>Nachvollziehbare Rollen und Berechtigungen</li>
+<li>Dokumentierte Datenflüsse</li>
+<li>Protokollierung und nachvollziehbare Bearbeitung</li>
+</ul>
+<ul class="transformation-list transformation-list--structured" role="list">
+<li>Bestehende Systeme statt unnötigem Komplettaustausch</li>
+<li>Austauschbare KI- und Technologiekomponenten</li>
+<li>Sicherheit und Datenschutz von Beginn an</li>
+<li>Wartbare Architektur statt schwer verständlicher Einzellösungen</li>
+</ul>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+<section class="section section--light" id="ueber" aria-labelledby="ueber-heading">
+<div class="container">
+<span class="section-label">Hintergrund</span>
+<h2 id="ueber-heading">Warum Thevio Systems?</h2>
+<div class="about-layout">
+<div class="about-content">
+<p class="philosophy-intro">Thevio Systems denkt vom Geschäftsproblem her, nicht von der Technologie: Erst wird der reale Prozess verstanden &ndash; erst danach entscheidet sich, ob und wie KI, Automatisierung oder individuelle Software sinnvoll eingesetzt werden.</p>
+<ul class="strengths-list" role="list">
+<li><strong>Produkt und Geschäftsprozess</strong> &mdash; Mit Triovo wurde ein vollständiges System umgesetzt statt nur skizziert.</li>
+<li><strong>Software, Architektur und Betrieb</strong> &mdash; Praxiswissen aus Frontend, Backend, Datenmodell, APIs und KI-Integration – inklusive Sicherheit und Wartbarkeit von Anfang an.</li>
+<li><strong>Customer Experience und Automatisierung</strong> &mdash; Anfrage- und Serviceprozesse werden aus Nutzer- und Teamsicht mitgedacht.</li>
+</ul>
+</div>
+<div class="founder-card">
+<div class="founder-card-inner">
+<figure class="founder-portrait">
+<img src="assets/img/founder-portrait-sebastian-przybyla.jpg" alt="Portraitfoto von Sebastian Przybyla, Gründer von Thevio Systems" width="910" height="1373" loading="lazy" decoding="async" class="founder-portrait-image" />
+</figure>
+<div class="founder-content">
+<div class="founder-meta">
+<h3>Sebastian Przybyla</h3>
+<p class="founder-role">Entwicklung und Produktverantwortung</p>
+</div>
+<div class="founder-body">
+<p>Ich verbinde Produkt- und Softwareentwicklung mit Erfahrung aus operativen Arbeitsabläufen und Mitarbeiterführung. Deshalb entstehen Lösungen, die nicht nur technisch funktionieren, sondern im Unternehmensalltag verständlich bleiben.</p>
+<ul class="founder-competencies" role="list">
+<li>KI-gestützte Workflow- und Prozesssysteme</li>
+<li>Backend-, API- und Produktentwicklung</li>
+<li>Customer Experience und Case Management</li>
+</ul>
+</div>
+<div class="founder-footer">
+<a href="https://www.linkedin.com/in/sebastian-przybyla-9426b0416" class="link-arrow" target="_blank" rel="noopener noreferrer">LinkedIn-Profil ansehen</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="section section--dark abschluss-section" id="kontakt" aria-labelledby="abschluss-heading">
+<div class="container">
+<div class="kontakt-glow" aria-hidden="true"></div>
+<span class="section-label section-label--inverse">Abschluss</span>
+<h2 id="abschluss-heading">Technologie sollte Komplexität reduzieren &ndash; nicht erzeugen.</h2>
+<p class="kontakt-intro">Aus manuellen Abläufen kann ein klares System werden &ndash; eines, das mit einem Unternehmen mitwächst und langfristig verständlich bleibt.</p>
+<div class="abschluss-layout">
+<div class="abschluss-cta-col">
+<a href="mailto:kontakt@thevio-systems.de" class="btn btn-inverse contact-cta contact-cta--primary">Prozess prüfen lassen</a>
+<span class="kontakt-alt-label">Oder direkt erreichbar über</span>
+<div class="kontakt-options-dark">
+<a href="mailto:kontakt@thevio-systems.de" class="contact-option contact-option--dark">
+<span class="contact-option-label">E-Mail</span>
+<span class="contact-option-value">kontakt@thevio-systems.de</span>
+</a>
+<a href="https://www.linkedin.com/in/sebastian-przybyla-9426b0416" class="contact-option contact-option--dark" target="_blank" rel="noopener noreferrer" aria-label="Kontakt über LinkedIn">
+<span class="contact-option-label">LinkedIn</span>
+<span class="contact-option-value">Kontakt über LinkedIn</span>
+</a>
+</div>
+</div>
+<ol class="abschluss-status-list reveal" role="list" aria-label="Ablauf bis zur messbaren Wirkung">
+<li class="abschluss-status-item"><span class="abschluss-status-dot" aria-hidden="true"></span>Prozess geprüft</li>
+<li class="abschluss-status-item"><span class="abschluss-status-dot" aria-hidden="true"></span>Pilot definiert</li>
+<li class="abschluss-status-item abschluss-status-item--final"><span class="abschluss-status-dot" aria-hidden="true"></span>Wirkung messbar</li>
+</ol>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<p class="footer-copy">&#169; 2026 Thevio Systems. Alle Rechte vorbehalten.</p>
+<nav class="footer-links" aria-label="Rechtliche Links">
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
