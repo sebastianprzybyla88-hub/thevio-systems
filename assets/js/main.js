@@ -93,6 +93,7 @@ revealTargets.forEach(function (el) { revealObserver.observe(el); });
 'use strict';
 
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hasHoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 function setPulse(container, activeEl, dotSelector) {
 if (!container) { return; }
@@ -148,15 +149,18 @@ self.pauseForInteraction();
 });
 });
 if (this.root) {
-['mouseenter', 'focusin'].forEach(function (evt) {
-self.root.addEventListener(evt, function () { self.pause(); }, { passive: true });
-});
-['mouseleave', 'focusout'].forEach(function (evt) {
-self.root.addEventListener(evt, function () { self.resumeSoon(); }, { passive: true });
-});
+if (hasHoverPointer) {
+self.root.addEventListener('mouseenter', function () { self.pause(); }, { passive: true });
+self.root.addEventListener('mouseleave', function () { self.resumeSoon(); }, { passive: true });
+}
+self.root.addEventListener('focusin', function () { self.pause(); }, { passive: true });
+self.root.addEventListener('focusout', function () { self.resumeSoon(); }, { passive: true });
 }
 document.addEventListener('visibilitychange', function () {
-if (document.hidden) { self.pause(); }
+if (document.hidden) {
+self.pause();
+if (self.resumeTimer) { window.clearTimeout(self.resumeTimer); self.resumeTimer = null; }
+}
 else if (self.visible && !self.manuallyPaused) { self.resume(); }
 });
 };
@@ -222,7 +226,7 @@ if (this.resumeTimer) { window.clearTimeout(this.resumeTimer); }
 if (!this.autoplay) { return; }
 this.resumeTimer = window.setTimeout(function () {
 self.manuallyPaused = false;
-if (self.visible) { self.resume(); }
+if (self.visible && !document.hidden) { self.resume(); }
 }, this.resumeDelay);
 };
 
@@ -268,6 +272,7 @@ items: panels,
 controls: tabs,
 interval: 4200,
 autoplay: true,
+observerThreshold: 0.05,
 onActivate: function (i) {
 if (panelEl && tabs[i]) { panelEl.setAttribute('aria-labelledby', tabs[i].id); }
   if (tabs[i] && window.innerWidth < 640) {
