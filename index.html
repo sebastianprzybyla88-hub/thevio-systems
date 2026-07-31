@@ -51,109 +51,104 @@
 <a href="#triovo" class="link-arrow">Triovo erleben</a>
 </div>
 </div>
-<div class="hero-scene hero-live-system" id="hero-scene" data-component="hero-scene" aria-label="Live Process System: Eine Anfrage wird aufgenommen, geprüft, eingeordnet, zugeordnet, freigegeben, bearbeitet und nachvollziehbar abgeschlossen.">
-<div class="hero-system-head">
-<span class="hero-system-kicker">Live Process System</span>
-<span class="hero-system-status"><span class="hero-system-status-dot" aria-hidden="true"></span>Signal aktiv</span>
-</div>
-<div class="hero-signal-path" aria-hidden="true"><span></span></div>
-<ol class="hero-stage" role="list">
-<li class="hero-row" data-row="0"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Eingang erkannt</strong><span>E-Mail, Formular oder Systemereignis wird zum Vorgang.</span></span></li>
-<li class="hero-row" data-row="1"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Angaben geprüft</strong><span>Pflichtdaten, Kontext und Rückfragen werden sichtbar.</span></span></li>
-<li class="hero-row" data-row="2"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Vorgang eingeordnet</strong><span>Kategorie, Priorität und Regeln greifen.</span></span></li>
-<li class="hero-row" data-row="3"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Routing bestimmt</strong><span>Rolle, Team oder System erhält den nächsten Schritt.</span></span></li>
-<li class="hero-row" data-row="4"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Menschliche Freigabe</strong><span>Kritische Entscheidungen bleiben kontrolliert.</span></span></li>
-<li class="hero-row" data-row="5"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Bearbeitung</strong><span>Alle relevanten Informationen liegen vorbereitet vor.</span></span></li>
-<li class="hero-row hero-row--status" data-row="6"><span class="hero-row-dot" aria-hidden="true"></span><span class="hero-row-text"><strong>Abschluss dokumentiert</strong><span>Ergebnis und Verlauf bleiben nachvollziehbar.</span></span></li>
-</ol>
-<div class="hero-phase-nav" role="group" aria-label="Phase auswählen">
-<button type="button" class="hero-phase-btn" data-phase="0" aria-pressed="true"><span class="visually-hidden">Phase 1: Eingang</span><span aria-hidden="true">01</span></button>
-<button type="button" class="hero-phase-btn" data-phase="1" aria-pressed="false"><span class="visually-hidden">Phase 2: Prüfung</span><span aria-hidden="true">02</span></button>
-<button type="button" class="hero-phase-btn" data-phase="2" aria-pressed="false"><span class="visually-hidden">Phase 3: Einordnung</span><span aria-hidden="true">03</span></button>
-<button type="button" class="hero-phase-btn" data-phase="3" aria-pressed="false"><span class="visually-hidden">Phase 4: Zuständigkeit</span><span aria-hidden="true">04</span></button>
-<button type="button" class="hero-phase-btn" data-phase="4" aria-pressed="false"><span class="visually-hidden">Phase 5: Freigabe</span><span aria-hidden="true">05</span></button>
-<button type="button" class="hero-phase-btn" data-phase="5" aria-pressed="false"><span class="visually-hidden">Phase 6: Status</span><span aria-hidden="true">06</span></button>
-<button type="button" class="hero-phase-btn" data-phase="6" aria-pressed="false"><span class="visually-hidden">Phase 7: Dokumentation</span><span aria-hidden="true">07</span></button>
-</div>
-<p class="hero-system-line" aria-live="polite">Eingang erkannt → Route bestimmt → Freigabe bestätigt → Abschluss dokumentiert</p>
-</div>
-</div>
-</div>
-</section>
-
-<hr class="section-divider" />
-<section class="section process-engine-section" id="prozess" aria-labelledby="prozess-heading">
-<div class="container">
-<span class="section-label section-label--inverse">Thevio Process Engine</span>
-<h2 id="prozess-heading">Ein Vorgang bewegt sich durch ein kontrolliertes System.</h2>
-<p class="engine-intro">Das Signal zeigt Eingang, Prüfung, Routing, menschliche Kontrolle und Abschluss in einer zusammenhängenden Architektur.</p>
-<div class="process-engine reveal" data-component="process-engine" data-phase="0" aria-label="Interaktive Prozess-Engine">
-<svg class="engine-path" viewBox="0 0 980 430" aria-hidden="true" focusable="false">
-<path class="engine-path-grid" d="M96 274 C170 178 265 104 385 162 C479 207 459 313 574 290 C706 264 671 120 807 134 C900 144 924 224 868 302" />
-<path class="engine-path-live" d="M96 274 C170 178 265 104 385 162 C479 207 459 313 574 290 C706 264 671 120 807 134 C900 144 924 224 868 302" />
-<circle class="engine-impulse" r="8">
-<animateMotion dur="7.2s" repeatCount="indefinite" path="M96 274 C170 178 265 104 385 162 C479 207 459 313 574 290 C706 264 671 120 807 134 C900 144 924 224 868 302" />
-</circle>
+<div class="hero-cdr-preview" id="hero-scene" data-component="cdr-hero" data-phase="0" aria-label="Capture Decide Resolve Vorschau">
+<div class="hero-cdr-stage" aria-hidden="true">
+<span class="hero-cdr-phase hero-cdr-phase--capture">Erfassen</span>
+<span class="hero-cdr-phase hero-cdr-phase--decide">Entscheiden</span>
+<span class="hero-cdr-phase hero-cdr-phase--resolve">Abschließen</span>
+<div class="hero-cdr-fragment hero-cdr-fragment--mail"><span>Mail</span><strong>Rückfrage</strong></div>
+<div class="hero-cdr-fragment hero-cdr-fragment--doc"><span>Dok.</span><strong>Beleg</strong></div>
+<div class="hero-cdr-fragment hero-cdr-fragment--due"><span>Frist</span><strong>14:30</strong></div>
+<svg class="hero-cdr-routes" viewBox="0 0 620 500" focusable="false">
+<path class="hero-cdr-route hero-cdr-route--a" d="M94 152 C196 138 238 214 307 244" />
+<path class="hero-cdr-route hero-cdr-route--b" d="M500 137 C398 140 367 203 315 244" />
+<path class="hero-cdr-route hero-cdr-route--c" d="M122 392 C202 345 236 303 309 258" />
+<path class="hero-cdr-route hero-cdr-route--out" d="M329 253 C390 268 430 310 490 354" />
 </svg>
-<button type="button" class="engine-node engine-node--input is-active" data-engine-step="0"><span>01</span>Eingang</button>
-<button type="button" class="engine-node engine-node--check" data-engine-step="1"><span>02</span>Prüfung</button>
-<button type="button" class="engine-node engine-node--classify" data-engine-step="2"><span>03</span>Einordnung</button>
-<button type="button" class="engine-node engine-node--route" data-engine-step="3"><span>04</span>Zuständigkeit</button>
-<div class="engine-human-gate" data-engine-gate="4" aria-label="Menschliche Kontrollstelle">
-<span class="engine-gate-label">Human Gate</span>
-<strong>Freigabe</strong>
+<div class="hero-cdr-object">
+<span class="hero-cdr-orbit"></span>
+<span class="hero-cdr-core"></span>
+<span class="hero-cdr-surface hero-cdr-surface--top"></span>
+<span class="hero-cdr-surface hero-cdr-surface--mid"></span>
+<span class="hero-cdr-surface hero-cdr-surface--low"></span>
+<span class="hero-cdr-check"></span>
 </div>
-<button type="button" class="engine-node engine-node--work" data-engine-step="5"><span>05</span>Bearbeitung</button>
-<button type="button" class="engine-node engine-node--done" data-engine-step="6"><span>06</span>Abschluss</button>
-<div class="engine-core" aria-hidden="true">
-<span>THEVIO</span>
-<strong>Signal Path</strong>
+<span class="hero-cdr-gate"><span></span></span>
 </div>
-<p class="engine-status" aria-live="polite">Eingang erkannt</p>
+<div class="hero-cdr-controls" role="group" aria-label="Hero-Phase auswählen">
+<button type="button" class="hero-cdr-control" data-cdr-phase="0" aria-pressed="true">Erfassen</button>
+<button type="button" class="hero-cdr-control" data-cdr-phase="1" aria-pressed="false">Entscheiden</button>
+<button type="button" class="hero-cdr-control" data-cdr-phase="2" aria-pressed="false">Abschließen</button>
+</div>
+<p class="hero-cdr-status" aria-live="polite">Fragmente werden zu einem Vorgang erfasst.</p>
+</div>
 </div>
 </div>
 </section>
 
 <hr class="section-divider" />
-<section class="section transformation-section controlled-transformation-section" id="transformation" aria-labelledby="transformation-heading">
-<div class="container">
-<div class="transform-heading-row">
-<div>
-<span class="section-label">Controlled Transformation</span>
-<h2 id="transformation-heading">Ungeordneter Eingang wird zu einem kontrollierten Vorgang.</h2>
+<section class="section resolution-system-section" id="prozess" aria-labelledby="resolution-system-heading">
+<span id="transformation" class="section-anchor" aria-hidden="true"></span>
+<div class="resolution-system-sticky">
+<div class="resolution-system-copy">
+<span class="section-label section-label--inverse">Thevio Resolution System</span>
+<h2 id="resolution-system-heading">Ein Vorgang. Drei Zustände. Ein kontrollierter Abschluss.</h2>
+<p>Aus ungeordneten Eingängen entsteht ein vollständiges digitales Vorgangsobjekt.</p>
 </div>
-<button type="button" class="transform-replay" data-transform-replay>Transformation erneut zeigen</button>
+<div class="resolution-system-stage reveal" data-component="cdr-system" data-phase="0" aria-label="Thevio Resolution System: Erfassen, Entscheiden, Abschließen">
+<div class="cdr-phase-copy" aria-live="polite">
+<span class="cdr-phase-index">01</span>
+<strong class="cdr-phase-title">Erfassen</strong>
+<span class="cdr-phase-line">Ungeordnete Fragmente finden einen gemeinsamen Signalpunkt.</span>
 </div>
-<div class="controlled-transform reveal" data-component="controlled-transformation" aria-label="Animierte Transformation von Eingangsdaten in einen strukturierten Prozess">
-<div class="transform-inputs" aria-label="Unstrukturierter Eingang">
-<article class="data-object data-object--mail"><span>E-Mail</span><strong>Rückfrage offen</strong></article>
-<article class="data-object data-object--sheet"><span>Tabellenzeile</span><strong>Spalte fehlt</strong></article>
-<article class="data-object data-object--doc"><span>Dokument</span><strong>Beleg 1842</strong></article>
-<article class="data-object data-object--note"><span>Freitext</span><strong>Bitte prüfen</strong></article>
-<article class="data-object data-object--status"><span>Status</span><strong>Unklar</strong></article>
+<div class="cdr-canvas" aria-hidden="true">
+<div class="cdr-depth-plane cdr-depth-plane--back"></div>
+<svg class="cdr-field-lines" viewBox="0 0 1120 620" focusable="false">
+<defs>
+<linearGradient id="cdr-blue-line" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#536177" stop-opacity="0" />
+<stop offset="0.5" stop-color="#6FB1FF" stop-opacity="0.92" />
+<stop offset="1" stop-color="#58C999" stop-opacity="0.72" />
+</linearGradient>
+</defs>
+<path class="cdr-line cdr-line--capture" d="M90 118 C260 146 332 237 522 292" />
+<path class="cdr-line cdr-line--capture" d="M176 505 C320 421 392 352 528 309" />
+<path class="cdr-line cdr-line--capture" d="M924 124 C788 156 686 226 586 292" />
+<path class="cdr-line cdr-line--decide" d="M360 308 C444 238 680 236 766 306" />
+<path class="cdr-line cdr-line--decide" d="M494 198 C562 168 640 184 704 235" />
+<path class="cdr-line cdr-line--resolve" d="M612 324 C718 342 792 400 916 446" />
+</svg>
+<div class="cdr-fragment cdr-fragment--mail"><span>Nachricht</span><strong>Reklamation offen</strong><i></i></div>
+<div class="cdr-fragment cdr-fragment--doc"><span>Dokument</span><strong>Beleg 1842</strong><i></i></div>
+<div class="cdr-fragment cdr-fragment--table"><span>Datensatz</span><strong>Wert fehlt</strong><i></i></div>
+<div class="cdr-fragment cdr-fragment--question"><span>Rückfrage</span><strong>Zuständigkeit?</strong><i></i></div>
+<div class="cdr-fragment cdr-fragment--date"><span>Frist</span><strong>Heute 14:30</strong><i></i></div>
+<div class="cdr-object">
+<span class="cdr-object-glass"></span>
+<span class="cdr-object-spine"></span>
+<span class="cdr-object-field cdr-object-field--id"></span>
+<span class="cdr-object-field cdr-object-field--owner"></span>
+<span class="cdr-object-field cdr-object-field--status"></span>
+<span class="cdr-object-field cdr-object-field--proof"></span>
+<span class="cdr-object-confirm"></span>
 </div>
-<div class="processing-core" aria-label="Thevio Processing Core">
-<span class="core-scan" aria-hidden="true"></span>
-<span class="core-label">Thevio Core</span>
-<div class="core-stack" aria-hidden="true"><span></span><span></span><span></span></div>
-<ol class="core-stages" role="list">
-<li>Erfassung</li>
-<li>Prüfung</li>
-<li>Strukturierung</li>
-<li>Routing</li>
-<li>Kontrolle</li>
-</ol>
+<div class="cdr-system-core">
+<span class="cdr-core-ring"></span>
+<span class="cdr-core-ring cdr-core-ring--inner"></span>
+<span class="cdr-core-label">Freigabe bestätigt</span>
 </div>
-<div class="structured-output" aria-label="Kontrollierter Ausgang">
-<div class="output-head"><span>Vorgang</span><strong>bereit zur Bearbeitung</strong></div>
-<ol class="output-track" role="list">
-<li>vollständig erfasst</li>
-<li>Zuständigkeit geklärt</li>
-<li>Frist sichtbar</li>
-<li>Kontrolle aktiv</li>
-<li>Abschluss nachvollziehbar</li>
-</ol>
-<div class="output-confirmation">Abschlussstatus bestätigt</div>
+<div class="cdr-resolve-surface">
+<span class="cdr-resolve-kicker">Vorgang</span>
+<strong>TV-1842</strong>
+<span class="cdr-resolve-owner">Service Operations</span>
+<span class="cdr-resolve-track"></span>
+<span class="cdr-resolve-proof">Abschluss dokumentiert</span>
+</div>
+</div>
+<div class="cdr-timeline" role="group" aria-label="Phase auswählen">
+<button type="button" class="cdr-timeline-step" data-cdr-system-phase="0" aria-pressed="true"><span>Erfassen</span></button>
+<button type="button" class="cdr-timeline-step" data-cdr-system-phase="1" aria-pressed="false"><span>Entscheiden</span></button>
+<button type="button" class="cdr-timeline-step" data-cdr-system-phase="2" aria-pressed="false"><span>Abschließen</span></button>
 </div>
 </div>
 </div>

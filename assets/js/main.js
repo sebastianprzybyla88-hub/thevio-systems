@@ -232,42 +232,157 @@ if (self.visible && !document.hidden) { self.resume(); }
 
 window.ThevioStepper = Stepper;
 
-/* Hero: lebende Prozess-Szene (eigener Loop-Zustand) */
+/* Capture-Decide-Resolve Hero Preview */
 (function () {
-var scene = document.getElementById('hero-scene');
+var scene = document.querySelector('[data-component="cdr-hero"]');
 if (!scene) { return; }
-var rows = Array.prototype.slice.call(scene.querySelectorAll('.hero-row'));
-var controls = Array.prototype.slice.call(scene.querySelectorAll('.hero-phase-btn'));
-var statusLine = scene.querySelector('.hero-system-line');
-var statusTexts = [
-'Eingang erkannt',
-'Angaben geprüft',
-'Vorgang eingeordnet',
-'Route bestimmt',
-'Freigabe bestätigt',
-'Bearbeitung vorbereitet',
-'Abschluss dokumentiert'
+var controls = Array.prototype.slice.call(scene.querySelectorAll('[data-cdr-phase]'));
+var statusLine = scene.querySelector('.hero-cdr-status');
+var labels = [
+'Fragmente werden zu einem Vorgang erfasst.',
+'Regeln, Route und Freigabe ordnen den Vorgang.',
+'Ein vollständiges Vorgangsobjekt ist abgeschlossen.'
 ];
-var stepper = new Stepper({
+new Stepper({
 root: scene,
-items: rows,
 controls: controls,
-interval: 1500,
+interval: 2200,
 autoplay: true,
 onActivate: function (i) {
-rows.forEach(function (r, idx) {
-if (idx < i) { r.classList.add('is-done'); } else if (idx !== i) { r.classList.remove('is-done'); }
-});
-setPulse(scene, rows[i], '.hero-row-dot');
-if (statusLine && statusTexts[i]) { statusLine.textContent = statusTexts[i]; }
+scene.setAttribute('data-phase', String(i));
+if (statusLine && labels[i]) { statusLine.textContent = labels[i]; }
 }
 });
 if (reducedMotion) {
-var last = rows.length - 1;
-stepper.activate(last, false);
-rows.forEach(function (r) { r.classList.add('is-done'); });
-setPulse(scene, rows[last], '.hero-row-dot');
+scene.setAttribute('data-phase', '2');
+controls.forEach(function (control, i) { control.setAttribute('aria-pressed', i === 2 ? 'true' : 'false'); });
+if (statusLine) { statusLine.textContent = labels[2]; }
 }
+})();
+
+/* Thevio Resolution System: scrollbasierte Signature-Buehne mit ruhiger Automatik */
+(function () {
+var stage = document.querySelector('[data-component="cdr-system"]');
+if (!stage) { return; }
+var section = stage.closest('.resolution-system-section');
+var controls = Array.prototype.slice.call(stage.querySelectorAll('[data-cdr-system-phase]'));
+var title = stage.querySelector('.cdr-phase-title');
+var index = stage.querySelector('.cdr-phase-index');
+var line = stage.querySelector('.cdr-phase-line');
+var phases = [
+{ title: 'Erfassen', index: '01', line: 'Ungeordnete Fragmente finden einen gemeinsamen Signalpunkt.' },
+{ title: 'Entscheiden', index: '02', line: 'Verbindungen, Route und Human Gate strukturieren den Vorgang.' },
+{ title: 'Abschließen', index: '03', line: 'Das Ergebnis ist ein vollständiges, kontrolliertes Vorgangsobjekt.' }
+];
+var active = 0;
+var timer = null;
+var resumeTimer = null;
+var visible = false;
+var manualPause = false;
+var scrollDriven = false;
+
+function render(i) {
+active = Math.max(0, Math.min(phases.length - 1, i));
+stage.setAttribute('data-phase', String(active));
+if (title) { title.textContent = phases[active].title; }
+if (index) { index.textContent = phases[active].index; }
+if (line) { line.textContent = phases[active].line; }
+controls.forEach(function (control, idx) {
+control.setAttribute('aria-pressed', idx === active ? 'true' : 'false');
+});
+}
+
+function stop() {
+if (timer) { window.clearInterval(timer); timer = null; }
+stage.classList.add('is-paused');
+}
+
+function start() {
+if (reducedMotion || manualPause || !visible || document.hidden || scrollDriven) { return; }
+stop();
+stage.classList.remove('is-paused');
+timer = window.setInterval(function () {
+render(active === phases.length - 1 ? 0 : active + 1);
+}, 2800);
+}
+
+function updateFromScroll() {
+if (!section || reducedMotion || !visible) { return; }
+var rect = section.getBoundingClientRect();
+var travel = Math.max(1, rect.height - window.innerHeight);
+var progress = Math.min(1, Math.max(0, -rect.top / travel));
+var nextPhase = progress < 0.34 ? 0 : (progress < 0.68 ? 1 : 2);
+scrollDriven = rect.top < 0 && rect.bottom > window.innerHeight;
+if (scrollDriven) {
+stop();
+render(nextPhase);
+}
+}
+
+function resumeLater() {
+if (resumeTimer) { window.clearTimeout(resumeTimer); }
+manualPause = true;
+stop();
+resumeTimer = window.setTimeout(function () {
+manualPause = false;
+start();
+}, 6200);
+}
+
+controls.forEach(function (control, i) {
+control.addEventListener('click', function () {
+render(i);
+resumeLater();
+});
+control.addEventListener('keydown', function (event) {
+var next = null;
+if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { next = i === controls.length - 1 ? 0 : i + 1; }
+if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { next = i === 0 ? controls.length - 1 : i - 1; }
+if (next !== null) {
+event.preventDefault();
+controls[next].focus();
+render(next);
+resumeLater();
+}
+});
+});
+
+document.addEventListener('visibilitychange', function () {
+if (document.hidden) {
+stop();
+if (resumeTimer) { window.clearTimeout(resumeTimer); resumeTimer = null; }
+} else {
+start();
+}
+});
+
+window.addEventListener('scroll', updateFromScroll, { passive: true });
+window.addEventListener('resize', updateFromScroll, { passive: true });
+
+if (reducedMotion) {
+visible = true;
+render(2);
+return;
+}
+if (!('IntersectionObserver' in window)) {
+visible = true;
+render(0);
+start();
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+visible = entry.isIntersecting;
+if (visible) {
+updateFromScroll();
+start();
+} else {
+stop();
+}
+});
+}, { threshold: 0.18 });
+observer.observe(stage);
+render(0);
 })();
 
 /* Funktionsprinzip: Prozess-Stepper (eigener Auto-Advance-Zustand) */
