@@ -514,7 +514,7 @@ render(0);
     var system = document.querySelector('[data-component="capability-system"]');
     if (!system) { return; }
     var nodes = Array.prototype.slice.call(system.querySelectorAll('.capability-node'));
-    new Stepper({
+    var stepper = new Stepper({
       root: system,
       items: nodes,
       interval: 2800,
@@ -528,6 +528,21 @@ render(0);
         });
         setPulse(system, nodes[i], '.capability-node-signal');
       }
+    });
+    nodes.forEach(function (node, i) {
+      node.tabIndex = 0;
+      node.setAttribute('aria-label', 'Ebene ' + (i + 1) + ' aktivieren');
+      node.addEventListener('click', function () {
+        stepper.activate(i, true);
+        stepper.pauseForInteraction();
+      });
+      node.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          stepper.activate(i, true);
+          stepper.pauseForInteraction();
+        }
+      });
     });
   })();
 
