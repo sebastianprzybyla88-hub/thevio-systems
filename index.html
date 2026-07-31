@@ -269,21 +269,51 @@
 <div class="container">
 <span class="section-label">Ausgangslage</span>
 <h2 id="zielgruppen-heading">Wann Thevio Systems besonders relevant wird</h2>
-<p class="section-intro">Nicht die Branche entscheidet, sondern die Komplexität des Prozesses. Relevant wird Thevio dort, wo Eingang, Zuständigkeit und Abschluss nicht mehr zuverlässig sichtbar sind.</p>
-<div class="scenario-compact-grid" data-component="scenario-demo">
-<article class="scenario-card reveal"><span>01</span><h3>Unstrukturierte Eingänge</h3><p>E-Mail, Formular, Telefon und Postfach werden zu einem einheitlichen Vorgang.</p></article>
-<article class="scenario-card reveal"><span>02</span><h3>Unklare Zuständigkeiten</h3><p>Regeln, Rollen, Vertretungen und Eskalationen werden nachvollziehbar abgebildet.</p></article>
-<article class="scenario-card reveal"><span>03</span><h3>Mehrere Teams</h3><p>Status, Dokumente und Entscheidungen bleiben am selben Vorgang statt in einzelnen Nachrichten.</p></article>
-<article class="scenario-card reveal"><span>04</span><h3>Operative Arbeit</h3><p>Erfassung und Freigabe funktionieren auch mobil, am Standort oder direkt am Entstehungsort.</p></article>
+<p class="section-intro">Nicht die Branche entscheidet, sondern die Prozesslage: Thevio wird relevant, wenn Eingang, Zuständigkeit und Abschluss über Teams hinweg nicht mehr zuverlässig sichtbar sind.</p>
+<div class="relevance-story reveal" data-component="relevance-story">
+<div class="relevance-visual" aria-hidden="true">
+<div class="relevance-map">
+<span class="rv-node rv-node--input" data-rv-node="0">Eingang</span>
+<span class="rv-node rv-node--rules" data-rv-node="1">Regeln</span>
+<span class="rv-node rv-node--teams" data-rv-node="2">Teams</span>
+<span class="rv-node rv-node--field" data-rv-node="3">Standort</span>
+<span class="rv-node rv-node--result">Abschluss</span>
+<span class="rv-line rv-line--a"></span>
+<span class="rv-line rv-line--b"></span>
+<span class="rv-line rv-line--c"></span>
+<span class="rv-line rv-line--d"></span>
+<span class="rv-focus"></span>
+</div>
+<div class="relevance-legend">
+<span>Signal erkannt</span>
+<strong>aus Fragmenten wird ein Vorgang</strong>
+</div>
+</div>
+<div class="relevance-states" role="tablist" aria-label="Typische Problemzustände">
+<button type="button" class="relevance-state" role="tab" id="relevance-tab-0" aria-selected="true" data-index="0">
+<span class="relevance-state-index">01</span>
+<span><strong>Unstrukturierte Eingänge</strong>E-Mail, Formular, Telefon und Postfach werden zu einem einheitlichen Vorgang.</span>
+</button>
+<button type="button" class="relevance-state" role="tab" id="relevance-tab-1" aria-selected="false" tabindex="-1" data-index="1">
+<span class="relevance-state-index">02</span>
+<span><strong>Unklare Zuständigkeit</strong>Regeln, Rollen, Vertretungen und Eskalationen werden nachvollziehbar.</span>
+</button>
+<button type="button" class="relevance-state" role="tab" id="relevance-tab-2" aria-selected="false" tabindex="-1" data-index="2">
+<span class="relevance-state-index">03</span>
+<span><strong>Mehrere Teams</strong>Status, Dokumente und Entscheidungen bleiben am selben Fall statt in einzelnen Nachrichten.</span>
+</button>
+<button type="button" class="relevance-state" role="tab" id="relevance-tab-3" aria-selected="false" tabindex="-1" data-index="3">
+<span class="relevance-state-index">04</span>
+<span><strong>Operative Arbeit</strong>Erfassung und Freigabe funktionieren auch mobil, am Standort oder direkt am Entstehungsort.</span>
+</button>
+</div>
 </div>
 <div class="target-tags">
 <span class="transformation-kicker">Typische Zielgruppen</span>
 <div class="process-desc--chips">
 <span class="process-chip">Mittelstand &amp; KMU</span>
-<span class="process-chip">Industrie- und Serviceunternehmen</span>
-<span class="process-chip">E-Commerce und Handel</span>
+<span class="process-chip">Industrie, Service, Handel und E-Commerce</span>
 <span class="process-chip">Service-, Operations-, Qualitäts- und Vertriebsteams</span>
-<span class="process-chip">Mehrere Standorte &amp; mobile Teams</span>
 </div>
 </div>
 </div>
@@ -294,55 +324,59 @@
 <div class="container">
 <span class="triovo-badge">Proof of Work</span>
 <h2 id="triovo-heading" class="triovo-dark-title">Triovo zeigt Thevio-Systementwicklung im Produkt.</h2>
-<p class="triovo-dark-intro">Triovo ist der Praxisnachweis: ein reales Prozessproblem, überführt in ein vollständiges Softwareprodukt &ndash; von der UX über Backend und KI-Workflow bis zum laufenden Betrieb.</p>
-<div class="triovo-system-strip" role="list" aria-label="Technische Leistungen in Triovo">
-<span role="listitem">UX</span>
-<span role="listitem">Backend</span>
-<span role="listitem">KI-Workflow</span>
-<span role="listitem">Datenmodell</span>
-<span role="listitem">Prozesslogik</span>
-</div>
+<p class="triovo-dark-intro">Triovo ist der Praxisnachweis: ein reales Prozessproblem, überführt in ein vollständiges Softwareprodukt &ndash; mit eigener UX, Backend, API, Datenmodell, Workflowlogik und Dashboard.</p>
+<div class="triovo-proof-layout">
 <div class="triovo-demo reveal" data-component="triovo-demo">
 <div class="triovo-demo-frame">
 <div class="triovo-frame-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-<div class="triovo-demo-image-wrap">
+<div class="triovo-demo-image-wrap" data-focus="0">
 <img src="assets/img/triovo-dashboard-preview.png" alt="Vollständige Ansicht des Triovo Business-Dashboards mit Testdaten: Fallübersicht, Status, Priorität und Resolution Score" width="1568" height="741" loading="lazy" decoding="async" class="triovo-demo-image" />
 <span class="triovo-demo-callout" data-callout="0" style="left:41.5%;top:54.8%;"></span>
 <span class="triovo-demo-callout" data-callout="1" style="left:51.7%;top:54.8%;"></span>
-<span class="triovo-demo-callout" data-callout="2" style="left:57.7%;top:54.8%;"></span>
-<span class="triovo-demo-callout" data-callout="3" style="left:38.6%;top:48.4%;"></span>
-<span class="triovo-demo-callout" data-callout="4" style="left:68.9%;top:54.8%;"></span>
-<span class="triovo-demo-callout" data-callout="5" style="left:44.6%;top:37.5%;"></span>
+<span class="triovo-demo-callout" data-callout="2" style="left:38.6%;top:48.4%;"></span>
+<span class="triovo-demo-callout" data-callout="3" style="left:44.6%;top:37.5%;"></span>
 </div>
-<p class="triovo-frame-caption">Reale Ansicht mit Testdaten &ndash; derselbe Bildschirm, wechselnder Fokus je Schritt.</p>
+<p class="triovo-frame-caption">Reale Ansicht mit Testdaten &ndash; der Fokus springt auf den jeweils relevanten Arbeitsbereich.</p>
 </div>
 <div class="triovo-demo-steps" role="tablist" aria-label="Ablauf in Triovo">
-<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-0" aria-selected="true" data-index="0"><span class="triovo-demo-step-index">01</span>Anliegen eingereicht</button>
-<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-1" aria-selected="false" tabindex="-1" data-index="1"><span class="triovo-demo-step-index">02</span>Angaben geprüft</button>
-<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-2" aria-selected="false" tabindex="-1" data-index="2"><span class="triovo-demo-step-index">03</span>KI-Triage ordnet ein</button>
-<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-3" aria-selected="false" tabindex="-1" data-index="3"><span class="triovo-demo-step-index">04</span>Fall im Dashboard</button>
-<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-4" aria-selected="false" tabindex="-1" data-index="4"><span class="triovo-demo-step-index">05</span>Bearbeitung vorbereitet</button>
-<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-5" aria-selected="false" tabindex="-1" data-index="5"><span class="triovo-demo-step-index">06</span>Resolution Score</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-0" aria-selected="true" data-index="0"><span class="triovo-demo-step-index">01</span>Eingang</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-1" aria-selected="false" tabindex="-1" data-index="1"><span class="triovo-demo-step-index">02</span>Prüfung &amp; Triage</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-2" aria-selected="false" tabindex="-1" data-index="2"><span class="triovo-demo-step-index">03</span>Routing &amp; Bearbeitung</button>
+<button type="button" class="triovo-demo-step" role="tab" id="triovo-step-3" aria-selected="false" tabindex="-1" data-index="3"><span class="triovo-demo-step-index">04</span>Abschluss &amp; Score</button>
 </div>
-<p class="triovo-demo-step-text" aria-live="polite">Ein Anliegen wird strukturiert eingereicht &ndash; Ausgangspunkt jedes Vorgangs.</p>
+<p class="triovo-demo-step-text" aria-live="polite">Eingang: ein Anliegen wird strukturiert als Fall erfasst.</p>
 </div>
-<div class="triovo-proof-dark">
-<h3 class="triovo-proof-title-dark">Technische Eigenleistung: der Umsetzungsweg</h3>
-<div class="triovo-path-stepper" data-component="triovo-path">
-<div class="triovo-path-nav" role="tablist" aria-label="Schritte der technischen Umsetzung">
-<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-0" aria-selected="true" data-index="0"><span class="triovo-path-index" aria-hidden="true">01</span><span class="triovo-path-btn-label">Problemverständnis &amp; UX</span></button>
-<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-1" aria-selected="false" tabindex="-1" data-index="1"><span class="triovo-path-index" aria-hidden="true">02</span><span class="triovo-path-btn-label">Architektur &amp; Daten</span></button>
-<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-2" aria-selected="false" tabindex="-1" data-index="2"><span class="triovo-path-index" aria-hidden="true">03</span><span class="triovo-path-btn-label">KI &amp; Workflowlogik</span></button>
-<button type="button" class="triovo-path-btn" role="tab" id="triovo-path-tab-3" aria-selected="false" tabindex="-1" data-index="3"><span class="triovo-path-index" aria-hidden="true">04</span><span class="triovo-path-btn-label">Dashboard &amp; Betrieb</span></button>
+<aside class="triovo-architecture reveal" aria-labelledby="triovo-architecture-heading">
+<h3 id="triovo-architecture-heading">Technische Eigenleistung</h3>
+<ol class="triovo-layer-list" role="list">
+<li><span>01</span><strong>Produkt &amp; UX</strong><p>Fallaufnahme und Dashboard wurden aus dem realen Arbeitsfluss heraus konzipiert.</p></li>
+<li><span>02</span><strong>Backend, API &amp; Daten</strong><p>Case-Management, E-Mail-Workflows und PostgreSQL-Modell bilden den Kern.</p></li>
+<li><span>03</span><strong>KI-Workflowlogik</strong><p>Analyse, Priorisierung und Lookup-Logik unterstützen die Triage ohne blinde Automatisierung.</p></li>
+<li><span>04</span><strong>Betrieb &amp; Sicherheit</strong><p>Dashboard, Zugriffsschutz, Healthcheck und Deployment sind Teil des Systems.</p></li>
+</ol>
+<p class="triovo-tech-line">Node.js · Express · PostgreSQL · Railway · Cloudflare</p>
+</aside>
 </div>
-<div class="triovo-path-panel">
-<div class="triovo-path-body is-active" data-index="0"><h4>Problemverständnis &amp; Produkt-/UX-Konzept</h4><p>Produktkonzept, Problemdefinition sowie UX- und Prozessstruktur für Anliegenaufnahme und Dashboard.</p></div>
-<div class="triovo-path-body" data-index="1"><h4>Systemarchitektur, Backend &amp; Daten</h4><p>Backend-/API-Struktur, Case-Management-Logik und E-Mail-Workflows auf einem PostgreSQL-Datenmodell.</p></div>
-<div class="triovo-path-body" data-index="2"><h4>KI- und Workflowlogik</h4><p>KI-gestützte Fallanalyse und Triage mit Kategorisierung, Priorisierung und Lookup-Logik.</p></div>
-<div class="triovo-path-body" data-index="3"><h4>Dashboard, Security &amp; Betrieb</h4><p>Auswertung, Zugriffsschutz durch Rate-Limiting und XSS-Schutz, Deployment mit Healthcheck.</p></div>
+<div class="result-story reveal" data-component="result-story">
+<div class="result-copy">
+<span class="triovo-proof-title-dark">Ergebnis</span>
+<h3>Aus verstreuter Bearbeitung wird ein sichtbarer Vorgang.</h3>
+<p>Der Nutzen liegt nicht in mehr Automatisierung, sondern in weniger Unklarheit: Eingang, Verantwortung, Status und Abschluss werden an einem Ort nachvollziehbar.</p>
+</div>
+<div class="result-comparison" role="tablist" aria-label="Vorher-Nachher Transformation">
+<button type="button" class="result-toggle" role="tab" id="result-tab-0" aria-selected="true" data-index="0">Vorher</button>
+<button type="button" class="result-toggle" role="tab" id="result-tab-1" aria-selected="false" tabindex="-1" data-index="1">Nachher</button>
+</div>
+<div class="result-panels">
+<div class="result-panel is-active" data-index="0">
+<span>Vorher</span>
+<p>Eingänge liegen verteilt, Zuständigkeiten entstehen im Chat, Abschluss ist schwer belegbar.</p>
+</div>
+<div class="result-panel" data-index="1">
+<span>Nachher</span>
+<p>Ein Vorgang bündelt Daten, Status, Entscheidungen und Resolution Score bis zum Abschluss.</p>
 </div>
 </div>
-<p class="triovo-tech-line">Technische Grundlage: Node.js · Express · PostgreSQL · Railway · Cloudflare</p>
 </div>
 <div class="triovo-cta">
 <a href="https://triovo.org" class="btn btn-inverse" target="_blank" rel="noopener noreferrer">Triovo live ansehen →</a>
@@ -354,51 +388,52 @@
 <section class="section" id="audit" aria-labelledby="audit-heading">
 <div class="container">
 <span class="section-label">Einstieg</span>
-<div class="about-layout">
+<div class="audit-layout">
 <div class="about-content">
-<h2 id="audit-heading">Vom Prozessgespräch zum begrenzten Pilot.</h2>
+<h2 id="audit-heading">Mini-Audit statt Bauchgefühl.</h2>
 <p class="audit-kicker">Erst prüfen, dann bauen.</p>
 <p>Das Potenzial-Audit untersucht einen konkreten Prozess und zeigt, ob Software, KI oder Automatisierung wirtschaftlich und technisch sinnvoll sind. Funktioniert ein Ablauf zuverlässig, empfiehlt Thevio keine unnötige Veränderung.</p>
 <ol class="audit-steps" role="list">
 <li class="audit-step">
 <span class="audit-step-index" aria-hidden="true">1</span>
 <div>
-<h3>Prozessgespräch</h3>
-<p>Wir betrachten Eingang, Bearbeitung, Übergaben, Rückfragen und Abschluss.</p>
+<h3>Prozess lesen</h3>
+<p>Eingang, Bearbeitung, Übergaben und Abschluss werden sichtbar gemacht.</p>
 </div>
 </li>
 <li class="audit-step">
 <span class="audit-step-index" aria-hidden="true">2</span>
 <div>
-<h3>Aufwand und Risiken einordnen</h3>
-<p>Wir prüfen manuellen Aufwand, Medienbrüche, Abhängigkeiten und Fehlerquellen.</p>
+<h3>Wirtschaftlich einordnen</h3>
+<p>Aufwand, Risiken und technische Umsetzbarkeit werden vorab geprüft.</p>
 </div>
 </li>
 <li class="audit-step">
 <span class="audit-step-index" aria-hidden="true">3</span>
 <div>
-<h3>Pilot priorisieren</h3>
-<p>Ein klar begrenzter Prozess und konkrete Erfolgskriterien werden festgelegt.</p>
-</div>
-</li>
-<li class="audit-step">
-<span class="audit-step-index" aria-hidden="true">4</span>
-<div>
-<h3>Umsetzen und prüfen</h3>
-<p>Das System wird mit realistischen Vorgängen getestet und nur bei nachvollziehbarem Nutzen erweitert.</p>
+<h3>Pilot begrenzen</h3>
+<p>Nur ein klarer Einstieg mit Erfolgskriterien geht in die Umsetzung.</p>
 </div>
 </li>
 </ol>
 <p class="contact-note">Hinweis: Bei anschließender Umsetzung kann der Audit-Betrag auf das Projekt angerechnet werden.</p>
 </div>
-<div class="contact-card audit-card reveal">
-<span class="audit-demo-badge">Beispielhafte Einordnung</span>
-<dl class="audit-demo-grid">
-<div class="audit-demo-item"><dt>Automatisierungspotenzial</dt><dd>erhöht</dd></div>
-<div class="audit-demo-item"><dt>Prozessklarheit</dt><dd>ausbaufähig</dd></div>
-<div class="audit-demo-item"><dt>Technische Umsetzbarkeit</dt><dd>gut</dd></div>
-<div class="audit-demo-item"><dt>Empfohlener Einstieg</dt><dd>E-Mail-Triage</dd></div>
+<div class="audit-console reveal" data-component="audit-console">
+<span class="audit-demo-badge">Mini-Audit</span>
+<div class="audit-checks" role="tablist" aria-label="Audit-Checkpoints">
+<button type="button" class="audit-check is-active" role="tab" id="audit-check-0" aria-selected="true" data-index="0"><span>01</span>Kanäle</button>
+<button type="button" class="audit-check" role="tab" id="audit-check-1" aria-selected="false" tabindex="-1" data-index="1"><span>02</span>Verantwortung</button>
+<button type="button" class="audit-check" role="tab" id="audit-check-2" aria-selected="false" tabindex="-1" data-index="2"><span>03</span>Statussicht</button>
+</div>
+<div class="audit-result-box" aria-live="polite">
+<span class="audit-result-label">Checkpoint</span>
+<h3>Kanäle bündeln</h3>
+<p>E-Mail, Formular, Telefon oder Postfach werden nur dann systematisiert, wenn ein gemeinsamer Vorgang daraus echten Nutzen stiftet.</p>
+<dl>
+<div><dt>Prüffrage</dt><dd>Wo entsteht der Fall?</dd></div>
+<div><dt>Ergebnis</dt><dd>klarer Einstiegspunkt</dd></div>
 </dl>
+</div>
 <a href="audit.html" class="btn btn-primary contact-cta">Prozess prüfen lassen</a>
 </div>
 </div>

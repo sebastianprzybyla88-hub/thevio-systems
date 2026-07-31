@@ -217,7 +217,10 @@ if (this.timer) { window.clearInterval(this.timer); this.timer = null; }
 Stepper.prototype.pauseForInteraction = function () {
 this.manuallyPaused = true;
 this.pause();
-this.resumeSoon();
+if (this.resumeTimer) {
+window.clearTimeout(this.resumeTimer);
+this.resumeTimer = null;
+}
 };
 
 Stepper.prototype.resumeSoon = function () {
@@ -708,6 +711,22 @@ var timer = null;
   });
 })();
 
+/* Relevanz: visuelle Problemzustaende statt Kartenreihe */
+(function () {
+var story = document.querySelector('[data-component="relevance-story"]');
+if (!story) { return; }
+var states = Array.prototype.slice.call(story.querySelectorAll('.relevance-state'));
+new Stepper({
+root: story,
+controls: states,
+interval: 3200,
+autoplay: true,
+onActivate: function (i) {
+story.setAttribute('data-active', String(i));
+}
+});
+})();
+
 /* Triovo: kontrollierte Produktfuehrung (einmaliger Durchlauf, danach Benutzersteuerung) */
 (function () {
 var demo = document.querySelector('[data-component="triovo-demo"]');
@@ -715,13 +734,12 @@ if (!demo) { return; }
 var tabs = Array.prototype.slice.call(demo.querySelectorAll('.triovo-demo-step'));
 var callouts = Array.prototype.slice.call(demo.querySelectorAll('.triovo-demo-callout'));
 var caption = demo.querySelector('.triovo-demo-step-text');
+var imageWrap = demo.querySelector('.triovo-demo-image-wrap');
 var texts = [
-'Ein Anliegen wird strukturiert eingereicht \u2013 Ausgangspunkt jedes Vorgangs.',
-'Angaben werden auf Vollständigkeit geprüft, bevor der Fall weiterläuft.',
-'Die KI-Triage ordnet Kategorie und Priorität automatisch ein.',
-'Der Fall erscheint strukturiert im Business-Dashboard.',
-'Die Bearbeitung wird vorbereitet, alle Informationen liegen gebündelt vor.',
-'Resolution Score und Abschlussstatus machen die Wirkung sichtbar.'
+'Eingang: ein Anliegen wird strukturiert als Fall erfasst.',
+'Prüfung & Triage: Angaben werden geprüft, Kategorie und Priorität eingeordnet.',
+'Routing & Bearbeitung: Verantwortung, Status und nächste Handlung sind sichtbar.',
+'Abschluss & Score: Resolution Score und Abschlussstatus machen die Wirkung nachvollziehbar.'
 ];
 new Stepper({
 root: demo,
@@ -732,6 +750,7 @@ loopOnce: true,
 autoplay: true,
 onActivate: function (i) {
 if (caption && texts[i]) { caption.textContent = texts[i]; }
+if (imageWrap) { imageWrap.setAttribute('data-focus', String(i)); }
 }
 });
 })();
@@ -749,6 +768,67 @@ controls: tabs,
 interval: 4200,
 loopOnce: true,
 autoplay: true
+});
+})();
+
+/* Ergebnis: Vorher/Nachher ohne erfundene Kennzahlen */
+(function () {
+var story = document.querySelector('[data-component="result-story"]');
+if (!story) { return; }
+var toggles = Array.prototype.slice.call(story.querySelectorAll('.result-toggle'));
+var panels = Array.prototype.slice.call(story.querySelectorAll('.result-panel'));
+new Stepper({
+root: story,
+items: panels,
+controls: toggles,
+interval: 4800,
+autoplay: false
+});
+})();
+
+/* Audit: drei Checkpoints mit konkretem Ergebnis */
+(function () {
+var audit = document.querySelector('[data-component="audit-console"]');
+if (!audit) { return; }
+var checks = Array.prototype.slice.call(audit.querySelectorAll('.audit-check'));
+var box = audit.querySelector('.audit-result-box');
+var content = [
+{
+title: 'Kanäle bündeln',
+text: 'E-Mail, Formular, Telefon oder Postfach werden nur dann systematisiert, wenn ein gemeinsamer Vorgang daraus echten Nutzen stiftet.',
+question: 'Wo entsteht der Fall?',
+result: 'klarer Einstiegspunkt'
+},
+{
+title: 'Verantwortung klären',
+text: 'Rollen, Vertretungen und Eskalationen zeigen, ob Software wirklich entlastet oder nur neue Abstimmung erzeugt.',
+question: 'Wer darf entscheiden?',
+result: 'belastbare Zuständigkeit'
+},
+{
+title: 'Status sichtbar machen',
+text: 'Der Audit prüft, ob Teams den Fortschritt, offene Rückfragen und den Abschluss ohne Nachfassen erkennen können.',
+question: 'Woran erkennt man fertig?',
+result: 'messbarer Abschluss'
+}
+];
+function render(i) {
+var item = content[i];
+if (!box || !item) { return; }
+var title = box.querySelector('h3');
+var text = box.querySelector('p');
+var dd = box.querySelectorAll('dd');
+if (title) { title.textContent = item.title; }
+if (text) { text.textContent = item.text; }
+if (dd[0]) { dd[0].textContent = item.question; }
+if (dd[1]) { dd[1].textContent = item.result; }
+}
+new Stepper({
+root: audit,
+controls: checks,
+interval: 3600,
+autoplay: true,
+onActivate: render
 });
 })();
 
