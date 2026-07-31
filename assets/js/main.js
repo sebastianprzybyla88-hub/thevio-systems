@@ -293,6 +293,107 @@ if (panelEl && tabs[i]) { panelEl.setAttribute('aria-labelledby', tabs[i].id); }
 });
 })();
 
+/* Process Engine: sichtbarer Signalpfad mit eigener Sequenz */
+(function () {
+var engine = document.querySelector('[data-component="process-engine"]');
+if (!engine) { return; }
+var nodes = Array.prototype.slice.call(engine.querySelectorAll('.engine-node'));
+var gate = engine.querySelector('[data-engine-gate]');
+var status = engine.querySelector('.engine-status');
+var phases = [
+{ label: 'Eingang erkannt', step: 0 },
+{ label: 'Angaben geprüft', step: 1 },
+{ label: 'Daten eingeordnet', step: 2 },
+{ label: 'Zuständigkeit bestimmt', step: 3 },
+{ label: 'Menschliche Freigabe bestätigt', step: 4 },
+{ label: 'Bearbeitung vorbereitet', step: 5 },
+{ label: 'Abschluss dokumentiert', step: 6 }
+];
+var index = 0;
+var timer = null;
+var resumeTimer = null;
+var visible = false;
+var manualPause = false;
+
+function render(i) {
+index = i;
+engine.setAttribute('data-phase', String(i));
+nodes.forEach(function (node) {
+var step = Number(node.getAttribute('data-engine-step'));
+node.classList.toggle('is-active', step === i);
+node.classList.toggle('is-complete', step < i || i === phases.length - 1);
+node.setAttribute('aria-pressed', step === i ? 'true' : 'false');
+});
+if (gate) {
+gate.classList.toggle('is-active', i === 4);
+gate.classList.toggle('is-complete', i > 4 || i === phases.length - 1);
+}
+if (status && phases[i]) { status.textContent = phases[i].label; }
+}
+
+function stop() {
+if (timer) { window.clearInterval(timer); timer = null; }
+}
+
+function start() {
+if (reducedMotion || manualPause || !visible || document.hidden) { return; }
+stop();
+timer = window.setInterval(function () {
+render((index + 1) % phases.length);
+}, 1050);
+}
+
+function restartSoon() {
+if (resumeTimer) { window.clearTimeout(resumeTimer); }
+manualPause = true;
+stop();
+resumeTimer = window.setTimeout(function () {
+manualPause = false;
+start();
+}, 6400);
+}
+
+nodes.forEach(function (node) {
+node.setAttribute('aria-pressed', 'false');
+node.addEventListener('click', function () {
+render(Number(node.getAttribute('data-engine-step')));
+restartSoon();
+});
+});
+
+document.addEventListener('visibilitychange', function () {
+if (document.hidden) {
+stop();
+if (resumeTimer) { window.clearTimeout(resumeTimer); resumeTimer = null; }
+engine.classList.add('is-paused');
+} else {
+engine.classList.remove('is-paused');
+start();
+}
+});
+
+if (reducedMotion) {
+visible = true;
+render(phases.length - 1);
+return;
+}
+if (!('IntersectionObserver' in window)) {
+visible = true;
+render(0);
+start();
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+visible = entry.isIntersecting;
+if (visible) { engine.classList.remove('is-paused'); start(); }
+else { engine.classList.add('is-paused'); stop(); }
+});
+}, { threshold: 0.28 });
+observer.observe(engine);
+render(0);
+})();
+
   /* Leistungen: verbundene Systemebenen mit automatisch laufendem Signal */
   (function () {
     var system = document.querySelector('[data-component="capability-system"]');
@@ -327,6 +428,78 @@ if (entry.isIntersecting) { activateScene(); io.unobserve(entry.target); }
 });
 }, { threshold: 0.4 });
 io.observe(scene);
+})();
+
+/* Controlled Transformation: einmal sichtbare Systemumwandlung mit Replay */
+(function () {
+var scene = document.querySelector('[data-component="controlled-transformation"]');
+if (!scene) { return; }
+var section = scene.closest('section');
+var replay = section ? section.querySelector('[data-transform-replay]') : null;
+var visible = false;
+var completeTimer = null;
+var hasPlayed = false;
+
+function clearCompleteTimer() {
+if (completeTimer) { window.clearTimeout(completeTimer); completeTimer = null; }
+}
+
+function complete() {
+scene.classList.remove('is-running');
+scene.classList.add('is-complete');
+hasPlayed = true;
+clearCompleteTimer();
+}
+
+function play(force) {
+if (reducedMotion) { complete(); return; }
+if (!visible || document.hidden || (!force && hasPlayed)) { return; }
+clearCompleteTimer();
+scene.classList.remove('is-complete', 'is-paused', 'is-running');
+void scene.offsetWidth;
+scene.classList.add('is-running');
+completeTimer = window.setTimeout(complete, 9200);
+}
+
+if (replay) {
+replay.addEventListener('click', function () {
+hasPlayed = false;
+play(true);
+});
+}
+
+document.addEventListener('visibilitychange', function () {
+if (document.hidden) {
+scene.classList.add('is-paused');
+clearCompleteTimer();
+} else if (visible && scene.classList.contains('is-running')) {
+play(true);
+} else if (visible && !hasPlayed) {
+play(false);
+}
+});
+
+if (reducedMotion) {
+visible = true;
+complete();
+return;
+}
+if (!('IntersectionObserver' in window)) {
+visible = true;
+play(false);
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+visible = entry.isIntersecting;
+if (visible) { play(false); }
+else {
+scene.classList.add('is-paused');
+clearCompleteTimer();
+}
+});
+}, { threshold: 0.25 });
+observer.observe(scene);
 })();
 
 /* Resolution Principle: einmalige, kumulative Sequenz */

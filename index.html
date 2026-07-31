@@ -82,56 +82,80 @@
 </section>
 
 <hr class="section-divider" />
-<section class="section section--light process-section" id="prozess" aria-labelledby="prozess-heading">
+<section class="section process-engine-section" id="prozess" aria-labelledby="prozess-heading">
 <div class="container">
-<h2 id="prozess-heading" class="visually-hidden">Wie Automatisierung bei Thevio Systems funktioniert</h2>
-<span class="section-label">Funktionsprinzip</span>
-<p class="section-intro">Jeder Vorgang durchläuft denselben kontrollierten Weg &ndash; vom Eingang bis zum nachvollziehbaren Abschluss.</p>
-<div class="process-interactive" data-component="process-stepper">
-<div class="process-tabs" role="tablist" aria-label="Phasen des Funktionsprinzips">
-<button type="button" class="process-tab" role="tab" id="proz-tab-0" aria-controls="proz-panel" aria-selected="true" data-index="0"><span class="process-tab-index">01</span><span class="process-tab-label">Eingang</span></button>
-<button type="button" class="process-tab" role="tab" id="proz-tab-1" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="1"><span class="process-tab-index">02</span><span class="process-tab-label">Prüfung</span></button>
-<button type="button" class="process-tab" role="tab" id="proz-tab-2" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="2"><span class="process-tab-index">03</span><span class="process-tab-label">Einordnung</span></button>
-<button type="button" class="process-tab" role="tab" id="proz-tab-3" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="3"><span class="process-tab-index">04</span><span class="process-tab-label">Zuständigkeit</span></button>
-<button type="button" class="process-tab" role="tab" id="proz-tab-4" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="4"><span class="process-tab-index">05</span><span class="process-tab-label">Bearbeitung</span></button>
-<button type="button" class="process-tab" role="tab" id="proz-tab-5" aria-controls="proz-panel" aria-selected="false" tabindex="-1" data-index="5"><span class="process-tab-index">06</span><span class="process-tab-label">Abschluss</span></button>
+<span class="section-label section-label--inverse">Thevio Process Engine</span>
+<h2 id="prozess-heading">Ein Vorgang bewegt sich durch ein kontrolliertes System.</h2>
+<p class="engine-intro">Das Signal zeigt Eingang, Prüfung, Routing, menschliche Kontrolle und Abschluss in einer zusammenhängenden Architektur.</p>
+<div class="process-engine reveal" data-component="process-engine" data-phase="0" aria-label="Interaktive Prozess-Engine">
+<svg class="engine-path" viewBox="0 0 980 430" aria-hidden="true" focusable="false">
+<path class="engine-path-grid" d="M96 274 C170 178 265 104 385 162 C479 207 459 313 574 290 C706 264 671 120 807 134 C900 144 924 224 868 302" />
+<path class="engine-path-live" d="M96 274 C170 178 265 104 385 162 C479 207 459 313 574 290 C706 264 671 120 807 134 C900 144 924 224 868 302" />
+<circle class="engine-impulse" r="8">
+<animateMotion dur="7.2s" repeatCount="indefinite" path="M96 274 C170 178 265 104 385 162 C479 207 459 313 574 290 C706 264 671 120 807 134 C900 144 924 224 868 302" />
+</circle>
+</svg>
+<button type="button" class="engine-node engine-node--input is-active" data-engine-step="0"><span>01</span>Eingang</button>
+<button type="button" class="engine-node engine-node--check" data-engine-step="1"><span>02</span>Prüfung</button>
+<button type="button" class="engine-node engine-node--classify" data-engine-step="2"><span>03</span>Einordnung</button>
+<button type="button" class="engine-node engine-node--route" data-engine-step="3"><span>04</span>Zuständigkeit</button>
+<div class="engine-human-gate" data-engine-gate="4" aria-label="Menschliche Kontrollstelle">
+<span class="engine-gate-label">Human Gate</span>
+<strong>Freigabe</strong>
 </div>
-<div class="process-panel" id="proz-panel" role="tabpanel" aria-labelledby="proz-tab-0">
-<div class="process-panel-body is-active" data-index="0"><span class="process-panel-index">01</span><h3>Eingang</h3><p>E-Mail, Formular oder Systemereignis werden zentral übernommen.</p><p class="process-panel-detail">Unabhängig vom Ursprungskanal entsteht ein einheitlicher, strukturierter Vorgang.</p></div>
-<div class="process-panel-body" data-index="1"><span class="process-panel-index">02</span><h3>Prüfung</h3><p>Vollständigkeit und Kontext werden geprüft.</p><p class="process-panel-detail">Fehlende Angaben werden erkannt, bevor der Vorgang weiterläuft.</p></div>
-<div class="process-panel-body" data-index="2"><span class="process-panel-index">03</span><h3>Einordnung</h3><p>Kategorie, Priorität und Regeln werden bestimmt.</p><p class="process-panel-detail">Automatisierte Regeln schlagen die passende Behandlung vor.</p></div>
-<div class="process-panel-body" data-index="3"><span class="process-panel-index">04</span><h3>Zuständigkeit</h3><p>Der Vorgang erreicht die richtige Person oder das passende System.</p><p class="process-panel-detail">Vertretungen und Eskalationswege greifen automatisch bei Abwesenheit.</p></div>
-<div class="process-panel-body" data-index="4"><span class="process-panel-index">05</span><h3>Bearbeitung</h3><p>Mitarbeitende erhalten einen vorbereiteten Vorgang.</p><p class="process-panel-detail">Alle relevanten Informationen liegen gebündelt an einem Ort vor.</p></div>
-<div class="process-panel-body" data-index="5"><span class="process-panel-index">06</span><h3>Abschluss</h3><p>Ergebnis, Rückfragen und Eskalationen bleiben dokumentiert.</p><p class="process-panel-detail">Auch nachträgliche Rückfragen bleiben im Kontext nachvollziehbar.</p></div>
+<button type="button" class="engine-node engine-node--work" data-engine-step="5"><span>05</span>Bearbeitung</button>
+<button type="button" class="engine-node engine-node--done" data-engine-step="6"><span>06</span>Abschluss</button>
+<div class="engine-core" aria-hidden="true">
+<span>THEVIO</span>
+<strong>Signal Path</strong>
 </div>
+<p class="engine-status" aria-live="polite">Eingang erkannt</p>
 </div>
 </div>
 </section>
 
 <hr class="section-divider" />
-<section class="section transformation-section" id="transformation" aria-labelledby="transformation-heading">
+<section class="section transformation-section controlled-transformation-section" id="transformation" aria-labelledby="transformation-heading">
 <div class="container">
-<span class="section-label">Transformation</span>
-<h2 id="transformation-heading">Von manuellen Abläufen zu einem strukturierten Prozess.</h2>
-<div class="transformation-scene reveal" data-component="transform-scene">
-<div class="ts-fragments" role="list" aria-label="Ausgangslage vor Thevio">
-<span class="ts-fragment ts-fragment--1" role="listitem">E-Mail</span>
-<span class="ts-fragment ts-fragment--2" role="listitem">Excel-Tabelle</span>
-<span class="ts-fragment ts-fragment--3" role="listitem">Papierbeleg</span>
-<span class="ts-fragment ts-fragment--4" role="listitem">Rückfrage</span>
-<span class="ts-fragment ts-fragment--5" role="listitem">Einzelwissen</span>
-<span class="ts-fragment ts-fragment--6" role="listitem">Status unklar</span>
+<div class="transform-heading-row">
+<div>
+<span class="section-label">Controlled Transformation</span>
+<h2 id="transformation-heading">Ungeordneter Eingang wird zu einem kontrollierten Vorgang.</h2>
 </div>
-<div class="ts-connector" aria-hidden="true"><span class="ts-connector-dot"></span></div>
-<div class="ts-result" role="list" aria-label="Ergebnis mit Thevio">
-<span class="ts-result-row" role="listitem"><span class="ts-result-key">Erfassung</span><span class="ts-result-value">strukturiert</span></span>
-<span class="ts-result-row" role="listitem"><span class="ts-result-key">Zuständigkeit</span><span class="ts-result-value">geklärt</span></span>
-<span class="ts-result-row" role="listitem"><span class="ts-result-key">Bearbeitung</span><span class="ts-result-value">vorbereitet</span></span>
-<span class="ts-result-row" role="listitem"><span class="ts-result-key">Frist</span><span class="ts-result-value">sichtbar</span></span>
-<span class="ts-result-row" role="listitem"><span class="ts-result-key">Abschluss</span><span class="ts-result-value">nachvollziehbar</span></span>
+<button type="button" class="transform-replay" data-transform-replay>Transformation erneut zeigen</button>
+</div>
+<div class="controlled-transform reveal" data-component="controlled-transformation" aria-label="Animierte Transformation von Eingangsdaten in einen strukturierten Prozess">
+<div class="transform-inputs" aria-label="Unstrukturierter Eingang">
+<article class="data-object data-object--mail"><span>E-Mail</span><strong>Rückfrage offen</strong></article>
+<article class="data-object data-object--sheet"><span>Tabellenzeile</span><strong>Spalte fehlt</strong></article>
+<article class="data-object data-object--doc"><span>Dokument</span><strong>Beleg 1842</strong></article>
+<article class="data-object data-object--note"><span>Freitext</span><strong>Bitte prüfen</strong></article>
+<article class="data-object data-object--status"><span>Status</span><strong>Unklar</strong></article>
+</div>
+<div class="processing-core" aria-label="Thevio Processing Core">
+<span class="core-scan" aria-hidden="true"></span>
+<span class="core-label">Thevio Core</span>
+<div class="core-stack" aria-hidden="true"><span></span><span></span><span></span></div>
+<ol class="core-stages" role="list">
+<li>Erfassung</li>
+<li>Prüfung</li>
+<li>Strukturierung</li>
+<li>Routing</li>
+<li>Kontrolle</li>
+</ol>
+</div>
+<div class="structured-output" aria-label="Kontrollierter Ausgang">
+<div class="output-head"><span>Vorgang</span><strong>bereit zur Bearbeitung</strong></div>
+<ol class="output-track" role="list">
+<li>vollständig erfasst</li>
+<li>Zuständigkeit geklärt</li>
+<li>Frist sichtbar</li>
+<li>Kontrolle aktiv</li>
+<li>Abschluss nachvollziehbar</li>
+</ol>
+<div class="output-confirmation">Abschlussstatus bestätigt</div>
 </div>
 </div>
-<p class="transformation-conclusion">Der Unterschied: Aus einzelnen Eingängen entsteht ein steuerbarer Vorgang mit Zuständigkeit, Frist und Abschluss.</p>
 </div>
 </section>
 
