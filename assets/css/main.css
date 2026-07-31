@@ -1880,14 +1880,7 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 }
 
 .capability-flow::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 1.1rem;
-    bottom: 1.1rem;
-    width: 2px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, rgba(145,160,184,0.22), rgba(113,167,255,0.68), rgba(88,201,153,0.55));
+    content: none;
 }
 
 .capability-node {
@@ -1903,6 +1896,12 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           background-color 0.5s var(--ease-premium),
           box-shadow 0.5s var(--ease-premium),
           transform 0.5s var(--ease-premium);
+    cursor: pointer;
+}
+
+.capability-node:focus-visible {
+    outline: 2px solid #71A7FF;
+    outline-offset: 4px;
 }
 
 .capability-node.is-active {
@@ -2093,14 +2092,7 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           padding-block: 1.25rem;
     }
     .capability-flow::before {
-          left: 1rem;
-          right: 1rem;
-          top: 50%;
-          bottom: auto;
-          width: auto;
-          height: 2px;
-          transform: translateY(-50%);
-          background: linear-gradient(90deg, rgba(145,160,184,0.2), rgba(113,167,255,0.72), rgba(88,201,153,0.55));
+          content: none;
     }
     .capability-node {
           padding: 1.35rem;
