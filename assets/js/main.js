@@ -93,6 +93,7 @@ revealTargets.forEach(function (el) { revealObserver.observe(el); });
 'use strict';
 
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hasHoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 function setPulse(container, activeEl, dotSelector) {
 if (!container) { return; }
@@ -120,10 +121,11 @@ this.resumeTimer = null;
 this.manuallyPaused = false;
 this.visible = false;
 this.finishedOnce = false;
+this.observerThreshold = config.observerThreshold || 0.2;
 this._bind();
 this._observe();
 this.activate(0, false);
-if (this.autoplay && !this.root) { this.resume(); }
+if (this.autoplay && (!this.root || this.visible)) { this.resume(); }
 }
 
 Stepper.prototype._bind = function () {
@@ -147,15 +149,18 @@ self.pauseForInteraction();
 });
 });
 if (this.root) {
-['mouseenter', 'focusin', 'touchstart'].forEach(function (evt) {
-self.root.addEventListener(evt, function () { self.pause(); }, { passive: true });
-});
-['mouseleave', 'focusout'].forEach(function (evt) {
-self.root.addEventListener(evt, function () { self.resumeSoon(); }, { passive: true });
-});
+if (hasHoverPointer) {
+self.root.addEventListener('mouseenter', function () { self.pause(); }, { passive: true });
+self.root.addEventListener('mouseleave', function () { self.resumeSoon(); }, { passive: true });
+}
+self.root.addEventListener('focusin', function () { self.pause(); }, { passive: true });
+self.root.addEventListener('focusout', function () { self.resumeSoon(); }, { passive: true });
 }
 document.addEventListener('visibilitychange', function () {
-if (document.hidden) { self.pause(); }
+if (document.hidden) {
+self.pause();
+if (self.resumeTimer) { window.clearTimeout(self.resumeTimer); self.resumeTimer = null; }
+}
 else if (self.visible && !self.manuallyPaused) { self.resume(); }
 });
 };
@@ -172,7 +177,7 @@ self.resume();
 self.pause();
 }
 });
-}, { threshold: 0.5 });
+}, { threshold: this.observerThreshold});
 io.observe(this.root);
 };
 
@@ -221,7 +226,7 @@ if (this.resumeTimer) { window.clearTimeout(this.resumeTimer); }
 if (!this.autoplay) { return; }
 this.resumeTimer = window.setTimeout(function () {
 self.manuallyPaused = false;
-if (self.visible) { self.resume(); }
+if (self.visible && !document.hidden) { self.resume(); }
 }, this.resumeDelay);
 };
 
@@ -267,11 +272,37 @@ items: panels,
 controls: tabs,
 interval: 4200,
 autoplay: true,
+observerThreshold: 0.05,
 onActivate: function (i) {
 if (panelEl && tabs[i]) { panelEl.setAttribute('aria-labelledby', tabs[i].id); }
+  if (tabs[i] && window.innerWidth < 640) {
+    tabs[i].scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+  }
 }
 });
 })();
+
+  /* Leistungen: verbundene Systemebenen mit automatisch laufendem Signal */
+  (function () {
+    var system = document.querySelector('[data-component="capability-system"]');
+    if (!system) { return; }
+    var nodes = Array.prototype.slice.call(system.querySelectorAll('.capability-node'));
+    new Stepper({
+      root: system,
+      items: nodes,
+      interval: 2800,
+      autoplay: true,
+      observerThreshold: 0.15,
+      onActivate: function (i) {
+        system.setAttribute('data-active', String(i));
+        nodes.forEach(function (node, idx) {
+          if (idx === i) { node.setAttribute('aria-current', 'step'); }
+          else { node.removeAttribute('aria-current'); }
+        });
+        setPulse(system, nodes[i], '.capability-node-signal');
+      }
+    });
+  })();
 
 /* Transformation: einmalige Szene beim Eintritt in den Viewport */
 (function () {
