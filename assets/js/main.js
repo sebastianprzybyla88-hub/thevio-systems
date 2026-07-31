@@ -238,6 +238,16 @@ var scene = document.getElementById('hero-scene');
 if (!scene) { return; }
 var rows = Array.prototype.slice.call(scene.querySelectorAll('.hero-row'));
 var controls = Array.prototype.slice.call(scene.querySelectorAll('.hero-phase-btn'));
+var statusLine = scene.querySelector('.hero-system-line');
+var statusTexts = [
+'Eingang erkannt',
+'Angaben geprüft',
+'Vorgang eingeordnet',
+'Route bestimmt',
+'Freigabe bestätigt',
+'Bearbeitung vorbereitet',
+'Abschluss dokumentiert'
+];
 var stepper = new Stepper({
 root: scene,
 items: rows,
@@ -249,6 +259,7 @@ rows.forEach(function (r, idx) {
 if (idx < i) { r.classList.add('is-done'); } else if (idx !== i) { r.classList.remove('is-done'); }
 });
 setPulse(scene, rows[i], '.hero-row-dot');
+if (statusLine && statusTexts[i]) { statusLine.textContent = statusTexts[i]; }
 }
 });
 if (reducedMotion) {
@@ -327,6 +338,8 @@ var played = false;
 function play() {
 if (played) { return; }
 played = true;
+var visual = document.querySelector('[data-component="resolution-visual"]');
+if (visual) { visual.classList.add('is-active'); }
 if (reducedMotion) {
 steps.forEach(function (s) { s.classList.add('is-active'); });
 setPulse(seq, steps[steps.length - 1], '.resolution-step-dot');
