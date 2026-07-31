@@ -232,42 +232,157 @@ if (self.visible && !document.hidden) { self.resume(); }
 
 window.ThevioStepper = Stepper;
 
-/* Hero: lebende Prozess-Szene (eigener Loop-Zustand) */
+/* Capture-Decide-Resolve Hero Preview */
 (function () {
-var scene = document.getElementById('hero-scene');
+var scene = document.querySelector('[data-component="cdr-hero"]');
 if (!scene) { return; }
-var rows = Array.prototype.slice.call(scene.querySelectorAll('.hero-row'));
-var controls = Array.prototype.slice.call(scene.querySelectorAll('.hero-phase-btn'));
-var statusLine = scene.querySelector('.hero-system-line');
-var statusTexts = [
-'Eingang erkannt',
-'Angaben geprüft',
-'Vorgang eingeordnet',
-'Route bestimmt',
-'Freigabe bestätigt',
-'Bearbeitung vorbereitet',
-'Abschluss dokumentiert'
+var controls = Array.prototype.slice.call(scene.querySelectorAll('[data-cdr-phase]'));
+var statusLine = scene.querySelector('.hero-cdr-status');
+var labels = [
+'Fragmente werden zu einem Vorgang erfasst.',
+'Regeln, Route und Freigabe ordnen den Vorgang.',
+'Ein vollständiges Vorgangsobjekt ist abgeschlossen.'
 ];
-var stepper = new Stepper({
+new Stepper({
 root: scene,
-items: rows,
 controls: controls,
-interval: 1500,
+interval: 2200,
 autoplay: true,
 onActivate: function (i) {
-rows.forEach(function (r, idx) {
-if (idx < i) { r.classList.add('is-done'); } else if (idx !== i) { r.classList.remove('is-done'); }
-});
-setPulse(scene, rows[i], '.hero-row-dot');
-if (statusLine && statusTexts[i]) { statusLine.textContent = statusTexts[i]; }
+scene.setAttribute('data-phase', String(i));
+if (statusLine && labels[i]) { statusLine.textContent = labels[i]; }
 }
 });
 if (reducedMotion) {
-var last = rows.length - 1;
-stepper.activate(last, false);
-rows.forEach(function (r) { r.classList.add('is-done'); });
-setPulse(scene, rows[last], '.hero-row-dot');
+scene.setAttribute('data-phase', '2');
+controls.forEach(function (control, i) { control.setAttribute('aria-pressed', i === 2 ? 'true' : 'false'); });
+if (statusLine) { statusLine.textContent = labels[2]; }
 }
+})();
+
+/* Thevio Resolution System: scrollbasierte Signature-Buehne mit ruhiger Automatik */
+(function () {
+var stage = document.querySelector('[data-component="cdr-system"]');
+if (!stage) { return; }
+var section = stage.closest('.resolution-system-section');
+var controls = Array.prototype.slice.call(stage.querySelectorAll('[data-cdr-system-phase]'));
+var title = stage.querySelector('.cdr-phase-title');
+var index = stage.querySelector('.cdr-phase-index');
+var line = stage.querySelector('.cdr-phase-line');
+var phases = [
+{ title: 'Erfassen', index: '01', line: 'Ungeordnete Fragmente finden einen gemeinsamen Signalpunkt.' },
+{ title: 'Entscheiden', index: '02', line: 'Verbindungen, Route und Human Gate strukturieren den Vorgang.' },
+{ title: 'Abschließen', index: '03', line: 'Das Ergebnis ist ein vollständiges, kontrolliertes Vorgangsobjekt.' }
+];
+var active = 0;
+var timer = null;
+var resumeTimer = null;
+var visible = false;
+var manualPause = false;
+var scrollDriven = false;
+
+function render(i) {
+active = Math.max(0, Math.min(phases.length - 1, i));
+stage.setAttribute('data-phase', String(active));
+if (title) { title.textContent = phases[active].title; }
+if (index) { index.textContent = phases[active].index; }
+if (line) { line.textContent = phases[active].line; }
+controls.forEach(function (control, idx) {
+control.setAttribute('aria-pressed', idx === active ? 'true' : 'false');
+});
+}
+
+function stop() {
+if (timer) { window.clearInterval(timer); timer = null; }
+stage.classList.add('is-paused');
+}
+
+function start() {
+if (reducedMotion || manualPause || !visible || document.hidden || scrollDriven) { return; }
+stop();
+stage.classList.remove('is-paused');
+timer = window.setInterval(function () {
+render(active === phases.length - 1 ? 0 : active + 1);
+}, 2800);
+}
+
+function updateFromScroll() {
+if (!section || reducedMotion || !visible) { return; }
+var rect = section.getBoundingClientRect();
+var travel = Math.max(1, rect.height - window.innerHeight);
+var progress = Math.min(1, Math.max(0, -rect.top / travel));
+var nextPhase = progress < 0.34 ? 0 : (progress < 0.68 ? 1 : 2);
+scrollDriven = rect.top < 0 && rect.bottom > window.innerHeight;
+if (scrollDriven) {
+stop();
+render(nextPhase);
+}
+}
+
+function resumeLater() {
+if (resumeTimer) { window.clearTimeout(resumeTimer); }
+manualPause = true;
+stop();
+resumeTimer = window.setTimeout(function () {
+manualPause = false;
+start();
+}, 6200);
+}
+
+controls.forEach(function (control, i) {
+control.addEventListener('click', function () {
+render(i);
+resumeLater();
+});
+control.addEventListener('keydown', function (event) {
+var next = null;
+if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { next = i === controls.length - 1 ? 0 : i + 1; }
+if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { next = i === 0 ? controls.length - 1 : i - 1; }
+if (next !== null) {
+event.preventDefault();
+controls[next].focus();
+render(next);
+resumeLater();
+}
+});
+});
+
+document.addEventListener('visibilitychange', function () {
+if (document.hidden) {
+stop();
+if (resumeTimer) { window.clearTimeout(resumeTimer); resumeTimer = null; }
+} else {
+start();
+}
+});
+
+window.addEventListener('scroll', updateFromScroll, { passive: true });
+window.addEventListener('resize', updateFromScroll, { passive: true });
+
+if (reducedMotion) {
+visible = true;
+render(2);
+return;
+}
+if (!('IntersectionObserver' in window)) {
+visible = true;
+render(0);
+start();
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+visible = entry.isIntersecting;
+if (visible) {
+updateFromScroll();
+start();
+} else {
+stop();
+}
+});
+}, { threshold: 0.18 });
+observer.observe(stage);
+render(0);
 })();
 
 /* Funktionsprinzip: Prozess-Stepper (eigener Auto-Advance-Zustand) */
@@ -291,6 +406,107 @@ if (panelEl && tabs[i]) { panelEl.setAttribute('aria-labelledby', tabs[i].id); }
   }
 }
 });
+})();
+
+/* Process Engine: sichtbarer Signalpfad mit eigener Sequenz */
+(function () {
+var engine = document.querySelector('[data-component="process-engine"]');
+if (!engine) { return; }
+var nodes = Array.prototype.slice.call(engine.querySelectorAll('.engine-node'));
+var gate = engine.querySelector('[data-engine-gate]');
+var status = engine.querySelector('.engine-status');
+var phases = [
+{ label: 'Eingang erkannt', step: 0 },
+{ label: 'Angaben geprüft', step: 1 },
+{ label: 'Daten eingeordnet', step: 2 },
+{ label: 'Zuständigkeit bestimmt', step: 3 },
+{ label: 'Menschliche Freigabe bestätigt', step: 4 },
+{ label: 'Bearbeitung vorbereitet', step: 5 },
+{ label: 'Abschluss dokumentiert', step: 6 }
+];
+var index = 0;
+var timer = null;
+var resumeTimer = null;
+var visible = false;
+var manualPause = false;
+
+function render(i) {
+index = i;
+engine.setAttribute('data-phase', String(i));
+nodes.forEach(function (node) {
+var step = Number(node.getAttribute('data-engine-step'));
+node.classList.toggle('is-active', step === i);
+node.classList.toggle('is-complete', step < i || i === phases.length - 1);
+node.setAttribute('aria-pressed', step === i ? 'true' : 'false');
+});
+if (gate) {
+gate.classList.toggle('is-active', i === 4);
+gate.classList.toggle('is-complete', i > 4 || i === phases.length - 1);
+}
+if (status && phases[i]) { status.textContent = phases[i].label; }
+}
+
+function stop() {
+if (timer) { window.clearInterval(timer); timer = null; }
+}
+
+function start() {
+if (reducedMotion || manualPause || !visible || document.hidden) { return; }
+stop();
+timer = window.setInterval(function () {
+render((index + 1) % phases.length);
+}, 1050);
+}
+
+function restartSoon() {
+if (resumeTimer) { window.clearTimeout(resumeTimer); }
+manualPause = true;
+stop();
+resumeTimer = window.setTimeout(function () {
+manualPause = false;
+start();
+}, 6400);
+}
+
+nodes.forEach(function (node) {
+node.setAttribute('aria-pressed', 'false');
+node.addEventListener('click', function () {
+render(Number(node.getAttribute('data-engine-step')));
+restartSoon();
+});
+});
+
+document.addEventListener('visibilitychange', function () {
+if (document.hidden) {
+stop();
+if (resumeTimer) { window.clearTimeout(resumeTimer); resumeTimer = null; }
+engine.classList.add('is-paused');
+} else {
+engine.classList.remove('is-paused');
+start();
+}
+});
+
+if (reducedMotion) {
+visible = true;
+render(phases.length - 1);
+return;
+}
+if (!('IntersectionObserver' in window)) {
+visible = true;
+render(0);
+start();
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+visible = entry.isIntersecting;
+if (visible) { engine.classList.remove('is-paused'); start(); }
+else { engine.classList.add('is-paused'); stop(); }
+});
+}, { threshold: 0.28 });
+observer.observe(engine);
+render(0);
 })();
 
   /* Leistungen: verbundene Systemebenen mit automatisch laufendem Signal */
@@ -327,6 +543,78 @@ if (entry.isIntersecting) { activateScene(); io.unobserve(entry.target); }
 });
 }, { threshold: 0.4 });
 io.observe(scene);
+})();
+
+/* Controlled Transformation: einmal sichtbare Systemumwandlung mit Replay */
+(function () {
+var scene = document.querySelector('[data-component="controlled-transformation"]');
+if (!scene) { return; }
+var section = scene.closest('section');
+var replay = section ? section.querySelector('[data-transform-replay]') : null;
+var visible = false;
+var completeTimer = null;
+var hasPlayed = false;
+
+function clearCompleteTimer() {
+if (completeTimer) { window.clearTimeout(completeTimer); completeTimer = null; }
+}
+
+function complete() {
+scene.classList.remove('is-running');
+scene.classList.add('is-complete');
+hasPlayed = true;
+clearCompleteTimer();
+}
+
+function play(force) {
+if (reducedMotion) { complete(); return; }
+if (!visible || document.hidden || (!force && hasPlayed)) { return; }
+clearCompleteTimer();
+scene.classList.remove('is-complete', 'is-paused', 'is-running');
+void scene.offsetWidth;
+scene.classList.add('is-running');
+completeTimer = window.setTimeout(complete, 9200);
+}
+
+if (replay) {
+replay.addEventListener('click', function () {
+hasPlayed = false;
+play(true);
+});
+}
+
+document.addEventListener('visibilitychange', function () {
+if (document.hidden) {
+scene.classList.add('is-paused');
+clearCompleteTimer();
+} else if (visible && scene.classList.contains('is-running')) {
+play(true);
+} else if (visible && !hasPlayed) {
+play(false);
+}
+});
+
+if (reducedMotion) {
+visible = true;
+complete();
+return;
+}
+if (!('IntersectionObserver' in window)) {
+visible = true;
+play(false);
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+visible = entry.isIntersecting;
+if (visible) { play(false); }
+else {
+scene.classList.add('is-paused');
+clearCompleteTimer();
+}
+});
+}, { threshold: 0.25 });
+observer.observe(scene);
 })();
 
 /* Resolution Principle: einmalige, kumulative Sequenz */
