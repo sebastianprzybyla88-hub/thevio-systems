@@ -711,18 +711,41 @@ var timer = null;
   });
 })();
 
-/* Relevanz: visuelle Problemzustaende statt Kartenreihe */
+/* Relevanz: Operations Signal Field */
 (function () {
-var story = document.querySelector('[data-component="relevance-story"]');
-if (!story) { return; }
-var states = Array.prototype.slice.call(story.querySelectorAll('.relevance-state'));
+var field = document.querySelector('[data-component="operations-field"]');
+if (!field) { return; }
+var states = Array.prototype.slice.call(field.querySelectorAll('.os-state'));
+var status = field.querySelector('.os-status-output strong');
+var description = field.querySelector('.os-state-description');
+var content = [
+{
+status: 'Eingänge nicht vereinheitlicht',
+description: 'Unterschiedliche Datenfragmente erreichen das System aus mehreren Richtungen und werden erst zu einem Vorgang gebündelt.'
+},
+{
+status: 'Verantwortung nicht eindeutig',
+description: 'Das Vorgangsobjekt erreicht eine Routingzone, aber die verbindliche Zuständigkeit bleibt unbestätigt.'
+},
+{
+status: 'Übergabe ohne gemeinsamen Kontext',
+description: 'Ein Vorgang bewegt sich über mehrere Übergabepunkte; an einer Schnittstelle droht Kontext verloren zu gehen.'
+},
+{
+status: 'Operativer Eingang nicht angebunden',
+description: 'Ein standortnaher Eingang wird in denselben Vorgang überführt, damit Erfassung und Freigabe sichtbar bleiben.'
+}
+];
 new Stepper({
-root: story,
+root: field,
 controls: states,
-interval: 3200,
+interval: 4600,
 autoplay: true,
 onActivate: function (i) {
-story.setAttribute('data-active', String(i));
+var item = content[i];
+field.setAttribute('data-active', String(i));
+if (item && status) { status.textContent = item.status; }
+if (item && description) { description.textContent = item.description; }
 }
 });
 })();
@@ -786,47 +809,43 @@ autoplay: false
 });
 })();
 
-/* Audit: drei Checkpoints mit konkretem Ergebnis */
+/* Audit: Process Diagnostic Console */
 (function () {
-var audit = document.querySelector('[data-component="audit-console"]');
-if (!audit) { return; }
-var checks = Array.prototype.slice.call(audit.querySelectorAll('.audit-check'));
-var box = audit.querySelector('.audit-result-box');
+var consoleEl = document.querySelector('[data-component="diagnostic-console"]');
+if (!consoleEl) { return; }
+var phases = Array.prototype.slice.call(consoleEl.querySelectorAll('.dc-phase'));
+var progress = consoleEl.querySelector('.dc-progress-value');
+var readouts = consoleEl.querySelectorAll('.dc-readout strong');
 var content = [
 {
-title: 'Kanäle bündeln',
-text: 'E-Mail, Formular, Telefon oder Postfach werden nur dann systematisiert, wenn ein gemeinsamer Vorgang daraus echten Nutzen stiftet.',
 question: 'Wo entsteht der Fall?',
-result: 'klarer Einstiegspunkt'
+diagnosis: 'Kanäle noch getrennt',
+result: 'Gemeinsamer Einstiegspunkt'
 },
 {
-title: 'Verantwortung klären',
-text: 'Rollen, Vertretungen und Eskalationen zeigen, ob Software wirklich entlastet oder nur neue Abstimmung erzeugt.',
-question: 'Wer darf entscheiden?',
-result: 'belastbare Zuständigkeit'
+question: 'Wer übernimmt verbindlich?',
+diagnosis: 'Verantwortung nicht eindeutig',
+result: 'Klare Rolle und Vertretung'
 },
 {
-title: 'Status sichtbar machen',
-text: 'Der Audit prüft, ob Teams den Fortschritt, offene Rückfragen und den Abschluss ohne Nachfassen erkennen können.',
-question: 'Woran erkennt man fertig?',
-result: 'messbarer Abschluss'
+question: 'Wann gilt der Vorgang als abgeschlossen?',
+diagnosis: 'Abschluss nicht verlässlich sichtbar',
+result: 'Messbarer Abschlusszustand'
 }
 ];
 function render(i) {
 var item = content[i];
-if (!box || !item) { return; }
-var title = box.querySelector('h3');
-var text = box.querySelector('p');
-var dd = box.querySelectorAll('dd');
-if (title) { title.textContent = item.title; }
-if (text) { text.textContent = item.text; }
-if (dd[0]) { dd[0].textContent = item.question; }
-if (dd[1]) { dd[1].textContent = item.result; }
+if (!item) { return; }
+consoleEl.setAttribute('data-active', String(i));
+if (progress) { progress.textContent = '0' + (i + 1) + ' / 03'; }
+if (readouts[0]) { readouts[0].textContent = item.question; }
+if (readouts[1]) { readouts[1].textContent = item.diagnosis; }
+if (readouts[2]) { readouts[2].textContent = item.result; }
 }
 new Stepper({
-root: audit,
-controls: checks,
-interval: 3600,
+root: consoleEl,
+controls: phases,
+interval: 4800,
 autoplay: true,
 onActivate: render
 });
