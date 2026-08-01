@@ -265,55 +265,58 @@
 </section>
 
 <hr class="section-divider" />
-<section class="section section--warm" id="zielgruppen" aria-labelledby="zielgruppen-heading">
+<section class="section section--signal-field" id="zielgruppen" aria-labelledby="zielgruppen-heading">
 <div class="container">
-<span class="section-label">Ausgangslage</span>
+<span class="section-label section-label--inverse">Ausgangslage</span>
 <h2 id="zielgruppen-heading">Wann Thevio Systems besonders relevant wird</h2>
-<p class="section-intro">Nicht die Branche entscheidet, sondern die Prozesslage: Thevio wird relevant, wenn Eingang, Zuständigkeit und Abschluss über Teams hinweg nicht mehr zuverlässig sichtbar sind.</p>
-<div class="relevance-story reveal" data-component="relevance-story">
-<div class="relevance-visual" aria-hidden="true">
-<div class="relevance-map">
-<span class="rv-node rv-node--input" data-rv-node="0">Eingang</span>
-<span class="rv-node rv-node--rules" data-rv-node="1">Regeln</span>
-<span class="rv-node rv-node--teams" data-rv-node="2">Teams</span>
-<span class="rv-node rv-node--field" data-rv-node="3">Standort</span>
-<span class="rv-node rv-node--result">Abschluss</span>
-<span class="rv-line rv-line--a"></span>
-<span class="rv-line rv-line--b"></span>
-<span class="rv-line rv-line--c"></span>
-<span class="rv-line rv-line--d"></span>
-<span class="rv-focus"></span>
+<p class="section-intro section-intro--inverse">Relevant wird Thevio dort, wo operative Vorgänge zwar entstehen, aber Eingang, Verantwortung oder Abschluss nicht mehr zuverlässig sichtbar sind.</p>
+<div class="operations-field reveal" data-component="operations-field" data-active="0">
+<div class="operations-stage" aria-hidden="true">
+<div class="os-grid"></div>
+<span class="os-fragment os-fragment--mail">Mail</span>
+<span class="os-fragment os-fragment--form">Formular</span>
+<span class="os-fragment os-fragment--field">Standort</span>
+<span class="os-lane os-lane--primary"></span>
+<span class="os-lane os-lane--split-a"></span>
+<span class="os-lane os-lane--split-b"></span>
+<span class="os-lane os-lane--handoff"></span>
+<div class="os-case-object">
+<span class="os-case-label">Vorgang</span>
+<span class="os-case-core"></span>
+<span class="os-case-ring"></span>
 </div>
-<div class="relevance-legend">
-<span>Signal erkannt</span>
-<strong>aus Fragmenten wird ein Vorgang</strong>
+<div class="os-routing-zone">
+<span>Route A</span>
+<span>Route B</span>
+<span>Freigabe offen</span>
 </div>
+<div class="os-handoff-zone">
+<span>Team</span>
+<span>Kontext</span>
 </div>
-<div class="relevance-states" role="tablist" aria-label="Typische Problemzustände">
-<button type="button" class="relevance-state" role="tab" id="relevance-tab-0" aria-selected="true" data-index="0">
-<span class="relevance-state-index">01</span>
-<span><strong>Unstrukturierte Eingänge</strong>E-Mail, Formular, Telefon und Postfach werden zu einem einheitlichen Vorgang.</span>
-</button>
-<button type="button" class="relevance-state" role="tab" id="relevance-tab-1" aria-selected="false" tabindex="-1" data-index="1">
-<span class="relevance-state-index">02</span>
-<span><strong>Unklare Zuständigkeit</strong>Regeln, Rollen, Vertretungen und Eskalationen werden nachvollziehbar.</span>
-</button>
-<button type="button" class="relevance-state" role="tab" id="relevance-tab-2" aria-selected="false" tabindex="-1" data-index="2">
-<span class="relevance-state-index">03</span>
-<span><strong>Mehrere Teams</strong>Status, Dokumente und Entscheidungen bleiben am selben Fall statt in einzelnen Nachrichten.</span>
-</button>
-<button type="button" class="relevance-state" role="tab" id="relevance-tab-3" aria-selected="false" tabindex="-1" data-index="3">
-<span class="relevance-state-index">04</span>
-<span><strong>Operative Arbeit</strong>Erfassung und Freigabe funktionieren auch mobil, am Standort oder direkt am Entstehungsort.</span>
-</button>
+<span class="os-field-input">Operativ</span>
+<span class="os-result-state">Abschluss sichtbar</span>
+<span class="os-disruption"></span>
+<span class="os-scanline"></span>
 </div>
+<div class="operations-diagnostics">
+<div class="os-status-output" aria-live="polite">
+<span>Diagnose</span>
+<strong>Eingänge nicht vereinheitlicht</strong>
 </div>
-<div class="target-tags">
-<span class="transformation-kicker">Typische Zielgruppen</span>
-<div class="process-desc--chips">
-<span class="process-chip">Mittelstand &amp; KMU</span>
-<span class="process-chip">Industrie, Service, Handel und E-Commerce</span>
-<span class="process-chip">Service-, Operations-, Qualitäts- und Vertriebsteams</span>
+<div class="os-state-rail" role="tablist" aria-label="Diagnostische Problemzustände">
+<button type="button" class="os-state" role="tab" id="os-state-0" aria-selected="true" data-index="0"><span>01</span><strong>Eingänge</strong></button>
+<button type="button" class="os-state" role="tab" id="os-state-1" aria-selected="false" tabindex="-1" data-index="1"><span>02</span><strong>Verantwortung</strong></button>
+<button type="button" class="os-state" role="tab" id="os-state-2" aria-selected="false" tabindex="-1" data-index="2"><span>03</span><strong>Teams</strong></button>
+<button type="button" class="os-state" role="tab" id="os-state-3" aria-selected="false" tabindex="-1" data-index="3"><span>04</span><strong>Operativ</strong></button>
+</div>
+<p class="os-state-description" aria-live="polite">Unterschiedliche Datenfragmente erreichen das System aus mehreren Richtungen und werden erst zu einem Vorgang gebündelt.</p>
+</div>
+<div class="os-meta-line" aria-label="Typische Zielgruppen">
+<span>Typische Zielgruppen</span>
+<strong>Mittelstand &amp; KMU</strong>
+<strong>Industrie, Service, Handel und E-Commerce</strong>
+<strong>Service-, Operations-, Qualitäts- und Vertriebsteams</strong>
 </div>
 </div>
 </div>
@@ -417,24 +420,41 @@
 </li>
 </ol>
 <p class="contact-note">Hinweis: Bei anschließender Umsetzung kann der Audit-Betrag auf das Projekt angerechnet werden.</p>
+<a href="audit.html" class="btn btn-primary contact-cta audit-editorial-cta">Prozess prüfen lassen</a>
 </div>
-<div class="audit-console reveal" data-component="audit-console">
-<span class="audit-demo-badge">Mini-Audit</span>
-<div class="audit-checks" role="tablist" aria-label="Audit-Checkpoints">
-<button type="button" class="audit-check is-active" role="tab" id="audit-check-0" aria-selected="true" data-index="0"><span>01</span>Kanäle</button>
-<button type="button" class="audit-check" role="tab" id="audit-check-1" aria-selected="false" tabindex="-1" data-index="1"><span>02</span>Verantwortung</button>
-<button type="button" class="audit-check" role="tab" id="audit-check-2" aria-selected="false" tabindex="-1" data-index="2"><span>03</span>Statussicht</button>
+<div class="diagnostic-console reveal" data-component="diagnostic-console" data-active="0">
+<div class="dc-header">
+<div>
+<span class="dc-kicker">Thevio Process Diagnostic</span>
+<strong>Scan aktiv</strong>
 </div>
-<div class="audit-result-box" aria-live="polite">
-<span class="audit-result-label">Checkpoint</span>
-<h3>Kanäle bündeln</h3>
-<p>E-Mail, Formular, Telefon oder Postfach werden nur dann systematisiert, wenn ein gemeinsamer Vorgang daraus echten Nutzen stiftet.</p>
-<dl>
-<div><dt>Prüffrage</dt><dd>Wo entsteht der Fall?</dd></div>
-<div><dt>Ergebnis</dt><dd>klarer Einstiegspunkt</dd></div>
-</dl>
+<div class="dc-progress" aria-live="polite">
+<span class="dc-status-light" aria-hidden="true"></span>
+<span class="dc-progress-value">01 / 03</span>
 </div>
-<a href="audit.html" class="btn btn-primary contact-cta">Prozess prüfen lassen</a>
+</div>
+<div class="dc-stage" aria-hidden="true">
+<span class="dc-signal dc-signal--mail">Mail</span>
+<span class="dc-signal dc-signal--ops">Ops</span>
+<span class="dc-signal dc-signal--service">Service</span>
+<span class="dc-case">Vorgang</span>
+<span class="dc-capture">Erfassung</span>
+<span class="dc-route dc-route--a">Rolle A</span>
+<span class="dc-route dc-route--b">Rolle B</span>
+<span class="dc-status-track"></span>
+<span class="dc-result">Result</span>
+<span class="dc-scan"></span>
+</div>
+<div class="dc-phase-track" role="tablist" aria-label="Audit-Diagnosephasen">
+<button type="button" class="dc-phase" role="tab" id="dc-phase-0" aria-selected="true" data-index="0"><span>01</span>Kanäle</button>
+<button type="button" class="dc-phase" role="tab" id="dc-phase-1" aria-selected="false" tabindex="-1" data-index="1"><span>02</span>Verantwortung</button>
+<button type="button" class="dc-phase" role="tab" id="dc-phase-2" aria-selected="false" tabindex="-1" data-index="2"><span>03</span>Statussicht</button>
+</div>
+<div class="dc-readouts" aria-live="polite">
+<div class="dc-readout dc-readout--question"><span>Prüffrage</span><strong>Wo entsteht der Fall?</strong></div>
+<div class="dc-readout dc-readout--diagnosis"><span>Diagnose</span><strong>Kanäle noch getrennt</strong></div>
+<div class="dc-readout dc-readout--result"><span>Mögliches Ergebnis</span><strong>Gemeinsamer Einstiegspunkt</strong></div>
+</div>
 </div>
 </div>
 </div>
