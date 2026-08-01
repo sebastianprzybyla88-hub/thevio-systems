@@ -6221,3 +6221,97 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           animation: none;
     }
 }
+
+/* Final collision polish for diagnostic target sections */
+.os-field-input,
+.os-result-state,
+.os-routing-zone,
+.os-handoff-zone,
+.dc-route,
+.dc-result,
+.dc-status-track {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.os-disruption {
+    z-index: 1;
+    opacity: 0.42;
+}
+
+.operations-field[data-active="0"] .os-field-input,
+.operations-field[data-active="0"] .os-result-state {
+    opacity: 0;
+}
+
+.operations-field[data-active="1"] .os-routing-zone,
+.operations-field[data-active="2"] .os-handoff-zone,
+.operations-field[data-active="3"] .os-field-input,
+.operations-field[data-active="3"] .os-result-state,
+.diagnostic-console[data-active="1"] .dc-route,
+.diagnostic-console[data-active="2"] .dc-route,
+.diagnostic-console[data-active="2"] .dc-result,
+.diagnostic-console[data-active="2"] .dc-status-track {
+    opacity: 1;
+    visibility: visible;
+}
+
+.operations-field[data-active="1"] .os-routing-zone {
+    right: clamp(1.75rem, 6vw, 5rem);
+    top: 12%;
+}
+
+.operations-field[data-active="1"] .os-routing-zone span:last-child {
+    transform: translateX(1.25rem);
+}
+
+.operations-field[data-active="1"] .os-handoff-zone,
+.operations-field[data-active="2"] .os-routing-zone,
+.operations-field[data-active="3"] .os-routing-zone,
+.operations-field[data-active="3"] .os-handoff-zone,
+.diagnostic-console[data-active="1"] .dc-signal,
+.diagnostic-console[data-active="2"] .dc-signal,
+.diagnostic-console[data-active="1"] .dc-capture,
+.diagnostic-console[data-active="2"] .dc-capture {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.diagnostic-console[data-active="2"] .dc-capture {
+    opacity: 0;
+}
+
+.diagnostic-console[data-active="2"] .dc-case {
+    left: 44%;
+}
+
+@media (max-width: 760px) {
+    .operations-field[data-active="1"] .os-fragment,
+    .operations-field[data-active="2"] .os-fragment,
+    .operations-field[data-active="3"] .os-fragment {
+          opacity: 0.05;
+    }
+
+    .operations-field[data-active="3"] .os-field-input {
+          left: 8%;
+          top: 28%;
+    }
+
+    .operations-field[data-active="3"] .os-result-state {
+          left: 8%;
+          bottom: 19%;
+    }
+
+    .operations-field[data-active="1"] .os-routing-zone {
+          right: 7%;
+          top: 9%;
+    }
+
+    .operations-field[data-active="1"] .os-routing-zone span:last-child {
+          transform: translateX(0);
+    }
+
+    .diagnostic-console[data-active="2"] .dc-case {
+          top: 42%;
+    }
+}
