@@ -57,6 +57,21 @@ nav.classList.remove('scrolled');
 }, { passive: true });
 }
 
+function alignCurrentHash() {
+if (!window.location.hash) { return; }
+var target = document.getElementById(window.location.hash.slice(1));
+if (!target) { return; }
+target.scrollIntoView({ block: 'start' });
+}
+
+if (window.location.hash) {
+window.addEventListener('load', function () {
+[0, 160, 520, 1000].forEach(function (delay) {
+window.setTimeout(alignCurrentHash, delay);
+});
+});
+}
+
 var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 var revealTargets = document.querySelectorAll('.reveal');
