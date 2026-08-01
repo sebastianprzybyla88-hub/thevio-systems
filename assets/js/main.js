@@ -640,6 +640,7 @@ observer.observe(scene);
 var seq = document.querySelector('.resolution-sequence[data-component="resolution-sequence"]');
 if (!seq) { return; }
 var steps = Array.prototype.slice.call(seq.querySelectorAll('.resolution-step'));
+var trigger = seq.closest('.resolution-section') || seq;
 var played = false;
 function play() {
 if (played) { return; }
@@ -661,8 +662,8 @@ setPulse(seq, step, '.resolution-step-dot');
 if (!('IntersectionObserver' in window)) { play(); return; }
 var io = new IntersectionObserver(function (entries) {
 entries.forEach(function (entry) { if (entry.isIntersecting) { play(); io.unobserve(entry.target); } });
-}, { threshold: 0.5 });
-io.observe(seq);
+}, { threshold: 0.18 });
+io.observe(trigger);
 })();
 
 /* Zielgruppen: primaer Benutzersteuerung, langsame Demonstration bis zur ersten Interaktion */
