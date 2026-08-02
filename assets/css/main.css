@@ -6753,3 +6753,460 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           top: 42%;
     }
 }
+
+/* Final premium composition polish for relevance and mini-audit */
+.section--signal-field {
+    padding-block: clamp(4.35rem, 3.2rem + 4.2vw, 6.8rem);
+}
+
+.section--signal-field h2 {
+    max-width: 17ch;
+    font-size: clamp(2.65rem, 1.85rem + 3.1vw, 4.75rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+    text-wrap: balance;
+}
+
+.section--signal-field .section-intro {
+    max-width: 58ch;
+    margin-bottom: clamp(2.1rem, 1.45rem + 2.2vw, 3.6rem);
+}
+
+.operations-stage {
+    min-height: clamp(390px, 39vw, 560px);
+}
+
+.os-case-object {
+    --os-case-width: clamp(180px, 19vw, 260px);
+}
+
+.operations-field[data-active="0"] .os-case-object {
+    left: 22%;
+    top: 51%;
+    transform: translateY(-50%);
+}
+
+.operations-field[data-active="0"] .os-fragment--mail { transform: translate3d(38px, 26px, 0); }
+.operations-field[data-active="0"] .os-fragment--form { transform: translate3d(82px, 42px, 0); }
+.operations-field[data-active="0"] .os-fragment--field { transform: translate3d(50px, -42px, 0); }
+
+.operations-field[data-active="0"] .os-result-state {
+    right: clamp(2.5rem, 7vw, 6rem);
+    bottom: 18%;
+    opacity: 0.34;
+    visibility: visible;
+}
+
+.operations-field[data-active="1"] .os-case-object {
+    transform: translate3d(260%,-72%,0);
+}
+
+.operations-field[data-active="2"] .os-case-object {
+    transform: translate3d(330%,42%,0);
+}
+
+.operations-field[data-active="3"] .os-case-object {
+    right: clamp(3rem, 8vw, 6.5rem);
+}
+
+.operations-field[data-active="3"] .os-result-state {
+    right: clamp(2.4rem, 7vw, 5.25rem);
+    bottom: 17%;
+}
+
+.os-lane--primary,
+.os-lane--split-a,
+.os-lane--split-b,
+.os-lane--handoff {
+    opacity: 0.52;
+}
+
+.operations-diagnostics {
+    padding-top: clamp(1rem, 0.8rem + 0.8vw, 1.55rem);
+}
+
+.os-state-rail {
+    gap: clamp(0.65rem, 0.45rem + 0.7vw, 1.05rem);
+}
+
+.os-state,
+.dc-phase {
+    color: rgba(169,180,196,0.68);
+}
+
+.os-state[aria-selected="true"],
+.dc-phase[aria-selected="true"] {
+    color: rgba(248,249,251,0.96);
+}
+
+.os-state[aria-selected="true"] span,
+.dc-phase[aria-selected="true"] span {
+    box-shadow: 0 0 0 6px rgba(76,124,209,0.12), 0 10px 24px rgba(76,124,209,0.22);
+}
+
+.os-meta-line {
+    display: grid;
+    grid-template-columns: auto repeat(3, minmax(0, auto));
+    align-items: baseline;
+    column-gap: clamp(1rem, 1.4vw, 1.65rem);
+    row-gap: 0.55rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(221,225,233,0.12);
+}
+
+.os-meta-line strong {
+    position: relative;
+    padding-left: clamp(0.8rem, 0.8vw, 1rem);
+    font-size: clamp(0.88rem, 0.84rem + 0.12vw, 0.96rem);
+    line-height: 1.35;
+}
+
+.os-meta-line strong::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.18em;
+    bottom: 0.18em;
+    width: 1px;
+    background: rgba(221,225,233,0.18);
+}
+
+#audit {
+    padding-block: clamp(4.7rem, 3.2rem + 4.2vw, 7rem);
+}
+
+.audit-layout {
+    gap: clamp(2.35rem, 1.8rem + 3.4vw, 4.55rem);
+}
+
+#audit .about-content {
+    max-width: 650px;
+}
+
+#audit-heading {
+    max-width: 14ch;
+    margin-bottom: 0.72rem;
+    font-size: clamp(2.85rem, 2.05rem + 3vw, 4.1rem);
+    line-height: 1.03;
+    letter-spacing: 0;
+    text-wrap: balance;
+}
+
+#audit .audit-kicker {
+    margin-bottom: 0.95rem;
+}
+
+#audit .about-content > p:not(.audit-kicker):not(.contact-note) {
+    max-width: 56ch;
+}
+
+#audit .audit-steps {
+    gap: 0.9rem;
+    margin-block: clamp(1.45rem, 1.1rem + 1.2vw, 2.15rem);
+    padding-top: clamp(1.25rem, 1rem + 0.85vw, 1.75rem);
+}
+
+#audit .audit-step {
+    gap: 0.9rem;
+}
+
+#audit .contact-note {
+    margin-bottom: clamp(1.4rem, 1rem + 1.2vw, 2rem);
+}
+
+.audit-editorial-cta {
+    margin-top: 0;
+}
+
+.diagnostic-console {
+    padding: clamp(1.6rem, 1.2rem + 1.5vw, 2.25rem);
+}
+
+.dc-stage {
+    min-height: clamp(250px, 24vw, 320px);
+}
+
+.dc-stage::before {
+    left: 10%;
+    right: 10%;
+    opacity: 0.72;
+}
+
+.diagnostic-console[data-active="0"] .dc-signal--mail { transform: translate3d(54px, 8px, 0); }
+.diagnostic-console[data-active="0"] .dc-signal--ops { transform: translate3d(58px, -30px, 0); }
+.diagnostic-console[data-active="0"] .dc-signal--service { transform: translate3d(-92px, -10px, 0); }
+
+.diagnostic-console[data-active="0"] .dc-case,
+.diagnostic-console[data-active="0"] .dc-capture {
+    color: rgba(248,249,251,0.6);
+    border-color: rgba(221,225,233,0.16);
+}
+
+.diagnostic-console[data-active="1"] .dc-case {
+    left: 57%;
+    border-color: rgba(124,167,232,0.58);
+}
+
+.diagnostic-console[data-active="1"] .dc-route {
+    color: rgba(248,249,251,0.72);
+}
+
+.diagnostic-console[data-active="2"] .dc-case {
+    left: 43%;
+}
+
+.diagnostic-console[data-active="2"] .dc-result {
+    color: rgba(221,255,237,0.78);
+}
+
+.dc-phase-track {
+    margin-top: 1.05rem;
+}
+
+.dc-phase {
+    min-height: 58px;
+}
+
+.dc-phase:not([aria-selected="true"]) span {
+    opacity: 0.86;
+}
+
+.dc-readout {
+    grid-template-columns: minmax(8.5rem, 0.32fr) minmax(0, 1fr);
+    padding-block: 0.82rem;
+}
+
+.dc-readout span {
+    align-self: start;
+}
+
+@media (min-width: 960px) {
+    .section--signal-field h2 {
+          max-width: 18ch;
+    }
+
+    #audit .about-content {
+          max-width: 720px;
+    }
+
+    #audit-heading {
+          max-width: 18ch;
+          font-size: clamp(2.85rem, 1.95rem + 2.65vw, 3.85rem);
+    }
+
+    .operations-field[data-active="1"] .os-routing-zone {
+          right: clamp(2.5rem, 9vw, 7rem);
+          top: 15%;
+    }
+
+    .diagnostic-console {
+          transform: translateY(-0.35rem);
+    }
+}
+
+@media (min-width: 761px) and (max-width: 959px) {
+    .section--signal-field {
+          padding-block: clamp(4.35rem, 3.7rem + 3vw, 5.75rem);
+    }
+
+    .section--signal-field h2 {
+          max-width: 15ch;
+    }
+
+    .operations-stage {
+          min-height: 430px;
+    }
+
+    .os-meta-line {
+          grid-template-columns: 1fr;
+    }
+
+    .os-meta-line strong {
+          min-height: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .section--signal-field,
+    #audit {
+          padding-block: clamp(3.35rem, 2.85rem + 2.8vw, 4.35rem);
+    }
+
+    .section--signal-field h2 {
+          max-width: 10.8ch;
+          font-size: clamp(2.15rem, 1.7rem + 3.8vw, 2.85rem);
+          line-height: 1.04;
+    }
+
+    .section--signal-field .section-intro {
+          margin-bottom: clamp(1.65rem, 1.2rem + 2vw, 2.25rem);
+          line-height: 1.58;
+    }
+
+    .operations-field {
+          gap: 1rem;
+    }
+
+    .operations-stage {
+          min-height: 370px;
+    }
+
+    .os-case-object {
+          --os-case-width: 140px;
+    }
+
+    .operations-field[data-active="0"] .os-case-object {
+          left: 35%;
+          top: 52%;
+          transform: translate(-50%,-50%);
+    }
+
+    .operations-field[data-active="0"] .os-fragment--mail { transform: translate3d(2px, 34px, 0); }
+    .operations-field[data-active="0"] .os-fragment--form { transform: translate3d(6px, 30px, 0); }
+    .operations-field[data-active="0"] .os-fragment--field { transform: translate3d(8px, -34px, 0); }
+
+    .operations-field[data-active="0"] .os-result-state {
+          right: 7%;
+          bottom: 14%;
+          opacity: 0.28;
+    }
+
+    .operations-field[data-active="1"] .os-case-object {
+          top: 38%;
+    }
+
+    .operations-field[data-active="2"] .os-case-object {
+          top: 54%;
+    }
+
+    .operations-field[data-active="3"] .os-case-object {
+          right: 1.25rem;
+    }
+
+    .operations-diagnostics {
+          gap: 1.05rem;
+          padding-top: 1rem;
+    }
+
+    .os-status-output {
+          gap: 0.35rem;
+    }
+
+    .os-status-output strong {
+          max-width: 20ch;
+          font-size: clamp(1.35rem, 1.1rem + 1.4vw, 1.7rem);
+    }
+
+    .os-state-rail {
+          gap: 0.55rem 0.75rem;
+    }
+
+    .os-state {
+          min-height: 54px;
+          gap: 0.65rem;
+    }
+
+    .os-state span {
+          width: 2.55rem;
+          height: 2.55rem;
+    }
+
+    .os-state-description {
+          font-size: 0.96rem;
+          line-height: 1.55;
+    }
+
+    .os-meta-line {
+          grid-template-columns: 1fr;
+          gap: 0.65rem;
+          padding-top: 1rem;
+    }
+
+    .os-meta-line span {
+          font-size: 0.74rem;
+    }
+
+    .os-meta-line strong {
+          padding-left: 0;
+          font-size: 0.9rem;
+    }
+
+    .os-meta-line strong::before {
+          left: auto;
+          right: auto;
+          top: -0.33rem;
+          bottom: auto;
+          width: 100%;
+          height: 1px;
+          background: rgba(221,225,233,0.12);
+    }
+
+    #audit-heading {
+          max-width: 11ch;
+          margin-bottom: 0.6rem;
+          font-size: clamp(2.35rem, 1.86rem + 4.2vw, 3.05rem);
+          line-height: 1.04;
+    }
+
+    #audit .audit-kicker {
+          margin-bottom: 0.78rem;
+    }
+
+    #audit .about-content > p:not(.audit-kicker):not(.contact-note) {
+          line-height: 1.58;
+    }
+
+    #audit .audit-steps {
+          gap: 0.78rem;
+          margin-block: 1.25rem;
+          padding-top: 1.15rem;
+    }
+
+    #audit .audit-step-index {
+          width: 30px;
+          height: 30px;
+    }
+
+    #audit .contact-note {
+          margin-bottom: 1.25rem;
+    }
+
+    .audit-layout {
+          gap: 1.8rem;
+    }
+
+    .diagnostic-console {
+          padding: 0.85rem;
+    }
+
+    .dc-header {
+          margin-bottom: 1rem;
+          padding-bottom: 1rem;
+    }
+
+    .dc-stage {
+          min-height: 280px;
+    }
+
+    .diagnostic-console[data-active="0"] .dc-signal--mail { transform: translate3d(0, 42px, 0); }
+    .diagnostic-console[data-active="0"] .dc-signal--ops { transform: translate3d(0, 0, 0); }
+    .diagnostic-console[data-active="0"] .dc-signal--service { transform: translate3d(0, 42px, 0); }
+
+    .dc-phase-track {
+          margin-top: 0.85rem;
+    }
+
+    .dc-phase {
+          min-height: 64px;
+    }
+
+    .dc-phase span {
+          width: 2.6rem;
+          height: 2.6rem;
+          margin-bottom: 0.52rem;
+    }
+
+    .dc-readout {
+          padding-block: 0.72rem;
+    }
+}
