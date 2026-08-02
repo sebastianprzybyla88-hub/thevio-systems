@@ -238,28 +238,50 @@
 <span class="section-label section-label--inverse">Thevio Resolution Principle</span>
 <h2 id="resolution-heading">Beantwortet ist noch nicht gelöst.</h2>
 <p class="section-intro section-intro--inverse">Viele Systeme messen nur, wie schnell ein Vorgang beantwortet wurde. Thevio betrachtet, ob er tatsächlich zu Ende gebracht wurde.</p>
+<div class="resolution-framework-proof" aria-label="Triovo Resolution Framework">
+<span><strong>Triovo-eigenes Framework</strong></span>
+<span>Status, Nachweis, Reopen-Logik</span>
+<span>Abschlussqualität als Produktmetrik</span>
+</div>
 <ol class="resolution-sequence" data-component="resolution-sequence" role="list">
-<li class="resolution-step" data-step="0"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Anfrage beantwortet</span></li>
-<li class="resolution-step" data-step="1"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Vorgang bearbeitet</span></li>
-<li class="resolution-step" data-step="2"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Rückfrage offen</span></li>
-<li class="resolution-step" data-step="3"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Erneut geöffnet</span></li>
-<li class="resolution-step" data-step="4"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Tatsächlich geklärt</span></li>
-<li class="resolution-step resolution-step--final" data-step="5"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Vollständig abgeschlossen</span></li>
+<li class="resolution-step" data-step="0"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Antwort</span></li>
+<li class="resolution-step" data-step="1"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Bearbeitung</span></li>
+<li class="resolution-step" data-step="2"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Rückfrage</span></li>
+<li class="resolution-step" data-step="3"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Reopen</span></li>
+<li class="resolution-step" data-step="4"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Klärung</span></li>
+<li class="resolution-step resolution-step--final" data-step="5"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Abschluss</span></li>
 </ol>
-<p class="resolution-note">Zusätzlich sichtbar: Wiederöffnungen, fehlende Informationen, Rückfragen, Eskalationen und Fristüberschreitungen &ndash; nicht nur die reine Antwortzeit.</p>
-<p class="competency-principle competency-principle--inverse card-link-gap">Der Resolution Score ist ein bei Triovo entwickelter Ansatz &ndash; kein branchenweit validierter Standard.</p>
 </div>
 <div class="resolution-visual reveal" data-component="resolution-visual" aria-label="Beispielhafte Resolution-Visualisierung">
+<div class="resolution-visual-head">
+<span>Triovo Core Metric</span>
+<strong>Resolution Score Engine</strong>
+</div>
+<div class="resolution-engine-grid" aria-hidden="true"></div>
 <div class="resolution-ring" aria-hidden="true">
-<span class="resolution-ring-core">Beispiel<br><strong>74</strong></span>
+<span class="resolution-ring-core"><small>Resolution</small><strong>74</strong><em>score</em></span>
+<span class="resolution-ring-orbit resolution-ring-orbit--one"></span>
+<span class="resolution-ring-orbit resolution-ring-orbit--two"></span>
+<span class="resolution-ring-pulse"></span>
 </div>
 <div class="resolution-architecture" role="list">
-<span role="listitem">Antwort gesendet</span>
-<span role="listitem">Rückfrage offen</span>
-<span role="listitem">Freigabe geprüft</span>
-<span role="listitem" class="is-complete">Abschluss belegt</span>
+<span role="listitem">Antwortzeit</span>
+<span role="listitem">Rückfragen</span>
+<span role="listitem">Freigabe</span>
+<span role="listitem" class="is-complete">Abschluss</span>
+</div>
+<div class="resolution-score-formula" aria-label="Score-Logik">
+<span><strong>+ Abschluss</strong> belegt</span>
+<span><strong>+ Freigabe</strong> geprüft</span>
+<span><strong>- Reopen</strong> erkannt</span>
+<span><strong>- Missing</strong> Info offen</span>
 </div>
 <p class="resolution-visual-note">Beispielwert zur Erklärung des Prinzips, kein Branchenstandard.</p>
+</div>
+</div>
+<div class="resolution-footnotes">
+<p class="resolution-note">Zusätzlich sichtbar: Wiederöffnungen, fehlende Informationen, Rückfragen, Eskalationen und Fristüberschreitungen &ndash; nicht nur die reine Antwortzeit.</p>
+<p class="competency-principle competency-principle--inverse">Der Resolution Score ist ein bei Triovo entwickelter Ansatz &ndash; kein branchenweit validierter Standard.</p>
 </div>
 </div>
 </section>
