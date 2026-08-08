@@ -528,6 +528,65 @@ observer.observe(scene);
 /* Resolution Principle: einmalige, kumulative Sequenz */
 (function () {
 var seq = document.querySelector('.resolution-sequence[data-component="resolution-sequence"]');
+var visual = document.querySelector('[data-component="resolution-visual"]');
+if (!seq && !visual) { return; }
+if (visual) {
+var factors = Array.prototype.slice.call(visual.querySelectorAll('[data-resolution-factor]'));
+var scoreNode = visual.querySelector('[data-resolution-score]');
+var verdictNode = visual.querySelector('[data-resolution-verdict]');
+var readout = visual.querySelector('.resolution-engine-readout');
+var factorConfig = {
+speed: { label: 'Antwortzeit', value: 8, text: 'schnelle Antwort zählt, entscheidet aber nicht allein.' },
+questions: { label: 'Rückfragen', value: -7, text: 'Rückfragen senken den Score, wenn Klärung fehlt.' },
+approval: { label: 'Freigabe', value: 12, text: 'geprüfte Freigabe erhöht die Belastbarkeit.' },
+closure: { label: 'Abschluss', value: 18, text: 'belegter Abschluss ist der stärkste positive Faktor.' },
+reopen: { label: 'Reopen', value: -14, text: 'Wiederöffnungen zeigen, dass der Vorgang noch nicht stabil gelöst ist.' },
+missing: { label: 'Missing Info', value: -11, text: 'fehlende Information macht den Abschluss unsicher.' },
+proof: { label: 'Nachweis', value: 9, text: 'Nachweisführung macht das Ergebnis prüfbar.' },
+sla: { label: 'Frist', value: -9, text: 'Fristrisiko senkt die operative Qualität.' }
+};
+function clampScore(value) {
+return Math.max(0, Math.min(100, value));
+}
+function renderScore() {
+var activeLabels = [];
+var activeNotes = [];
+var score = 35;
+factors.forEach(function (button) {
+var key = button.getAttribute('data-resolution-factor');
+var config = factorConfig[key];
+var active = button.getAttribute('aria-pressed') === 'true';
+if (!config) { return; }
+button.classList.toggle('is-active', active);
+if (active) {
+score += config.value;
+activeLabels.push(config.label);
+activeNotes.push(config.text);
+}
+});
+score = clampScore(score);
+visual.style.setProperty('--resolution-score', String(score));
+visual.style.setProperty('--resolution-score-stop', score + '%');
+visual.setAttribute('data-score', String(score));
+if (scoreNode) { scoreNode.textContent = String(score); }
+if (verdictNode) {
+verdictNode.textContent = score >= 82 ? 'stark' : (score >= 64 ? 'stabil' : (score >= 45 ? 'riskant' : 'offen'));
+}
+if (readout) {
+var ruleText = activeLabels.length ? activeLabels.join(', ') : 'keine aktive Regel';
+var noteText = activeNotes.length ? activeNotes.slice(0, 2).join(' ') : 'Ohne Regeln bleibt nur Bauchgefühl.';
+readout.innerHTML = '<strong>Aktive Framework-Regeln:</strong> ' + ruleText + '. ' + noteText;
+}
+}
+factors.forEach(function (button) {
+button.addEventListener('click', function () {
+var active = button.getAttribute('aria-pressed') === 'true';
+button.setAttribute('aria-pressed', active ? 'false' : 'true');
+renderScore();
+});
+});
+renderScore();
+}
 if (!seq) { return; }
 var steps = Array.prototype.slice.call(seq.querySelectorAll('.resolution-step'));
 var trigger = seq.closest('.resolution-section') || seq;
@@ -535,7 +594,6 @@ var played = false;
 function play() {
 if (played) { return; }
 played = true;
-var visual = document.querySelector('[data-component="resolution-visual"]');
 if (visual) { visual.classList.add('is-active'); }
 if (reducedMotion) {
 steps.forEach(function (s) { s.classList.add('is-active'); });

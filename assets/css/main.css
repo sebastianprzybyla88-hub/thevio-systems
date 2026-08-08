@@ -7681,3 +7681,151 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           font-size: 0.8rem;
     }
 }
+
+/* Final override: make the Resolution Score read as an interactive custom framework. */
+.resolution-visual {
+    --resolution-score: 74;
+    --resolution-score-stop: 74%;
+}
+
+.resolution-ring {
+    background:
+          conic-gradient(from -22deg, #5CC39B 0 var(--resolution-score-stop), #D9B56B var(--resolution-score-stop) calc(var(--resolution-score-stop) + 8%), rgba(255,255,255,0.13) calc(var(--resolution-score-stop) + 8%) 100%);
+    transition: background 0.55s var(--ease-premium), transform 0.45s var(--ease-premium), box-shadow 0.45s ease;
+}
+
+.resolution-ring-core em {
+    color: #8AD8B9;
+    transition: color 0.35s ease;
+}
+
+.resolution-visual[data-score^="0"] .resolution-ring-core em,
+.resolution-visual[data-score^="1"] .resolution-ring-core em,
+.resolution-visual[data-score^="2"] .resolution-ring-core em,
+.resolution-visual[data-score^="3"] .resolution-ring-core em,
+.resolution-visual[data-score^="4"] .resolution-ring-core em {
+    color: #D9B56B;
+}
+
+.resolution-factor,
+.resolution-score-formula button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    min-height: 48px;
+    border: 1px solid rgba(221,225,233,0.1);
+    border-radius: 8px;
+    background: rgba(6,15,24,0.48);
+    color: rgba(232,238,247,0.7);
+    font-family: inherit;
+    font-size: 0.74rem;
+    font-weight: 760;
+    line-height: 1.15;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease, transform 0.35s var(--ease-premium), box-shadow 0.35s ease;
+}
+
+.resolution-factor {
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.7rem 0.65rem 0.7rem 1.55rem;
+}
+
+.resolution-factor::before,
+.resolution-score-formula button::before {
+    content: '';
+    position: absolute;
+    left: 0.62rem;
+    top: 50%;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 50%;
+    background: #7CA7E8;
+    opacity: 0.58;
+    transform: translateY(-50%);
+}
+
+.resolution-factor strong {
+    color: rgba(255,255,255,0.62);
+    font-size: 0.72rem;
+}
+
+.resolution-factor:hover,
+.resolution-factor:focus-visible,
+.resolution-score-formula button:hover,
+.resolution-score-formula button:focus-visible {
+    border-color: rgba(124,167,232,0.5);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.resolution-factor[aria-pressed="true"],
+.resolution-factor.is-active,
+.resolution-score-formula button[aria-pressed="true"] {
+    border-color: rgba(92,195,155,0.46);
+    background: rgba(72,135,111,0.18);
+    color: rgba(255,255,255,0.95);
+    box-shadow: 0 0 0 1px rgba(92,195,155,0.08);
+}
+
+.resolution-factor[aria-pressed="true"]::before,
+.resolution-score-formula button[aria-pressed="true"]::before {
+    background: #5CC39B;
+    opacity: 1;
+    box-shadow: 0 0 0 4px rgba(92,195,155,0.1);
+}
+
+.resolution-score-formula {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.resolution-score-formula button {
+    display: block;
+    padding: 0.65rem 0.65rem 0.65rem 1.45rem;
+}
+
+.resolution-score-formula button strong {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: #D9B56B;
+    font-size: 0.68rem;
+}
+
+.resolution-score-formula button[aria-pressed="true"] strong {
+    color: #8AD8B9;
+}
+
+.resolution-engine-readout {
+    position: relative;
+    z-index: 1;
+    min-height: 54px;
+    margin-top: 0.8rem;
+    padding: 0.78rem 0.85rem;
+    border: 1px solid rgba(124,167,232,0.18);
+    border-radius: 8px;
+    background: rgba(6,15,24,0.52);
+    color: #AEBAD0;
+    font-size: 0.8rem;
+    line-height: 1.42;
+}
+
+.resolution-engine-readout strong {
+    color: #FFFFFF;
+}
+
+@media (max-width: 720px) {
+    .resolution-architecture,
+    .resolution-score-formula {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 460px) {
+    .resolution-architecture,
+    .resolution-score-formula {
+          grid-template-columns: 1fr;
+    }
+}

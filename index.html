@@ -169,11 +169,11 @@
 <div class="resolution-copy">
 <span class="section-label section-label--inverse">Thevio Resolution Principle</span>
 <h2 id="resolution-heading">Beantwortet ist noch nicht gelöst.</h2>
-<p class="section-intro section-intro--inverse">Viele Systeme messen nur, wie schnell ein Vorgang beantwortet wurde. Thevio betrachtet, ob er tatsächlich zu Ende gebracht wurde.</p>
+<p class="section-intro section-intro--inverse">Viele Systeme messen nur, wie schnell ein Vorgang beantwortet wurde. Thevio entwickelt dafür eigene Frameworks: Bewertungslogik, Statusmodell und Nachweisführung werden als Produktmechanik programmiert.</p>
 <div class="resolution-framework-proof" aria-label="Triovo Resolution Framework">
-<span><strong>Triovo-eigenes Framework</strong></span>
-<span>Status, Nachweis, Reopen-Logik</span>
-<span>Abschlussqualität als Produktmetrik</span>
+<span><strong>Eigenes Score-Framework</strong></span>
+<span>Regeln, Gewichtung und Reopen-Logik</span>
+<span>Abschlussqualität als programmierte Metrik</span>
 </div>
 <ol class="resolution-sequence" data-component="resolution-sequence" role="list">
 <li class="resolution-step" data-step="0"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Antwort</span></li>
@@ -184,36 +184,37 @@
 <li class="resolution-step resolution-step--final" data-step="5"><span class="resolution-step-dot" aria-hidden="true"></span><span class="resolution-step-label">Abschluss</span></li>
 </ol>
 </div>
-<div class="resolution-visual reveal" data-component="resolution-visual" aria-label="Beispielhafte Resolution-Visualisierung">
+<div class="resolution-visual reveal" data-component="resolution-visual" data-score="74" aria-label="Interaktive Resolution Score Engine">
 <div class="resolution-visual-head">
-<span>Triovo Core Metric</span>
+<span>Triovo Framework Layer</span>
 <strong>Resolution Score Engine</strong>
 </div>
 <div class="resolution-engine-grid" aria-hidden="true"></div>
 <div class="resolution-ring" aria-hidden="true">
-<span class="resolution-ring-core"><small>Resolution</small><strong>74</strong><em>score</em></span>
+<span class="resolution-ring-core"><small>Framework Score</small><strong data-resolution-score>74</strong><em data-resolution-verdict>stabil</em></span>
 <span class="resolution-ring-orbit resolution-ring-orbit--one"></span>
 <span class="resolution-ring-orbit resolution-ring-orbit--two"></span>
 <span class="resolution-ring-pulse"></span>
 </div>
-<div class="resolution-architecture" role="list">
-<span role="listitem">Antwortzeit</span>
-<span role="listitem">Rückfragen</span>
-<span role="listitem">Freigabe</span>
-<span role="listitem" class="is-complete">Abschluss</span>
+<div class="resolution-architecture" role="group" aria-label="Score-Faktoren auswählen">
+<button type="button" class="resolution-factor" data-resolution-factor="speed" aria-pressed="false"><span>Antwortzeit</span><strong>+8</strong></button>
+<button type="button" class="resolution-factor" data-resolution-factor="questions" aria-pressed="false"><span>Rückfragen</span><strong>-7</strong></button>
+<button type="button" class="resolution-factor" data-resolution-factor="approval" aria-pressed="true"><span>Freigabe</span><strong>+12</strong></button>
+<button type="button" class="resolution-factor is-complete" data-resolution-factor="closure" aria-pressed="true"><span>Abschluss</span><strong>+18</strong></button>
 </div>
 <div class="resolution-score-formula" aria-label="Score-Logik">
-<span><strong>+ Abschluss</strong> belegt</span>
-<span><strong>+ Freigabe</strong> geprüft</span>
-<span><strong>- Reopen</strong> erkannt</span>
-<span><strong>- Missing</strong> Info offen</span>
+<button type="button" data-resolution-factor="reopen" aria-pressed="false"><strong>- Reopen</strong> erkannt</button>
+<button type="button" data-resolution-factor="missing" aria-pressed="false"><strong>- Missing</strong> Info offen</button>
+<button type="button" data-resolution-factor="proof" aria-pressed="true"><strong>+ Nachweis</strong> vorhanden</button>
+<button type="button" data-resolution-factor="sla" aria-pressed="false"><strong>- Frist</strong> gefährdet</button>
 </div>
-<p class="resolution-visual-note">Beispielwert zur Erklärung des Prinzips, kein Branchenstandard.</p>
+<p class="resolution-engine-readout" aria-live="polite"><strong>Aktive Framework-Regeln:</strong> Freigabe, Abschluss und Nachweis erhöhen die Belastbarkeit des Vorgangs.</p>
+<p class="resolution-visual-note">Interaktives Beispiel der Triovo-Logik: kein Branchenstandard, sondern ein eigenes Bewertungsmodell von Thevio Systems.</p>
 </div>
 </div>
 <div class="resolution-footnotes">
 <p class="resolution-note">Zusätzlich sichtbar: Wiederöffnungen, fehlende Informationen, Rückfragen, Eskalationen und Fristüberschreitungen &ndash; nicht nur die reine Antwortzeit.</p>
-<p class="competency-principle competency-principle--inverse">Der Resolution Score ist ein bei Triovo entwickelter Ansatz &ndash; kein branchenweit validierter Standard.</p>
+<p class="competency-principle competency-principle--inverse">Der Resolution Score zeigt Thevios Fähigkeit, eigene Prozess-Frameworks zu entwickeln: Regeln werden nicht nur visualisiert, sondern als Softwarelogik nutzbar gemacht.</p>
 </div>
 </div>
 </section>
