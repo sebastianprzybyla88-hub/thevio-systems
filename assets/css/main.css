@@ -7214,7 +7214,7 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 /* Final override: make the relevance graphic read as a clear process map. */
 .operations-stage.operations-map {
     display: grid;
-    grid-template-columns: minmax(180px, 0.9fr) minmax(56px, 0.26fr) minmax(230px, 0.88fr) minmax(56px, 0.26fr) minmax(220px, 1fr);
+    grid-template-columns: minmax(180px, 0.86fr) minmax(42px, 0.18fr) minmax(270px, 1.05fr) minmax(42px, 0.18fr) minmax(220px, 1fr);
     align-items: center;
     gap: clamp(0.85rem, 2vw, 1.35rem);
     min-height: clamp(430px, 43vw, 560px);
@@ -7330,6 +7330,7 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           linear-gradient(145deg, rgba(42,74,121,0.68), rgba(11,22,36,0.9)),
           rgba(11,22,36,0.88);
     box-shadow: 0 26px 72px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.04);
+    overflow: hidden;
     transform: none;
 }
 
@@ -7342,17 +7343,18 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 }
 
 .operations-map .os-case-map strong {
-    max-width: 12ch;
+    max-width: 100%;
     color: #FFFFFF;
-    font-size: clamp(1.55rem, 2.8vw, 2.35rem);
-    line-height: 1.02;
+    font-size: clamp(1.45rem, 2.15vw, 2rem);
+    line-height: 1.06;
+    overflow-wrap: anywhere;
 }
 
 .operations-map .os-case-core {
     position: relative;
     left: auto;
     top: auto;
-    width: 100%;
+    width: calc(100% - 1.45rem);
     height: 4px;
     margin-top: 0.65rem;
     border-radius: 999px;
@@ -7361,8 +7363,8 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
 }
 
 .operations-map .os-case-ring {
-    right: 1.1rem;
-    bottom: 1.1rem;
+    right: 1rem;
+    bottom: 1.02rem;
     width: 1.15rem;
     height: 1.15rem;
     border-color: #10C7DD;
