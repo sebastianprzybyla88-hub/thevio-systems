@@ -7495,3 +7495,191 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           font-size: 1.35rem;
     }
 }
+
+/* Final override: make the mini-audit graphic read as an explicit diagnostic map. */
+.diagnostic-console .dc-stage.dc-audit-map {
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr) 34px minmax(136px, 1.08fr) 34px minmax(120px, 1fr);
+    align-items: stretch;
+    gap: 0.75rem;
+    min-height: 320px;
+    padding: clamp(0.9rem, 1.6vw, 1.15rem);
+    overflow: hidden;
+}
+
+.diagnostic-console .dc-stage.dc-audit-map::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background:
+          linear-gradient(90deg, rgba(111,177,255,0.08), transparent 42%, rgba(88,201,153,0.08)),
+          radial-gradient(circle at 50% 44%, rgba(76,124,209,0.16), transparent 42%);
+    pointer-events: none;
+}
+
+.diagnostic-console .dc-stage.dc-audit-map::after,
+.diagnostic-console .dc-stage.dc-audit-map .dc-signal,
+.diagnostic-console .dc-stage.dc-audit-map .dc-case,
+.diagnostic-console .dc-stage.dc-audit-map .dc-capture,
+.diagnostic-console .dc-stage.dc-audit-map .dc-route,
+.diagnostic-console .dc-stage.dc-audit-map .dc-result,
+.diagnostic-console .dc-stage.dc-audit-map .dc-status-track,
+.diagnostic-console .dc-stage.dc-audit-map .dc-scan {
+    display: none;
+}
+
+.dc-map-panel,
+.dc-map-arrow,
+.dc-map-proof {
+    position: relative;
+    z-index: 2;
+}
+
+.dc-map-panel {
+    display: grid;
+    align-content: start;
+    min-width: 0;
+    min-height: 210px;
+    padding: 0.95rem;
+    border: 1px solid rgba(111,177,255,0.24);
+    border-radius: 8px;
+    background: rgba(7, 17, 29, 0.72);
+    transition: border-color 0.45s ease, background 0.45s ease, box-shadow 0.45s ease, transform 0.45s var(--ease-premium);
+}
+
+.dc-map-panel span,
+.dc-map-proof span {
+    margin-bottom: 0.55rem;
+    color: #6FB1FF;
+    font-size: 0.66rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.dc-map-panel strong {
+    color: #FFFFFF;
+    font-size: clamp(1rem, 1.35vw, 1.18rem);
+    line-height: 1.14;
+    overflow-wrap: anywhere;
+}
+
+.dc-map-panel p {
+    margin: 0.72rem 0 0;
+    color: #AEBAD0;
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.dc-map-panel--problem {
+    border-color: rgba(255,210,116,0.32);
+    background: rgba(255,210,116,0.08);
+}
+
+.dc-map-panel--check {
+    border-color: rgba(111,177,255,0.5);
+    background: linear-gradient(145deg, rgba(42,74,121,0.54), rgba(7,17,29,0.82));
+}
+
+.dc-map-panel--result {
+    border-color: rgba(88,201,153,0.36);
+    background: rgba(88,201,153,0.08);
+}
+
+.dc-map-arrow {
+    align-self: center;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(111,177,255,0.1), rgba(102,199,219,0.85));
+}
+
+.dc-map-arrow--result {
+    background: linear-gradient(90deg, rgba(102,199,219,0.85), rgba(88,201,153,0.74));
+}
+
+.dc-map-arrow i {
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid rgba(102,199,219,0.86);
+    border-right: 2px solid rgba(102,199,219,0.86);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.dc-map-proof {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.78rem 0.9rem;
+    border: 1px solid rgba(221,225,233,0.12);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.035);
+}
+
+.dc-map-proof strong {
+    color: #FFFFFF;
+    font-size: 0.88rem;
+    line-height: 1.32;
+}
+
+.diagnostic-console[data-active="0"] .dc-map-panel--problem,
+.diagnostic-console[data-active="1"] .dc-map-panel--check,
+.diagnostic-console[data-active="2"] .dc-map-panel--result {
+    border-color: rgba(111,177,255,0.72);
+    box-shadow: 0 0 0 1px rgba(111,177,255,0.11), 0 16px 38px rgba(76,124,209,0.12);
+    transform: translateY(-2px);
+}
+
+.diagnostic-console[data-active="2"] .dc-map-panel--result {
+    border-color: rgba(88,201,153,0.72);
+    background: rgba(88,201,153,0.13);
+}
+
+@media (max-width: 900px) {
+    .diagnostic-console .dc-stage.dc-audit-map {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          gap: 0.7rem;
+          padding: 0.85rem;
+    }
+
+    .dc-map-panel {
+          min-height: auto;
+    }
+
+    .dc-map-arrow {
+          width: 2px;
+          height: 28px;
+          justify-self: center;
+          background: linear-gradient(180deg, rgba(111,177,255,0.1), rgba(102,199,219,0.85));
+    }
+
+    .dc-map-arrow--result {
+          background: linear-gradient(180deg, rgba(102,199,219,0.85), rgba(88,201,153,0.74));
+    }
+
+    .dc-map-arrow i {
+          right: auto;
+          top: auto;
+          left: 50%;
+          bottom: -1px;
+          transform: translateX(-50%) rotate(135deg);
+    }
+}
+
+@media (max-width: 520px) {
+    .dc-map-panel {
+          padding: 0.8rem;
+    }
+
+    .dc-map-panel strong {
+          font-size: 0.98rem;
+    }
+
+    .dc-map-panel p,
+    .dc-map-proof strong {
+          font-size: 0.8rem;
+    }
+}

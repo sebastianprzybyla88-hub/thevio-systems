@@ -388,17 +388,28 @@
 <span class="dc-progress-value">01 / 03</span>
 </div>
 </div>
-<div class="dc-stage" aria-hidden="true">
-<span class="dc-signal dc-signal--mail">Mail</span>
-<span class="dc-signal dc-signal--ops">Ops</span>
-<span class="dc-signal dc-signal--service">Service</span>
-<span class="dc-case">Vorgang</span>
-<span class="dc-capture">Erfassung</span>
-<span class="dc-route dc-route--a">Rolle A</span>
-<span class="dc-route dc-route--b">Rolle B</span>
-<span class="dc-status-track"></span>
-<span class="dc-result">Result</span>
-<span class="dc-scan"></span>
+<div class="dc-stage dc-audit-map" aria-hidden="true">
+<div class="dc-map-panel dc-map-panel--problem">
+<span>Ausgangslage</span>
+<strong>Kanäle noch getrennt</strong>
+<p>Mail, Service und Ops erzeugen Fälle, aber keinen gemeinsamen Einstieg.</p>
+</div>
+<span class="dc-map-arrow"><i></i></span>
+<div class="dc-map-panel dc-map-panel--check">
+<span>Prüffrage</span>
+<strong>Wo entsteht der Fall?</strong>
+<p>Thevio liest den Prozess, bevor Software oder Automatisierung empfohlen werden.</p>
+</div>
+<span class="dc-map-arrow dc-map-arrow--result"><i></i></span>
+<div class="dc-map-panel dc-map-panel--result">
+<span>Mögliches Ergebnis</span>
+<strong>Gemeinsamer Einstiegspunkt</strong>
+<p>Erst wenn der Nutzen klar ist, wird ein begrenzter Pilot sinnvoll.</p>
+</div>
+<div class="dc-map-proof">
+<span>Audit-Logik</span>
+<strong>Problem sichtbar machen → wirtschaftlich einordnen → Pilot begrenzen</strong>
+</div>
 </div>
 <div class="dc-phase-track" role="tablist" aria-label="Audit-Diagnosephasen">
 <button type="button" class="dc-phase" role="tab" id="dc-phase-0" aria-selected="true" data-index="0"><span>01</span>Kanäle</button>

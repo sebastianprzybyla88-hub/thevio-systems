@@ -715,21 +715,32 @@ if (!consoleEl) { return; }
 var phases = Array.prototype.slice.call(consoleEl.querySelectorAll('.dc-phase'));
 var progress = consoleEl.querySelector('.dc-progress-value');
 var readouts = consoleEl.querySelectorAll('.dc-readout strong');
+var problemTitle = consoleEl.querySelector('.dc-map-panel--problem strong');
+var problemText = consoleEl.querySelector('.dc-map-panel--problem p');
+var checkTitle = consoleEl.querySelector('.dc-map-panel--check strong');
+var resultTitle = consoleEl.querySelector('.dc-map-panel--result strong');
+var resultText = consoleEl.querySelector('.dc-map-panel--result p');
 var content = [
 {
 question: 'Wo entsteht der Fall?',
 diagnosis: 'Kanäle noch getrennt',
-result: 'Gemeinsamer Einstiegspunkt'
+result: 'Gemeinsamer Einstiegspunkt',
+problemText: 'Mail, Service und Ops erzeugen Fälle, aber keinen gemeinsamen Einstieg.',
+resultText: 'Ein klarer Eingang macht Erfassung und nächsten Schritt überprüfbar.'
 },
 {
 question: 'Wer übernimmt verbindlich?',
 diagnosis: 'Verantwortung nicht eindeutig',
-result: 'Klare Rolle und Vertretung'
+result: 'Klare Rolle und Vertretung',
+problemText: 'Der Vorgang ist da, aber Rolle, Vertretung und Entscheidung sind nicht festgelegt.',
+resultText: 'Verantwortung wird vor der Umsetzung sichtbar und organisatorisch tragfähig.'
 },
 {
 question: 'Wann gilt der Vorgang als abgeschlossen?',
 diagnosis: 'Abschluss nicht verlässlich sichtbar',
-result: 'Messbarer Abschlusszustand'
+result: 'Messbarer Abschlusszustand',
+problemText: 'Bearbeitung findet statt, aber der belastbare Abschlusszustand fehlt.',
+resultText: 'Das Audit definiert, woran ein abgeschlossener Vorgang wirklich erkennbar ist.'
 }
 ];
 function render(i) {
@@ -740,6 +751,11 @@ if (progress) { progress.textContent = '0' + (i + 1) + ' / 03'; }
 if (readouts[0]) { readouts[0].textContent = item.question; }
 if (readouts[1]) { readouts[1].textContent = item.diagnosis; }
 if (readouts[2]) { readouts[2].textContent = item.result; }
+if (problemTitle) { problemTitle.textContent = item.diagnosis; }
+if (problemText) { problemText.textContent = item.problemText; }
+if (checkTitle) { checkTitle.textContent = item.question; }
+if (resultTitle) { resultTitle.textContent = item.result; }
+if (resultText) { resultText.textContent = item.resultText; }
 }
 new Stepper({
 root: consoleEl,
