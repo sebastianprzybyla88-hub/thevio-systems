@@ -225,33 +225,34 @@
 <h2 id="zielgruppen-heading">Wann Thevio Systems besonders relevant wird</h2>
 <p class="section-intro section-intro--inverse">Relevant wird Thevio dort, wo operative Vorgänge zwar entstehen, aber Eingang, Verantwortung oder Abschluss nicht mehr zuverlässig sichtbar sind.</p>
 <div class="operations-field reveal" data-component="operations-field" data-active="0">
-<div class="operations-stage" aria-hidden="true">
-<div class="os-grid"></div>
-<span class="os-fragment os-fragment--mail">Mail</span>
-<span class="os-fragment os-fragment--form">Formular</span>
-<span class="os-fragment os-fragment--field">Standort</span>
-<span class="os-lane os-lane--primary"></span>
-<span class="os-lane os-lane--split-a"></span>
-<span class="os-lane os-lane--split-b"></span>
-<span class="os-lane os-lane--handoff"></span>
-<div class="os-case-object">
-<span class="os-case-label">Vorgang</span>
+<div class="operations-stage operations-map" aria-hidden="true">
+<div class="os-map-column os-map-column--sources">
+<span class="os-map-label">Ungeordnete Eingänge</span>
+<span class="os-source os-source--mail">Mail</span>
+<span class="os-source os-source--form">Formular</span>
+<span class="os-source os-source--field">Standort</span>
+<span class="os-source os-source--ops">Operativer Kanal</span>
+</div>
+<div class="os-map-arrow os-map-arrow--in"><span></span></div>
+<div class="os-case-object os-case-map">
+<span class="os-case-label">Thevio Vorgang</span>
+<strong>Ein gemeinsames Objekt</strong>
 <span class="os-case-core"></span>
 <span class="os-case-ring"></span>
 </div>
-<div class="os-routing-zone">
-<span>Route A</span>
-<span>Route B</span>
-<span>Freigabe offen</span>
+<div class="os-map-arrow os-map-arrow--out"><span></span></div>
+<div class="os-map-column os-map-column--outcomes">
+<span class="os-map-label">Sichtbar im System</span>
+<span class="os-outcome os-outcome--entry">Eingang gebündelt</span>
+<span class="os-outcome os-outcome--owner">Verantwortung gesetzt</span>
+<span class="os-outcome os-outcome--context">Kontext für Teams</span>
+<span class="os-outcome os-outcome--done">Abschluss belegbar</span>
 </div>
-<div class="os-handoff-zone">
-<span>Team</span>
-<span>Kontext</span>
+<div class="os-diagnosis-card">
+<span>Aktuelles Risiko</span>
+<strong>Eingänge nicht vereinheitlicht</strong>
+<p>Information kommt an, ist aber noch kein kontrollierter Vorgang.</p>
 </div>
-<span class="os-field-input">Operativ</span>
-<span class="os-result-state">Abschluss sichtbar</span>
-<span class="os-disruption"></span>
-<span class="os-scanline"></span>
 </div>
 <div class="operations-diagnostics">
 <div class="os-status-output" aria-live="polite">
@@ -261,8 +262,8 @@
 <div class="os-state-rail" role="tablist" aria-label="Diagnostische Problemzustände">
 <button type="button" class="os-state" role="tab" id="os-state-0" aria-selected="true" data-index="0"><span>01</span><strong>Eingänge</strong></button>
 <button type="button" class="os-state" role="tab" id="os-state-1" aria-selected="false" tabindex="-1" data-index="1"><span>02</span><strong>Verantwortung</strong></button>
-<button type="button" class="os-state" role="tab" id="os-state-2" aria-selected="false" tabindex="-1" data-index="2"><span>03</span><strong>Teams</strong></button>
-<button type="button" class="os-state" role="tab" id="os-state-3" aria-selected="false" tabindex="-1" data-index="3"><span>04</span><strong>Operativ</strong></button>
+<button type="button" class="os-state" role="tab" id="os-state-2" aria-selected="false" tabindex="-1" data-index="2"><span>03</span><strong>Kontext</strong></button>
+<button type="button" class="os-state" role="tab" id="os-state-3" aria-selected="false" tabindex="-1" data-index="3"><span>04</span><strong>Abschluss</strong></button>
 </div>
 <p class="os-state-description" aria-live="polite">Unterschiedliche Datenfragmente erreichen das System aus mehreren Richtungen und werden erst zu einem Vorgang gebündelt.</p>
 </div>

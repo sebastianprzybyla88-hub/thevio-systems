@@ -609,22 +609,28 @@ if (!field) { return; }
 var states = Array.prototype.slice.call(field.querySelectorAll('.os-state'));
 var status = field.querySelector('.os-status-output strong');
 var description = field.querySelector('.os-state-description');
+var riskTitle = field.querySelector('.os-diagnosis-card strong');
+var riskText = field.querySelector('.os-diagnosis-card p');
 var content = [
 {
 status: 'Eingänge nicht vereinheitlicht',
-description: 'Unterschiedliche Datenfragmente erreichen das System aus mehreren Richtungen und werden erst zu einem Vorgang gebündelt.'
+description: 'Unterschiedliche Datenfragmente erreichen das System aus mehreren Richtungen und werden erst zu einem Vorgang gebündelt.',
+risk: 'Information kommt an, ist aber noch kein kontrollierter Vorgang.'
 },
 {
 status: 'Verantwortung nicht eindeutig',
-description: 'Das Vorgangsobjekt erreicht eine Routingzone, aber die verbindliche Zuständigkeit bleibt unbestätigt.'
+description: 'Das Vorgangsobjekt erreicht eine Routingzone, aber die verbindliche Zuständigkeit bleibt unbestätigt.',
+risk: 'Der Vorgang existiert, aber niemand ist sichtbar zuständig.'
 },
 {
 status: 'Übergabe ohne gemeinsamen Kontext',
-description: 'Ein Vorgang bewegt sich über mehrere Übergabepunkte; an einer Schnittstelle droht Kontext verloren zu gehen.'
+description: 'Ein Vorgang bewegt sich über mehrere Übergabepunkte; an einer Schnittstelle droht Kontext verloren zu gehen.',
+risk: 'Teams arbeiten weiter, ohne denselben Informationsstand zu teilen.'
 },
 {
 status: 'Operativer Eingang nicht angebunden',
-description: 'Ein standortnaher Eingang wird in denselben Vorgang überführt, damit Erfassung und Freigabe sichtbar bleiben.'
+description: 'Ein standortnaher Eingang wird in denselben Vorgang überführt, damit Erfassung und Freigabe sichtbar bleiben.',
+risk: 'Der Abschluss ist fachlich passiert, aber im System nicht belastbar belegt.'
 }
 ];
 new Stepper({
@@ -637,6 +643,8 @@ var item = content[i];
 field.setAttribute('data-active', String(i));
 if (item && status) { status.textContent = item.status; }
 if (item && description) { description.textContent = item.description; }
+if (item && riskTitle) { riskTitle.textContent = item.status; }
+if (item && riskText) { riskText.textContent = item.risk; }
 }
 });
 })();
