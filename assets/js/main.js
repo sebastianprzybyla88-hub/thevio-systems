@@ -257,9 +257,9 @@ if (!scene) { return; }
 var controls = Array.prototype.slice.call(scene.querySelectorAll('[data-cdr-phase]'));
 var statusLine = scene.querySelector('.hero-cdr-status');
 var labels = [
-'Fragmente werden zu einem Vorgang erfasst.',
-'Regeln, Route und Freigabe ordnen den Vorgang.',
-'Ein vollständiges Vorgangsobjekt ist abgeschlossen.'
+'Website, App oder Workflow wird konkret geplant.',
+'Technik, Daten und Schnittstellen werden sauber gebaut.',
+'Automatisierung läuft kontrolliert im Alltag.'
 ];
 new Stepper({
 root: scene,
