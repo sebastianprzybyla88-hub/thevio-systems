@@ -7829,3 +7829,135 @@ animation: pulse-ring 2.4s var(--ease-premium) infinite;
           grid-template-columns: 1fr;
     }
 }
+
+/* Final polish: integrate interactive score controls into the engine design. */
+.resolution-visual .resolution-control-panel {
+    position: relative;
+    z-index: 1;
+    margin-top: clamp(0.75rem, 1vw, 1rem);
+    padding: clamp(0.8rem, 1.2vw, 1rem);
+    border: 1px solid rgba(124,167,232,0.16);
+    border-radius: 8px;
+    background:
+          linear-gradient(145deg, rgba(124,167,232,0.08), rgba(6,15,24,0.72)),
+          rgba(6,15,24,0.62);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.resolution-visual .resolution-control-label {
+    display: block;
+    margin-bottom: 0.72rem;
+    color: #7CA7E8;
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.resolution-visual .resolution-architecture,
+.resolution-visual .resolution-score-formula {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.58rem;
+    margin: 0;
+}
+
+.resolution-visual .resolution-score-formula {
+    margin-top: 0.58rem;
+    padding-top: 0.58rem;
+    border-top: 1px solid rgba(221,225,233,0.08);
+}
+
+.resolution-visual .resolution-factor,
+.resolution-visual .resolution-score-formula > button[type="button"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    min-height: 54px;
+    border: 1px solid rgba(124,167,232,0.18);
+    border-radius: 8px;
+    background:
+          linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015)),
+          rgba(8,18,28,0.78);
+    color: rgba(232,238,247,0.76);
+    box-shadow: none;
+}
+
+.resolution-visual .resolution-factor {
+    padding: 0.72rem 0.72rem 0.72rem 1.65rem;
+}
+
+.resolution-visual .resolution-factor span,
+.resolution-visual .resolution-score-formula > button[type="button"] {
+    overflow-wrap: anywhere;
+}
+
+.resolution-visual .resolution-factor strong {
+    flex: 0 0 auto;
+    padding: 0.18rem 0.38rem;
+    border-radius: 999px;
+    background: rgba(124,167,232,0.1);
+    color: rgba(232,238,247,0.7);
+}
+
+.resolution-visual .resolution-score-formula > button[type="button"] {
+    padding: 0.72rem 0.72rem 0.72rem 1.65rem;
+}
+
+.resolution-visual .resolution-score-formula > button[type="button"] strong {
+    display: inline;
+    margin: 0 0.18rem 0 0;
+    color: #D9B56B;
+    font-size: inherit;
+}
+
+.resolution-visual .resolution-factor::before,
+.resolution-visual .resolution-score-formula > button[type="button"]::before {
+    left: 0.72rem;
+    background: #7CA7E8;
+    opacity: 0.72;
+}
+
+.resolution-visual .resolution-factor[aria-pressed="true"],
+.resolution-visual .resolution-factor.is-active,
+.resolution-visual .resolution-score-formula > button[type="button"][aria-pressed="true"] {
+    border-color: rgba(92,195,155,0.48);
+    background:
+          linear-gradient(145deg, rgba(92,195,155,0.18), rgba(92,195,155,0.06)),
+          rgba(8,18,28,0.82);
+    color: #FFFFFF;
+    box-shadow: inset 0 0 0 1px rgba(92,195,155,0.08), 0 10px 26px rgba(0,0,0,0.16);
+}
+
+.resolution-visual .resolution-factor[aria-pressed="true"] strong,
+.resolution-visual .resolution-score-formula > button[type="button"][aria-pressed="true"] strong {
+    color: #8AD8B9;
+}
+
+.resolution-visual .resolution-factor:hover,
+.resolution-visual .resolution-factor:focus-visible,
+.resolution-visual .resolution-score-formula > button[type="button"]:hover,
+.resolution-visual .resolution-score-formula > button[type="button"]:focus-visible {
+    border-color: rgba(124,167,232,0.56);
+    background-color: rgba(12,28,44,0.9);
+    color: #FFFFFF;
+}
+
+.resolution-visual .resolution-engine-readout {
+    margin-top: 0.72rem;
+    border-color: rgba(92,195,155,0.2);
+    background:
+          linear-gradient(90deg, rgba(92,195,155,0.1), rgba(124,167,232,0.055)),
+          rgba(6,15,24,0.7);
+}
+
+.resolution-visual .resolution-visual-note {
+    color: rgba(174,186,208,0.78);
+}
+
+@media (max-width: 520px) {
+    .resolution-visual .resolution-architecture,
+    .resolution-visual .resolution-score-formula {
+          grid-template-columns: 1fr;
+    }
+}
