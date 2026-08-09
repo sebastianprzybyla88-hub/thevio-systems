@@ -8084,7 +8084,7 @@ pointer-events: none;
 @media (min-width: 1180px) {
     :root {
           --container-max: 1380px;
-          --font-size-hero: clamp(3.5rem, 2.3rem + 2.9vw, 6rem);
+          --font-size-hero: clamp(3rem, 2.15rem + 2.15vw, 4.65rem);
     }
 
     .section {
@@ -8096,8 +8096,13 @@ pointer-events: none;
     }
 
     .hero-layout {
-          grid-template-columns: minmax(520px, 0.92fr) minmax(560px, 1.08fr);
-          gap: clamp(4rem, 6vw, 7.5rem);
+          grid-template-columns: minmax(460px, 0.9fr) minmax(500px, 1fr);
+          gap: clamp(3.25rem, 5vw, 6rem);
+    }
+
+    .hero h1 {
+          max-width: 13ch;
+          line-height: 1.03;
     }
 
     .hero-cdr-preview {
@@ -8581,5 +8586,315 @@ pointer-events: none;
 
     .competence-lab-state {
           margin-left: 0;
+    }
+}
+
+/* Competence lab v2: concrete, readable proof instead of abstract placeholders. */
+.competence-lab-copy h2 {
+    max-width: 760px;
+    font-size: clamp(2rem, 1.45rem + 1.55vw, 3.35rem);
+    line-height: 1.07;
+    letter-spacing: -0.024em;
+}
+
+.competence-lab-copy .section-intro {
+    max-width: 700px;
+    margin-bottom: 1.55rem;
+}
+
+.competence-lab-stage {
+    min-height: 520px;
+    padding: clamp(1.1rem, 1.7vw, 1.65rem);
+}
+
+.competence-view.is-active {
+    min-height: 420px;
+    grid-template-rows: minmax(260px, 1fr) auto;
+}
+
+.competence-blueprint {
+    position: relative;
+    display: grid;
+    min-height: 282px;
+    padding: clamp(1rem, 1.8vw, 1.5rem);
+    border: 1px solid rgba(221,225,233,0.14);
+    border-radius: 8px;
+    background:
+          radial-gradient(44% 60% at 50% 45%, rgba(76,124,209,0.14), transparent 62%),
+          rgba(4,13,21,0.34);
+    overflow: hidden;
+}
+
+.competence-blueprint--portal {
+    grid-template-columns: minmax(0, 0.95fr) 42px minmax(0, 1.22fr) 42px minmax(0, 0.95fr);
+    align-items: stretch;
+    gap: 0;
+}
+
+.blueprint-screen,
+.logic-panel,
+.logic-core,
+.automation-source,
+.automation-hub,
+.automation-output {
+    border: 1px solid rgba(124,167,232,0.24);
+    border-radius: 8px;
+    background:
+          linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)),
+          rgba(8,18,28,0.82);
+    color: #E8EEF7;
+}
+
+.blueprint-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 230px;
+    padding: clamp(1rem, 1.5vw, 1.35rem);
+}
+
+.blueprint-screen--app {
+    border-color: rgba(92,195,155,0.44);
+    background:
+          linear-gradient(145deg, rgba(92,195,155,0.13), rgba(76,124,209,0.08)),
+          rgba(8,18,28,0.88);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.18);
+}
+
+.blueprint-kicker,
+.logic-panel span,
+.logic-core span,
+.competence-view-copy span,
+.automation-hub small {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: #7CA7E8;
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.blueprint-screen strong,
+.logic-panel strong,
+.logic-core strong,
+.automation-hub strong {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: #FFFFFF;
+    font-size: clamp(1.05rem, 0.9rem + 0.55vw, 1.45rem);
+    line-height: 1.08;
+}
+
+.blueprint-screen p,
+.logic-panel p,
+.automation-hub p {
+    color: #AEBAD0;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.blueprint-arrow {
+    position: relative;
+    align-self: center;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(124,167,232,0.45), rgba(92,195,155,0.72));
+}
+
+.blueprint-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid rgba(92,195,155,0.9);
+    border-right: 1px solid rgba(92,195,155,0.9);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.blueprint-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.blueprint-mini-grid span {
+    min-height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(221,225,233,0.14);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.045);
+    color: #CFE0F8;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.competence-blueprint--logic {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.9fr) minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: stretch;
+}
+
+.logic-panel,
+.logic-core {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+    padding: clamp(1rem, 1.6vw, 1.35rem);
+}
+
+.logic-core {
+    border-color: rgba(217,181,107,0.44);
+    text-align: center;
+    background:
+          radial-gradient(closest-side, rgba(217,181,107,0.14), transparent 70%),
+          rgba(8,18,28,0.88);
+}
+
+.logic-core ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.7rem;
+}
+
+.logic-core li {
+    padding: 0.32rem 0.58rem;
+    border: 1px solid rgba(217,181,107,0.32);
+    border-radius: 999px;
+    color: #F1D28B;
+    font-size: 0.74rem;
+    font-weight: 800;
+}
+
+.logic-panel--result {
+    border-color: rgba(92,195,155,0.36);
+}
+
+.logic-panel--result strong {
+    color: #9CEBCB;
+}
+
+.competence-blueprint--automation {
+    grid-template-columns: minmax(150px, 0.75fr) minmax(280px, 1.15fr) minmax(190px, 0.9fr);
+    gap: 0.9rem;
+    align-items: stretch;
+}
+
+.automation-source,
+.automation-output {
+    display: grid;
+    gap: 0.55rem;
+    align-content: center;
+    min-height: 240px;
+    padding: clamp(1rem, 1.6vw, 1.35rem);
+}
+
+.automation-source span,
+.automation-output span {
+    display: block;
+    min-height: 42px;
+    padding: 0.68rem 0.75rem;
+    border: 1px solid rgba(124,167,232,0.18);
+    border-radius: 8px;
+    background: rgba(8,18,28,0.82);
+    color: #E8EEF7;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.automation-output span {
+    border-color: rgba(92,195,155,0.3);
+    color: #BFEEDB;
+}
+
+.automation-hub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+    padding: clamp(1.1rem, 1.8vw, 1.5rem);
+    text-align: center;
+    border-color: rgba(217,181,107,0.42);
+    background:
+          radial-gradient(closest-side, rgba(217,181,107,0.12), transparent 70%),
+          rgba(8,18,28,0.88);
+}
+
+.automation-hub small {
+    color: #F1D28B;
+}
+
+.competence-view-copy {
+    padding: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.competence-view-copy span {
+    color: #5CC39B;
+}
+
+.competence-view-copy h3 {
+    max-width: 780px;
+    font-size: clamp(1.45rem, 1.1rem + 0.95vw, 2.15rem);
+}
+
+.competence-view-copy p {
+    max-width: 880px;
+    font-size: clamp(0.96rem, 0.9rem + 0.18vw, 1.05rem);
+}
+
+@media (min-width: 1180px) {
+    .section--competence-lab {
+          padding-block: clamp(5rem, 4.8vw, 6.75rem);
+    }
+
+    .competence-lab-grid {
+          grid-template-columns: minmax(430px, 0.78fr) minmax(660px, 1.22fr);
+          align-items: center;
+    }
+
+    .competence-lab-stage {
+          min-height: 560px;
+    }
+
+    .competence-view.is-active {
+          min-height: 456px;
+    }
+}
+
+@media (max-width: 900px) {
+    .competence-blueprint--portal,
+    .competence-blueprint--logic,
+    .competence-blueprint--automation {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+    }
+
+    .blueprint-arrow {
+          width: 1px;
+          height: 24px;
+          justify-self: center;
+    }
+
+    .blueprint-arrow::after {
+          right: 50%;
+          top: auto;
+          bottom: 0;
+          transform: translateX(50%) rotate(135deg);
+    }
+
+    .blueprint-screen,
+    .logic-panel,
+    .logic-core,
+    .automation-source,
+    .automation-hub,
+    .automation-output {
+          min-height: auto;
     }
 }

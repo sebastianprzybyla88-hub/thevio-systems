@@ -446,7 +446,7 @@ render(0);
     var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-competence-view]'));
     var views = Array.prototype.slice.call(lab.querySelectorAll('.competence-view'));
     var state = lab.querySelector('.competence-lab-state');
-    var labels = ['App-Prototyp', 'Framework', 'n8n-Workflow'];
+    var labels = ['Kundenportal', 'Entscheidungslogik', 'Automatisierung'];
     function activate(index) {
       lab.setAttribute('data-active', String(index));
       views.forEach(function (view) {
