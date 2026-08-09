@@ -439,6 +439,46 @@ render(0);
     });
   })();
 
+  /* Kompetenz-Lab: konkrete Bausteine fuer App, Framework und n8n-Workflow */
+  (function () {
+    var lab = document.querySelector('[data-component="competence-lab"]');
+    if (!lab) { return; }
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-competence-view]'));
+    var views = Array.prototype.slice.call(lab.querySelectorAll('.competence-view'));
+    var state = lab.querySelector('.competence-lab-state');
+    var labels = ['App-Prototyp', 'Framework', 'n8n-Workflow'];
+    function activate(index) {
+      lab.setAttribute('data-active', String(index));
+      views.forEach(function (view) {
+        var active = Number(view.getAttribute('data-view')) === index;
+        view.classList.toggle('is-active', active);
+        view.hidden = !active;
+      });
+      tabs.forEach(function (tab, tabIndex) {
+        tab.setAttribute('aria-selected', tabIndex === index ? 'true' : 'false');
+        tab.tabIndex = tabIndex === index ? 0 : -1;
+      });
+      if (state && labels[index]) { state.textContent = labels[index]; }
+    }
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () { activate(index); });
+      tab.addEventListener('keydown', function (event) {
+        var next = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          next = index === tabs.length - 1 ? 0 : index + 1;
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          next = index === 0 ? tabs.length - 1 : index - 1;
+        }
+        if (next !== null) {
+          event.preventDefault();
+          tabs[next].focus();
+          activate(next);
+        }
+      });
+    });
+    activate(0);
+  })();
+
 /* Transformation: einmalige Szene beim Eintritt in den Viewport */
 (function () {
 var scene = document.querySelector('.transformation-scene[data-component="transform-scene"]');
