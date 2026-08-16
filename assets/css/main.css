@@ -1076,9 +1076,7 @@ min-height: 100%;
 content: '';
 position: absolute;
 inset: 0;
-background:
-linear-gradient(90deg, transparent 0 48%, rgba(124,167,232,0.1) 48% 49%, transparent 49%),
-radial-gradient(circle at 78% 22%, rgba(61,187,149,0.14), transparent 34%);
+background: radial-gradient(circle at 78% 22%, rgba(61,187,149,0.14), transparent 34%);
 pointer-events: none;
 }
 .abschluss-proof-card > * { position: relative; z-index: 1; }
