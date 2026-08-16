@@ -317,6 +317,24 @@ z-index: 0;
 .card h3 { font-size: var(--font-size-xl); font-weight: 500; color: var(--color-text-primary); margin-bottom: var(--space-3); line-height: var(--line-height-tight); }
 .card p { font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: var(--line-height-normal); }
 .card p strong { color: var(--color-text-primary); font-weight: 600; }
+.entry-format-grid { align-items: stretch; }
+.entry-format-card { display: flex; flex-direction: column; min-height: 100%; }
+.entry-format-index {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 2rem;
+height: 2rem;
+margin-bottom: var(--space-6);
+border-radius: 50%;
+background-color: var(--color-accent-light);
+color: var(--color-accent-bright);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: 0;
+}
+.entry-format-card h3 { font-weight: 650; }
+.entry-format-card p { margin-top: auto; }
 
 /* Zielgruppen: Situation Map */
 .scenario-map { position: relative; display: flex; flex-direction: column; gap: var(--space-6); padding-left: var(--space-10); }
