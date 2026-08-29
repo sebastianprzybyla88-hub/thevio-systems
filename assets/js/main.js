@@ -257,9 +257,9 @@ if (!scene) { return; }
 var controls = Array.prototype.slice.call(scene.querySelectorAll('[data-cdr-phase]'));
 var statusLine = scene.querySelector('.hero-cdr-status');
 var labels = [
-'Website, App oder Workflow wird konkret geplant.',
-'Technik, Daten und Schnittstellen werden sauber gebaut.',
-'Automatisierung läuft kontrolliert im Alltag.'
+'Der Kundenfall wird vollständig und verständlich aufgenommen.',
+'Triage, Zuständigkeit und fehlende Informationen werden geklärt.',
+'Status, Eskalation und Lösung werden nachvollziehbar dokumentiert.'
 ];
 new Stepper({
 root: scene,
@@ -536,14 +536,14 @@ var scoreNode = visual.querySelector('[data-resolution-score]');
 var verdictNode = visual.querySelector('[data-resolution-verdict]');
 var readout = visual.querySelector('.resolution-engine-readout');
 var factorConfig = {
-speed: { label: 'Antwortzeit', value: 8, text: 'schnelle Antwort zählt, entscheidet aber nicht allein.' },
-questions: { label: 'Rückfragen', value: -7, text: 'Rückfragen senken den Score, wenn Klärung fehlt.' },
-approval: { label: 'Freigabe', value: 12, text: 'geprüfte Freigabe erhöht die Belastbarkeit.' },
-closure: { label: 'Abschluss', value: 18, text: 'belegter Abschluss ist der stärkste positive Faktor.' },
-reopen: { label: 'Reopen', value: -14, text: 'Wiederöffnungen zeigen, dass der Vorgang noch nicht stabil gelöst ist.' },
-missing: { label: 'Missing Info', value: -11, text: 'fehlende Information macht den Abschluss unsicher.' },
-proof: { label: 'Nachweis', value: 9, text: 'Nachweisführung macht das Ergebnis prüfbar.' },
-sla: { label: 'Frist', value: -9, text: 'Fristrisiko senkt die operative Qualität.' }
+speed: { label: 'Erstreaktion', value: 8, text: 'schnelle Reaktion hilft, löst den Fall aber nicht allein.' },
+questions: { label: 'Rückfragen', value: -7, text: 'Rückfragen senken die Klarheit, wenn entscheidende Angaben fehlen.' },
+approval: { label: 'Freigabe', value: 12, text: 'geprüfte Freigabe macht die nächste Handlung belastbarer.' },
+closure: { label: 'Lösung', value: 18, text: 'dokumentierte Lösung ist der stärkste positive Faktor.' },
+reopen: { label: 'Reopen', value: -14, text: 'Wiederöffnungen zeigen, dass der Kundenfall noch nicht stabil geklärt ist.' },
+missing: { label: 'Fehlende Angabe', value: -11, text: 'fehlende Information macht Triage und Abschluss unsicher.' },
+proof: { label: 'Nachweis', value: 9, text: 'Nachweisführung macht Entscheidungen prüfbar.' },
+sla: { label: 'Eskalation', value: -9, text: 'Eskalationsrisiko senkt die Klärungsqualität.' }
 };
 function clampScore(value) {
 return Math.max(0, Math.min(100, value));
@@ -671,24 +671,24 @@ var riskTitle = field.querySelector('.os-diagnosis-card strong');
 var riskText = field.querySelector('.os-diagnosis-card p');
 var content = [
 {
-status: 'Eingänge nicht vereinheitlicht',
-description: 'Unterschiedliche Datenfragmente erreichen das System aus mehreren Richtungen und werden erst zu einem Vorgang gebündelt.',
-risk: 'Information kommt an, ist aber noch kein kontrollierter Vorgang.'
+status: 'Fallangaben unvollständig',
+description: 'Eine Anfrage geht ein, aber Pflichtangaben, Nachweise oder technische Details fehlen und erzeugen vermeidbare Rückfragen.',
+risk: 'Information kommt an, ist aber noch kein prüfbarer Kundenfall.'
 },
 {
 status: 'Verantwortung nicht eindeutig',
-description: 'Das Vorgangsobjekt erreicht eine Routingzone, aber die verbindliche Zuständigkeit bleibt unbestätigt.',
-risk: 'Der Vorgang existiert, aber niemand ist sichtbar zuständig.'
+description: 'Der Kundenfall existiert, aber Rolle, Fachabteilung, Servicepartner oder Vertretung sind noch nicht verbindlich sichtbar.',
+risk: 'Der Fall wird bearbeitet, aber Verantwortung und nächster Schritt bleiben unklar.'
 },
 {
-status: 'Übergabe ohne gemeinsamen Kontext',
-description: 'Ein Vorgang bewegt sich über mehrere Übergabepunkte; an einer Schnittstelle droht Kontext verloren zu gehen.',
-risk: 'Teams arbeiten weiter, ohne denselben Informationsstand zu teilen.'
+status: 'Status für Kunden nicht erklärbar',
+description: 'Mehrere Beteiligte arbeiten am Fall, aber Kunde und Team sehen nicht denselben Bearbeitungsstand.',
+risk: 'Der Kunde fragt wiederholt nach, obwohl intern bereits gearbeitet wird.'
 },
 {
-status: 'Operativer Eingang nicht angebunden',
-description: 'Ein standortnaher Eingang wird in denselben Vorgang überführt, damit Erfassung und Freigabe sichtbar bleiben.',
-risk: 'Der Abschluss ist fachlich passiert, aber im System nicht belastbar belegt.'
+status: 'Lösung nicht belastbar dokumentiert',
+description: 'Klärung, Freigabe, Nachweis und Kommunikation werden erst zusammengeführt, wenn der Abschluss nachvollziehbar ist.',
+risk: 'Die Lösung ist fachlich passiert, aber für spätere Rückfragen nicht ausreichend belegbar.'
 }
 ];
 new Stepper({
@@ -716,10 +716,10 @@ var callouts = Array.prototype.slice.call(demo.querySelectorAll('.triovo-demo-ca
 var caption = demo.querySelector('.triovo-demo-step-text');
 var imageWrap = demo.querySelector('.triovo-demo-image-wrap');
 var texts = [
-'Eingang: ein Anliegen wird strukturiert als Fall erfasst.',
-'Prüfung & Triage: Angaben werden geprüft, Kategorie und Priorität eingeordnet.',
-'Routing & Bearbeitung: Verantwortung, Status und nächste Handlung sind sichtbar.',
-'Abschluss & Score: Resolution Score und Abschlussstatus machen die Wirkung nachvollziehbar.'
+'Eingang: ein Kundenfall wird mit Kontext und Nachweisen strukturiert erfasst.',
+'Prüfung & Triage: fehlende Angaben, Kategorie und Dringlichkeit werden sichtbar.',
+'Routing & Bearbeitung: Verantwortung, Status und nächste Handlung sind nachvollziehbar.',
+'Abschluss & Lösung: Entscheidung, Nachweis und Ergebnis bleiben dokumentiert.'
 ];
 new Stepper({
 root: demo,
@@ -780,25 +780,25 @@ var resultTitle = consoleEl.querySelector('.dc-map-panel--result strong');
 var resultText = consoleEl.querySelector('.dc-map-panel--result p');
 var content = [
 {
-question: 'Wo entsteht der Fall?',
-diagnosis: 'Kanäle noch getrennt',
-result: 'Gemeinsamer Einstiegspunkt',
-problemText: 'Mail, Service und Ops erzeugen Fälle, aber keinen gemeinsamen Einstieg.',
-resultText: 'Ein klarer Eingang macht Erfassung und nächsten Schritt überprüfbar.'
+question: 'Wo fehlt Klarheit?',
+diagnosis: 'Fallangaben unvollständig',
+result: 'Begrenzter Pilotprozess',
+problemText: 'Anfrage, Nachweise und Kontext entstehen verteilt und sind noch kein prüfbarer Kundenfall.',
+resultText: 'Ein begrenzter Ablauf macht Erfassung, Triage und nächsten Schritt überprüfbar.'
 },
 {
 question: 'Wer übernimmt verbindlich?',
 diagnosis: 'Verantwortung nicht eindeutig',
-result: 'Klare Rolle und Vertretung',
-problemText: 'Der Vorgang ist da, aber Rolle, Vertretung und Entscheidung sind nicht festgelegt.',
-resultText: 'Verantwortung wird vor der Umsetzung sichtbar und organisatorisch tragfähig.'
+result: 'Klare Rolle und Übergabe',
+problemText: 'Der Kundenfall ist da, aber Rolle, Vertretung, Fachabteilung oder Servicepartner sind nicht festgelegt.',
+resultText: 'Verantwortung und Übergabe werden vor der Umsetzung sichtbar und organisatorisch tragfähig.'
 },
 {
-question: 'Wann gilt der Vorgang als abgeschlossen?',
-diagnosis: 'Abschluss nicht verlässlich sichtbar',
-result: 'Messbarer Abschlusszustand',
-problemText: 'Bearbeitung findet statt, aber der belastbare Abschlusszustand fehlt.',
-resultText: 'Das Audit definiert, woran ein abgeschlossener Vorgang wirklich erkennbar ist.'
+question: 'Wann ist der Kundenfall wirklich gelöst?',
+diagnosis: 'Lösung nicht belastbar dokumentiert',
+result: 'Nachvollziehbarer Lösungszustand',
+problemText: 'Bearbeitung findet statt, aber Nachweis, Kommunikation und belastbarer Lösungszustand fehlen.',
+resultText: 'Der Check definiert, woran ein gelöster Kundenfall wirklich erkennbar ist.'
 }
 ];
 function render(i) {
