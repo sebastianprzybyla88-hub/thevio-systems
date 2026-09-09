@@ -18,28 +18,50 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://thevio-systems.de/audit.html#service",
-      "name": "Fallprozess-Check",
-      "url": "https://thevio-systems.de/audit.html",
-      "provider": {
-        "@type": "Organization",
-        "name": "Thevio Systems",
-        "url": "https://thevio-systems.de/",
-        "email": "kontakt@thevio-systems.de"
-      },
-      "areaServed": ["Deutschland", "DACH"],
-      "serviceType": [
-        "Fallprozess-Check",
-        "Support-Prozessanalyse",
-        "Reklamationsprozess Analyse",
-        "Kundenfallsteuerung",
-        "Status- und Eskalationsanalyse"
-      ],
-      "description": "Der Fallprozess-Check von Thevio Systems analysiert einen konkreten Support-, Reklamations- oder Eskalationsprozess und zeigt, wo Informationen fehlen, Zuständigkeiten unklar sind, Rückfragen entstehen und Übergaben stocken."
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://thevio-systems.de/audit.html#service",
+          "name": "Fallprozess-Check",
+          "url": "https://thevio-systems.de/audit.html",
+          "provider": {
+            "@type": "Organization",
+            "name": "Thevio Systems",
+            "url": "https://thevio-systems.de/",
+            "email": "kontakt@thevio-systems.de"
+          },
+          "areaServed": ["Deutschland", "DACH"],
+          "serviceType": [
+            "Fallprozess-Check",
+            "Support-Prozessanalyse",
+            "Reklamationsprozess Analyse",
+            "Kundenfallsteuerung",
+            "Status- und Eskalationsanalyse"
+          ],
+          "description": "Der Fallprozess-Check von Thevio Systems analysiert einen konkreten Support-, Reklamations- oder Eskalationsprozess und zeigt, wo Informationen fehlen, Zuständigkeiten unklar sind, Rückfragen entstehen und Übergaben stocken."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://thevio-systems.de/audit.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Startseite",
+              "item": "https://thevio-systems.de/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Fallprozess-Check",
+              "item": "https://thevio-systems.de/audit.html"
+            }
+          ]
+        }
+      ]
     }
     </script>
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="/assets/img/thevio-logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -283,10 +305,20 @@
       <div class="container">
         <div class="footer-inner">
           <p class="footer-copy">&#169; 2026 Thevio Systems. Alle Rechte vorbehalten.</p>
-        <nav class="footer-links" aria-label="Rechtliche Links">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
+        <div class="footer-nav-groups">
+          <nav class="footer-links footer-link-group" aria-label="Lösungen">
+            <span class="footer-link-group-label">Lösungen</span>
+            <a href="reklamationsmanagement.html">Reklamationsmanagement</a>
+            <a href="fallmanagement-kundenservice.html">Fallmanagement</a>
+            <a href="eskalationsmanagement-kundenservice.html">Eskalationsmanagement</a>
+            <a href="triovo.html">Triovo</a>
+            <a href="audit.html">Fallprozess-Check</a>
           </nav>
+          <nav class="footer-links footer-link-group" aria-label="Rechtliche Links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
         </div>
       </div>
     </footer>
