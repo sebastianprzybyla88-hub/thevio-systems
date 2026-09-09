@@ -533,6 +533,181 @@ h2.triovo-dark-title { font-size: var(--font-size-h2); font-weight: 700; color: 
 .founder-competencies li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background-color: var(--color-accent); }
 .founder-footer { margin-top: var(--space-4); }
 
+.founder-story {
+margin-top: var(--space-12);
+padding: clamp(1.4rem, 3vw, 2.4rem);
+border: 1px solid var(--color-border);
+border-radius: var(--border-radius);
+background:
+linear-gradient(145deg, rgba(255,255,255,0.88), rgba(232,237,245,0.48)),
+var(--color-bg-primary);
+box-shadow: var(--shadow-soft, 0 20px 44px rgba(15,25,35,0.08));
+}
+.founder-story-lead {
+max-width: 760px;
+margin-bottom: var(--space-8);
+padding-bottom: var(--space-6);
+border-bottom: 1px solid var(--color-border);
+}
+.founder-story-kicker {
+display: block;
+margin-bottom: var(--space-3);
+color: var(--color-accent);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: var(--letter-spacing-wide);
+text-transform: uppercase;
+}
+.founder-story h3 {
+max-width: 760px;
+margin-bottom: var(--space-3);
+color: var(--color-text-primary);
+font-size: clamp(1.65rem, 1.25rem + 1.4vw, 2.4rem);
+line-height: var(--line-height-tight);
+font-weight: 700;
+letter-spacing: 0;
+}
+.founder-story-claim {
+max-width: 720px;
+color: var(--color-text-primary);
+font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.24rem);
+font-weight: 650;
+line-height: var(--line-height-normal);
+}
+.founder-story-body {
+display: grid;
+gap: 0.75rem;
+max-width: 760px;
+}
+.founder-story-body p {
+margin: 0;
+color: var(--color-text-secondary);
+font-size: var(--font-size-md);
+line-height: 1.7;
+}
+.founder-story-body strong {
+color: var(--color-text-primary);
+font-weight: 700;
+}
+.founder-story-link {
+font-weight: 700;
+}
+.founder-story-question,
+.founder-story-body .founder-story-closing {
+margin-block: var(--space-3);
+padding: var(--space-4);
+border-left: 3px solid var(--color-accent);
+background: rgba(255,255,255,0.62);
+color: var(--color-text-primary);
+font-weight: 650;
+}
+.founder-story-signature {
+display: grid;
+gap: 0.2rem;
+margin-top: var(--space-3);
+padding-top: var(--space-5, 1.25rem);
+border-top: 1px solid var(--color-border);
+}
+.founder-story-signature span {
+color: var(--color-accent);
+font-weight: 700;
+}
+.founder-story-path {
+display: grid;
+grid-template-columns: repeat(6, minmax(0, 1fr));
+gap: 0.5rem;
+margin-top: var(--space-8);
+padding-top: var(--space-6);
+border-top: 1px solid var(--color-border);
+}
+.founder-story-path li {
+position: relative;
+min-height: 74px;
+padding: 0.78rem 0.7rem;
+border: 1px solid rgba(27,58,107,0.14);
+border-radius: var(--border-radius-sm);
+background: rgba(255,255,255,0.62);
+color: var(--color-text-primary);
+font-size: var(--font-size-xs);
+font-weight: 750;
+line-height: 1.25;
+}
+.founder-story-path li::after {
+content: '';
+position: absolute;
+top: 50%;
+right: -0.52rem;
+width: 0.52rem;
+height: 1px;
+background: var(--color-border-strong);
+}
+.founder-story-path li:last-child::after {
+display: none;
+}
+.founder-story-path span {
+display: block;
+margin-bottom: var(--space-2);
+color: var(--color-accent);
+font-size: 0.68rem;
+font-weight: 850;
+letter-spacing: 0.08em;
+}
+@media (max-width: 760px) {
+.founder-story {
+margin-top: var(--space-10);
+padding: var(--space-6);
+}
+.founder-story-lead {
+margin-bottom: var(--space-6);
+}
+.founder-story h3 {
+font-size: 1.65rem;
+}
+.founder-story-body {
+gap: 0.68rem;
+}
+.founder-story-body p {
+font-size: 0.96rem;
+line-height: 1.62;
+}
+.founder-story-path {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 0.55rem;
+}
+.founder-story-path li {
+min-height: 62px;
+}
+.founder-story-path li::after {
+display: none;
+}
+}
+@media (max-width: 420px) {
+.founder-story {
+padding: 1.1rem;
+}
+.founder-story h3 {
+font-size: 1.42rem;
+}
+.founder-story-claim {
+font-size: 1rem;
+}
+.founder-story-path {
+grid-template-columns: 1fr;
+}
+.founder-story-path li {
+min-height: auto;
+}
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+.founder-story-path {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.founder-story-path li::after {
+display: none;
+}
+}
+
 /* Kontakt: dunkles Finale */
 .abschluss-section { text-align: left; }
 .kontakt-intro { font-size: var(--font-size-lg); color: var(--color-text-inverse-muted); max-width: 620px; line-height: var(--line-height-loose); margin-bottom: var(--space-10); }
