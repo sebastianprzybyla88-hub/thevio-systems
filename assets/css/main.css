@@ -3961,6 +3961,102 @@ pointer-events: none;
     }
 }
 
+@media (max-width: 380px) {
+    .hero {
+          padding-block: 1.25rem;
+    }
+
+    .hero-layout {
+          gap: 0.9rem;
+    }
+
+    .hero h1 {
+          margin-bottom: 0.8rem;
+          font-size: 1.32rem;
+          line-height: 1.08;
+    }
+
+    .hero-sub {
+          margin-bottom: 0.9rem;
+          font-size: 0.95rem;
+          line-height: 1.5;
+    }
+
+    .hero-actions {
+          gap: 0.65rem;
+    }
+
+    .hero-offer-list {
+          gap: 0.35rem;
+          margin-top: 0.9rem;
+    }
+
+    .hero-offer-list li {
+          min-height: 26px;
+          padding: 0.32rem 0.5rem;
+          font-size: 0.66rem;
+    }
+
+    .hero-cdr-preview {
+          min-height: 204px;
+          padding: 0.55rem;
+    }
+
+    .hero-cdr-stage {
+          min-height: 128px;
+    }
+
+    .hero-cdr-fragment {
+          width: 70px;
+          min-height: 38px;
+          padding: 0.34rem;
+    }
+
+    .hero-cdr-object {
+          width: 96px;
+    }
+
+    .hero-cdr-preview[data-phase="2"] .hero-cdr-object,
+    .hero-cdr-gate {
+          width: 116px;
+    }
+
+    .hero-cdr-control {
+          min-height: 34px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 959px) {
+    .hero h1 {
+          font-size: 2.2rem;
+          line-height: 1.08;
+          margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+          line-height: 1.55;
+    }
+
+    .hero-offer-list {
+          margin-top: 1rem;
+    }
+
+    .hero-cdr-preview {
+          min-height: 300px;
+          padding: 0.9rem;
+    }
+
+    .hero-cdr-stage {
+          min-height: 204px;
+    }
+
+    .hero-cdr-control {
+          min-height: 38px;
+    }
+}
+
 /* ---- Visual Scroll Story: Proof and Ergebnis ---- */
 
 .triovo-proof-layout {
