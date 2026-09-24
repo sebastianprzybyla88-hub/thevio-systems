@@ -8563,3 +8563,345 @@ pointer-events: none;
           grid-template-columns: 1fr;
     }
 }
+
+/* ---- Editorial rhythm pass: lighter sections and shorter reading stops ---- */
+@media (min-width: 960px) {
+    .resolution-section {
+          min-height: auto;
+    }
+}
+
+.resolution-section {
+    padding-block: clamp(3.6rem, 2.7rem + 3.2vw, 5.1rem);
+}
+
+.resolution-section h2 {
+    max-width: 13.5ch;
+    font-size: clamp(2.25rem, 1.68rem + 2.15vw, 3.65rem);
+    line-height: 1.04;
+}
+
+.resolution-section .section-intro--inverse {
+    max-width: 58ch;
+    font-size: clamp(1rem, 0.95rem + 0.22vw, 1.12rem);
+    line-height: 1.62;
+}
+
+.resolution-layout {
+    align-items: start;
+    gap: clamp(2rem, 3vw, 3.75rem);
+}
+
+.resolution-visual {
+    min-height: auto;
+    padding: clamp(1rem, 0.8rem + 0.85vw, 1.45rem);
+}
+
+.resolution-ring {
+    width: clamp(190px, 17vw, 238px);
+    height: clamp(190px, 17vw, 238px);
+}
+
+.resolution-ring-core strong {
+    font-size: clamp(3.4rem, 2.75rem + 2.4vw, 4.85rem);
+}
+
+.resolution-architecture span,
+.resolution-visual .resolution-factor,
+.resolution-visual .resolution-score-formula > button[type="button"] {
+    min-height: 42px;
+    font-size: 0.7rem;
+}
+
+.section--signal-field {
+    padding-block: clamp(3.6rem, 2.6rem + 3.2vw, 5.2rem);
+}
+
+.section--signal-field h2 {
+    max-width: 18ch;
+    font-size: clamp(2.18rem, 1.62rem + 2.1vw, 3.45rem);
+    line-height: 1.06;
+}
+
+.section--signal-field .section-intro {
+    max-width: 56ch;
+    margin-bottom: clamp(1.7rem, 1.25rem + 1.6vw, 2.8rem);
+    line-height: 1.58;
+}
+
+.operations-stage.operations-map {
+    min-height: clamp(340px, 32vw, 440px);
+    padding: clamp(1rem, 1.6vw, 1.45rem);
+}
+
+.operations-map .os-source,
+.operations-map .os-outcome {
+    min-height: 40px;
+    padding: 0.62rem 0.78rem;
+}
+
+.operations-map .os-case-map,
+.operations-field[data-active="0"] .operations-map .os-case-map,
+.operations-field[data-active="1"] .operations-map .os-case-map,
+.operations-field[data-active="2"] .operations-map .os-case-map,
+.operations-field[data-active="3"] .operations-map .os-case-map {
+    min-height: 158px;
+}
+
+.section--triovo-dark {
+    padding-block: clamp(3.6rem, 2.75rem + 3.1vw, 5.4rem);
+}
+
+.triovo-badge {
+    margin-bottom: var(--space-4);
+}
+
+h2.triovo-dark-title {
+    max-width: 18ch;
+    margin-bottom: var(--space-4);
+    font-size: clamp(2.2rem, 1.65rem + 2.2vw, 3.6rem);
+    line-height: 1.08;
+}
+
+.triovo-dark-intro {
+    max-width: 60ch;
+    margin-bottom: var(--space-4);
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+    line-height: 1.62;
+}
+
+.triovo-proof-layout {
+    gap: clamp(1.6rem, 2.6vw, 2.6rem);
+    margin-top: clamp(1.7rem, 1.25rem + 1.6vw, 2.6rem);
+    margin-bottom: clamp(1.8rem, 1.3rem + 1.6vw, 2.8rem);
+}
+
+.triovo-demo {
+    margin-bottom: clamp(1.7rem, 1.2rem + 1.4vw, 2.5rem);
+}
+
+.triovo-demo-frame {
+    margin-bottom: var(--space-4);
+    padding: var(--space-3);
+}
+
+.triovo-frame-caption {
+    margin-top: var(--space-3);
+}
+
+.triovo-demo-steps {
+    gap: 0.55rem;
+    margin-bottom: var(--space-3);
+}
+
+.triovo-demo-step {
+    min-height: 40px;
+    padding: 0.55rem 0.78rem;
+}
+
+.triovo-demo-step-text {
+    font-size: 0.95rem;
+}
+
+.triovo-architecture {
+    align-self: start;
+    min-height: 0;
+    padding: clamp(1rem, 1.2vw, 1.3rem);
+}
+
+.triovo-architecture::before {
+    display: none;
+}
+
+.triovo-architecture h3 {
+    margin-bottom: 0.9rem;
+    font-size: clamp(1.15rem, 1rem + 0.5vw, 1.45rem);
+}
+
+.triovo-layer-list {
+    gap: 0.58rem;
+}
+
+.triovo-layer-list li {
+    grid-template-columns: 2.1rem minmax(0, 1fr);
+    column-gap: 0.82rem;
+    padding: 0.78rem;
+}
+
+.triovo-layer-list span {
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 0.68rem;
+}
+
+.triovo-layer-list strong {
+    font-size: 0.95rem;
+}
+
+.triovo-layer-list p {
+    margin-top: 0.22rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.triovo-tech-line {
+    margin-top: 0.9rem;
+    font-size: 0.84rem;
+}
+
+.result-story {
+    gap: clamp(1rem, 1.6vw, 1.5rem);
+    margin-bottom: var(--space-8);
+    padding: clamp(1.1rem, 1.5vw, 1.6rem);
+}
+
+.result-copy h3 {
+    font-size: clamp(1.45rem, 1.1rem + 1.2vw, 2rem);
+}
+
+.result-panel {
+    min-height: 104px;
+    padding: 1rem;
+}
+
+.result-panel p {
+    font-size: 1rem;
+}
+
+#audit {
+    padding-block: clamp(3.6rem, 2.6rem + 3vw, 5.2rem);
+}
+
+#audit-heading {
+    font-size: clamp(2.05rem, 1.55rem + 1.8vw, 3rem);
+    line-height: 1.08;
+}
+
+.diagnostic-console {
+    padding: clamp(1.1rem, 1.2vw, 1.55rem);
+}
+
+.diagnostic-console .dc-stage.dc-audit-map {
+    gap: 0.54rem;
+    padding: clamp(0.85rem, 1.3vw, 1.05rem);
+}
+
+.dc-map-panel {
+    padding: 0.72rem 0.86rem;
+}
+
+.dc-map-panel strong {
+    font-size: clamp(1rem, 1.35vw, 1.18rem);
+}
+
+.dc-map-panel p {
+    font-size: 0.78rem;
+    line-height: 1.36;
+}
+
+.dc-map-arrow {
+    height: 20px;
+}
+
+.dc-map-proof {
+    padding: 0.72rem 0.86rem;
+}
+
+.dc-phase {
+    min-height: 48px;
+}
+
+.dc-readout {
+    padding-block: 0.62rem;
+}
+
+.founder-story {
+    padding: clamp(1.25rem, 2.4vw, 2rem);
+    margin-top: clamp(2rem, 3vw, 3.25rem);
+}
+
+.founder-story h3 {
+    font-size: clamp(1.9rem, 1.45rem + 1.5vw, 2.75rem);
+}
+
+.founder-story-grid {
+    gap: clamp(1.5rem, 2.5vw, 2.6rem);
+}
+
+.founder-story-step {
+    padding-block: clamp(1rem, 1.5vw, 1.4rem);
+}
+
+.founder-story-step p {
+    line-height: 1.56;
+}
+
+.founder-story-note,
+.founder-story-question,
+.founder-story-closing,
+.founder-story-proof {
+    padding: 0.82rem 1rem;
+}
+
+.founder-story-kpi,
+.founder-story-journey {
+    padding: clamp(1rem, 1.5vw, 1.35rem);
+}
+
+.founder-story-path li {
+    min-height: 42px;
+}
+
+@media (min-width: 960px) {
+    .triovo-proof-layout {
+          grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    }
+
+    .result-story {
+          grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.9fr);
+    }
+}
+
+@media (min-width: 1180px) {
+    .founder-story-main {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0 clamp(1.4rem, 2vw, 2rem);
+    }
+
+    .founder-story-step {
+          padding-block: 1rem;
+    }
+
+    .founder-story-step:nth-child(odd) {
+          border-right: 1px solid var(--color-border);
+          padding-right: clamp(1.4rem, 2vw, 2rem);
+    }
+
+    .founder-story-step:nth-child(even) {
+          padding-left: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .resolution-section,
+    .section--signal-field,
+    .section--triovo-dark,
+    #audit {
+          padding-block: clamp(3rem, 2.45rem + 2.6vw, 3.9rem);
+    }
+
+    .resolution-section h2,
+    .section--signal-field h2,
+    #audit-heading {
+          font-size: clamp(1.95rem, 1.5rem + 3vw, 2.45rem);
+    }
+
+    .operations-stage.operations-map {
+          min-height: auto;
+    }
+
+    .triovo-demo-step {
+          min-height: 38px;
+    }
+}
