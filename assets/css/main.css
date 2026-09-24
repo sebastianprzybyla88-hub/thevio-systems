@@ -8925,3 +8925,130 @@ h2.triovo-dark-title {
           min-height: 38px;
     }
 }
+
+/* Readability pass for compact homepage elements */
+.hero-offer-list {
+    gap: 0.85rem;
+}
+
+.hero-offer-list li {
+    min-height: auto;
+    gap: 0.6rem;
+    padding: 0.95rem 1rem;
+}
+
+.hero-offer-list strong {
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    max-width: 100%;
+    padding: 0.24rem 0.52rem;
+    border-radius: 999px;
+    background: rgba(27, 58, 107, 0.08);
+    line-height: 1.15;
+}
+
+.hero-offer-list span {
+    line-height: 1.46;
+}
+
+.founder-story {
+    background:
+          linear-gradient(180deg, rgba(255,255,255,0.96), rgba(244,248,252,0.88)),
+          var(--color-surface);
+}
+
+.founder-story-lead {
+    max-width: 860px;
+}
+
+.founder-story-main {
+    gap: 0.9rem;
+}
+
+.founder-story-step {
+    padding: 1rem;
+    border: 1px solid rgba(30, 64, 115, 0.14);
+    border-radius: var(--border-radius);
+    background: rgba(255,255,255,0.78);
+    box-shadow: 0 14px 30px rgba(15, 25, 35, 0.045);
+}
+
+.founder-story-step:last-child {
+    border-bottom: 1px solid rgba(30, 64, 115, 0.14);
+}
+
+.founder-story-step-label {
+    margin-bottom: 0.7rem;
+}
+
+.founder-story-note,
+.founder-story-question,
+.founder-story-closing,
+.founder-story-proof {
+    background: rgba(255,255,255,0.78);
+}
+
+.founder-story-kpi,
+.founder-story-journey {
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 16px 36px rgba(15, 25, 35, 0.06);
+}
+
+.founder-story-path li {
+    min-height: 46px;
+}
+
+.founder-story-signature {
+    max-width: none;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(30, 64, 115, 0.14);
+    border-radius: var(--border-radius);
+    background: rgba(255,255,255,0.82);
+}
+
+#themen .cards-grid {
+    align-items: stretch;
+}
+
+#themen .topic-card {
+    min-height: 232px;
+}
+
+@media (min-width: 720px) {
+    .hero-offer-list li {
+          min-height: 118px;
+    }
+}
+
+@media (min-width: 1180px) {
+    .hero-offer-list {
+          max-width: 760px;
+    }
+
+    .hero-offer-list li {
+          min-height: 112px;
+    }
+
+    .founder-story-main {
+          gap: 0.9rem;
+    }
+
+    .founder-story-step,
+    .founder-story-step:nth-child(odd),
+    .founder-story-step:nth-child(even) {
+          padding: 1rem;
+          border: 1px solid rgba(30, 64, 115, 0.14);
+    }
+}
+
+@media (max-width: 719px) {
+    .hero-offer-list li {
+          grid-template-columns: auto minmax(0, 1fr);
+          align-items: start;
+    }
+
+    .hero-offer-list strong {
+          margin-top: 0.05rem;
+    }
+}
