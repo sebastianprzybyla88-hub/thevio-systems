@@ -258,7 +258,7 @@ var controls = Array.prototype.slice.call(scene.querySelectorAll('[data-cdr-phas
 var statusLine = scene.querySelector('.hero-cdr-status');
 var labels = [
 'Der Kundenfall wird vollständig und verständlich aufgenommen.',
-'Triage, Zuständigkeit und fehlende Informationen werden geklärt.',
+'Triage, Zuständigkeit und nächster Schritt werden geklärt.',
 'Status, Eskalation und Lösung werden nachvollziehbar dokumentiert.'
 ];
 new Stepper({
@@ -671,24 +671,24 @@ var riskTitle = field.querySelector('.os-diagnosis-card strong');
 var riskText = field.querySelector('.os-diagnosis-card p');
 var content = [
 {
-status: 'Fallangaben unvollständig',
-description: 'Eine Anfrage geht ein, aber Pflichtangaben, Nachweise oder technische Details fehlen und erzeugen vermeidbare Rückfragen.',
-risk: 'Information kommt an, ist aber noch kein prüfbarer Kundenfall.'
+status: 'Information fehlt',
+description: 'Support fragt nach, der Fall wartet und Bearbeitungszeit steigt.',
+risk: 'Der Fall ist angekommen, aber noch nicht prüfbar.'
 },
 {
-status: 'Verantwortung nicht eindeutig',
-description: 'Der Kundenfall existiert, aber Rolle, Fachabteilung, Servicepartner oder Vertretung sind noch nicht verbindlich sichtbar.',
-risk: 'Der Fall wird bearbeitet, aber Verantwortung und nächster Schritt bleiben unklar.'
+status: 'Zuständigkeit unklar',
+description: 'Der Fall wird weitergereicht und Kontext geht zwischen Team, Fachabteilung oder Servicepartner verloren.',
+risk: 'Alle arbeiten, aber niemand sieht verbindlich den nächsten Schritt.'
 },
 {
-status: 'Status für Kunden nicht erklärbar',
-description: 'Mehrere Beteiligte arbeiten am Fall, aber Kunde und Team sehen nicht denselben Bearbeitungsstand.',
-risk: 'Der Kunde fragt wiederholt nach, obwohl intern bereits gearbeitet wird.'
+status: 'Status fehlt',
+description: 'Der Kunde fragt erneut nach, obwohl intern bereits gearbeitet wird.',
+risk: 'Bearbeitung findet statt, ist aber für Kunde und Team nicht erklärbar.'
 },
 {
-status: 'Lösung nicht belastbar dokumentiert',
-description: 'Klärung, Freigabe, Nachweis und Kommunikation werden erst zusammengeführt, wenn der Abschluss nachvollziehbar ist.',
-risk: 'Die Lösung ist fachlich passiert, aber für spätere Rückfragen nicht ausreichend belegbar.'
+status: 'Entscheidung verzögert sich',
+description: 'Freigabe, Nachweis oder Eskalation bleiben liegen und erhöhen Bearbeitungszeit sowie Kosten.',
+risk: 'Der wirtschaftliche Aufwand steigt, bevor der Engpass sichtbar wird.'
 }
 ];
 new Stepper({
@@ -780,22 +780,22 @@ var resultTitle = consoleEl.querySelector('.dc-map-panel--result strong');
 var resultText = consoleEl.querySelector('.dc-map-panel--result p');
 var content = [
 {
-question: 'Wo fehlt Klarheit?',
-diagnosis: 'Fallangaben unvollständig',
+question: 'Welcher Fall kostet Kapazität?',
+diagnosis: 'Information fehlt',
 result: 'Begrenzter Pilotprozess',
 problemText: 'Anfrage, Nachweise und Kontext entstehen verteilt und sind noch kein prüfbarer Kundenfall.',
 resultText: 'Ein begrenzter Ablauf macht Erfassung, Triage und nächsten Schritt überprüfbar.'
 },
 {
-question: 'Wer übernimmt verbindlich?',
-diagnosis: 'Verantwortung nicht eindeutig',
+question: 'Wo geht Verantwortung verloren?',
+diagnosis: 'Zuständigkeit unklar',
 result: 'Klare Rolle und Übergabe',
 problemText: 'Der Kundenfall ist da, aber Rolle, Vertretung, Fachabteilung oder Servicepartner sind nicht festgelegt.',
 resultText: 'Verantwortung und Übergabe werden vor der Umsetzung sichtbar und organisatorisch tragfähig.'
 },
 {
 question: 'Wann ist der Kundenfall wirklich gelöst?',
-diagnosis: 'Lösung nicht belastbar dokumentiert',
+diagnosis: 'Abschluss nicht belastbar',
 result: 'Nachvollziehbarer Lösungszustand',
 problemText: 'Bearbeitung findet statt, aber Nachweis, Kommunikation und belastbarer Lösungszustand fehlen.',
 resultText: 'Der Check definiert, woran ein gelöster Kundenfall wirklich erkennbar ist.'
